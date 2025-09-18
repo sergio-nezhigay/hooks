@@ -1,0 +1,68 @@
+<style>
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid black;
+    margin: 20px 0;
+    /* font-family: Arial, sans-serif; */
+}
+
+.custom-table th,
+.custom-table td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+}
+
+.custom-table thead th {
+  background: #ec8177;
+    font-weight: bold;
+  color:#22294f;
+  width: 25%;
+}
+
+.custom-table .text-red {
+    color: #e53e3e; 
+}
+
+.custom-table td span {
+    display: inline-block;
+    line-height: 1; /* Same as leading-none */
+}
+</style>
+<discount-table>
+  
+<table class="custom-table">
+    <thead>
+        <tr>
+            <th>Minimum Quantity</th>
+            <th>Discount</th>
+            <th>Price (each)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Buy 50 +</td>
+            <td class="text-red">5% Off</td>
+            <td><span data-price-5-off>{{ product.selected_or_first_available_variant.price | times: 0.95 | money }}</span></td>
+        </tr>
+        <tr>
+            <td>Buy 100 +</td>
+            <td class="text-red">10% Off</td>
+            <td><span data-price-10-off>{{ product.selected_or_first_available_variant.price | times: 0.9 | money }}</span></td>
+        </tr>
+        <tr>
+            <td>Buy 250 +</td>
+            <td class="text-red">15% Off</td>
+            <td><span data-price-15-off>{{ product.selected_or_first_available_variant.price | times: 0.85 | money }}</span></td>
+        </tr>
+        <tr>
+            <td>Buy 500 +</td>
+            <td class="text-red">20% Off</td>
+            <td><span data-price-20-off>{{ product.selected_or_first_available_variant.price | times: 0.8 | money }}</span></td>
+        </tr>
+    </tbody>
+</table>
+</discount-table>
+<!-- addition script for this is extend in product-info.js function name is updateDiscountTable -->
+

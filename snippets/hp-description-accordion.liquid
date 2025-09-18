@@ -1,0 +1,202 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<div class="main-accordion">
+  {% if product.metafields.custom.description.value != blank %}
+    <div class="accordion specs">
+      <div class="accordion-header">
+        Description
+        <i class="fas fa-chevron-down chevron"></i>
+      </div>
+      <div class="accordion-content">
+        <p>{{ product.metafields.custom.description.value }}</p>
+        
+      </div>
+    </div>
+  {% endif %}
+  {% if product.metafields.custom.dimensions %}
+    <div class="accordion dimension">
+      <div class="accordion-header">
+        Dimensions
+        <i class="fas fa-chevron-down chevron"></i>
+      </div>
+      <div class="accordion-content">
+        <p>{{ product.metafields.custom.dimensions }}</p>
+      </div>
+    </div>
+  {% endif %}
+  {% if product.metafields.custom.weight_capacity %}
+    <div class="accordion capacity">
+      <div class="accordion-header">
+        Weight Capacity
+        <i class="fas fa-chevron-down chevron"></i>
+      </div>
+      <div class="accordion-content">
+        <p>{{ product.metafields.custom.weight_capacity }}</p>
+      </div>
+    </div>
+  {% endif %}
+  {% if product.metafields.custom.material %}
+    <div class="accordion material">
+      <div class="accordion-header">
+        Material
+        <i class="fas fa-chevron-down chevron"></i>
+      </div>
+      <div class="accordion-content">
+        <p>{{ product.metafields.custom.material }}</p>
+      </div>
+    </div>
+  {% endif %}
+  {% if product.metafields.custom.colors %}
+    <div class="accordion colors">
+      <div class="accordion-header">
+        Colors
+        <i class="fas fa-chevron-down chevron"></i>
+      </div>
+      <div class="accordion-content">
+        <p>{{ product.metafields.custom.colors }}</p>
+      </div>
+    </div>
+  {% endif %}
+  {% if product.metafields.custom.resource %}
+    <div class="accordion resources">
+      <div class="accordion-header">
+        Resources
+        <i class="fas fa-chevron-down chevron"></i>
+      </div>
+      <div class="accordion-content">
+        <p>{{ product.metafields.custom.resource | metafield_tag }}</p>
+      </div>
+    </div>
+  {% endif %}
+    {% if product.metafields.custom.color_two %}
+        <div class="accordion color_two">
+            <div class="accordion-header">
+                Colors
+                <i class="fas fa-chevron-down chevron"></i>
+            </div>
+            <div class="accordion-content">
+                <p>{{ product.metafields.custom.color_two | metafield_tag }}</p>
+            </div>
+        </div>
+    {% endif %}
+</div>
+
+<style>
+  .accordion {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 0;
+    overflow: hidden;
+  }
+
+  .accordion-header {
+    color: #000;
+    cursor: pointer;
+    padding: 15px;
+    text-align: left;
+    outline: none;
+    border: none;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    transition: background-color 0.3s;
+  }
+
+  .accordion-content {
+    display: none;
+    padding: 15px;
+    border-top: 1px solid #ccc;
+    background-color: #fff;
+  }
+
+  /* Chevron Icon Style */
+  .chevron {
+    position: absolute;
+    right: 20px;
+    top:22px;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+  }
+
+  /* Rotate chevron when active */
+  .accordion-header.active .chevron {
+    transform: rotate(180deg);
+  }
+
+  .accordion.dimension:hover {
+    background: #EC8177;
+}
+
+.accordion.dimension .accordion-header:hover {
+    background: #EC8177;
+}
+
+.accordion.capacity:hover {
+    background: #75C1E9;
+}
+
+.accordion.capacity .accordion-header:hover {
+    background: #75C1E9;
+}
+
+.accordion.material:hover {
+    background: #FFDF82;
+}
+
+.accordion.material .accordion-header:hover {
+    background: #FFDF82;
+}
+
+.accordion.colors:hover {
+    background: #76C262;
+}
+
+.accordion.colors .accordion-header:hover {
+    background: #76C262;
+}
+  .accordion.resources:hover {
+    background: #09213A;
+}
+.accordion.resources:hover .accordion-header {
+    background: #09213A;
+  color:white;
+}
+.accordion.resources .accordion-header:hover {
+    background: #09213A;
+    color:white;
+}
+
+.accordion.color_two .accordion-header:hover {
+    background: #76C262;
+    color:white;
+}
+  
+  .accordion.specs:hover {
+    background: #F3F3F3;
+}
+
+.accordion.specs .accordion-header:hover {
+    background: #F3F3F3;
+}
+
+</style>
+
+<script>
+  // JavaScript to handle accordion functionality
+  document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+      // Toggle active state for the clicked header
+      header.classList.toggle('active');
+
+      // Toggle display of the associated content
+      const content = header.nextElementSibling;
+      if (content.style.display === 'block') {
+        content.style.display = 'none';
+      } else {
+        content.style.display = 'block';
+      }
+    });
+  });
+</script>

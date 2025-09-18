@@ -1,0 +1,15 @@
+{
+  "name": "hooks",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "shopify theme dev --store=evhenii-test-store.myshopify.com --theme 180427489586",
+    "push": "shopify theme push --store=evhenii-test-store.myshopify.com --theme 180427489586",
+    "pull": "shopify theme pull --store=evhenii-test-store.myshopify.com --theme 180427489586"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

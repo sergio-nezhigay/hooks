@@ -1,0 +1,158 @@
+<div>
+    {% render 'hp-p-img', product: product %}
+
+    {% if product.title contains "Oak" %}
+        {% assign railColour = "oak" %}
+    {% else %}
+        {% assign railColour = "white" %}
+    {% endif %%}
+    {% if product.title contains "Original" %}
+        {% assign hookSize = "original" %}
+    {% else %}
+        {% assign hookSize = "xl" %}
+    {% endif %%}
+
+    <div id="railImages" class="top-0 sticky" style="display: none" data-rail-colour="{{ railColour }}">
+
+        <div class="box" data-rail-length="3 Hooks" style="display:none">
+            <img class="image-bottom" src="{{ railColour | prepend: '-' | prepend: hookSize | prepend: '3-' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="3">
+                <img class="red-image" src="{{ hookSize | prepend: '3a-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="2">
+                <img class="red-image" src="{{ hookSize | prepend: '3b-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="1">
+                <img class="red-image" src="{{ hookSize | prepend: '3c-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+        </div>
+
+        <div class="box" data-rail-length="6 Hooks" style="display:none">
+            <img class="image-bottom" src="{{ railColour | prepend: '-' | prepend: hookSize | prepend: '6-' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="6">
+                <img class="red-image" src="{{ hookSize | prepend: '6a-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="5">
+                <img class="red-image" src="{{ hookSize | prepend: '6b-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="4">
+                <img class="red-image" src="{{ hookSize | prepend: '6c-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="3">
+                <img class="red-image" src="{{ hookSize | prepend: '6d-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="2">
+                <img class="red-image" src="{{ hookSize | prepend: '6e-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="1">
+                <img class="red-image" src="{{ hookSize | prepend: '6f-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+
+        </div>
+
+        <div class="box" data-rail-length="9 Hooks" style="display:none">
+            <img class="image-bottom" src="{{ railColour | prepend: '-' | prepend: hookSize | prepend: '9-' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="9">
+                <img class="red-image" src="{{ hookSize | prepend: '9a-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="8">
+                <img class="red-image" src="{{ hookSize | prepend: '9b-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="7">
+                <img class="red-image" src="{{ hookSize | prepend: '9c-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="6">
+                <img class="red-image" src="{{ hookSize | prepend: '9d-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="5">
+                <img class="red-image" src="{{ hookSize | prepend: '9e-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="4">
+                <img class="red-image" src="{{ hookSize | prepend: '9f-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="3">
+                <img class="red-image" src="{{ hookSize | prepend: '9g-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="2">
+                <img class="red-image" src="{{ hookSize | prepend: '9h-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="1">
+                <img class="red-image" src="{{ hookSize | prepend: '9i-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+
+        </div>
+
+        <div class="box" data-rail-length="12 Hooks" style="display:none">
+            <img class="image-bottom" src="{{ railColour | prepend: '-' | prepend: hookSize | prepend: '12-' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="12">
+                <img class="red-image" src="{{ hookSize | prepend: '12a-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="11">
+                <img class="red-image" src="{{ hookSize | prepend: '12b-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="10">
+                <img class="red-image" src="{{ hookSize | prepend: '12c-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="9">
+                <img class="red-image" src="{{ hookSize | prepend: '12d-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="8">
+                <img class="red-image" src="{{ hookSize | prepend: '12e-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="7">
+                <img class="red-image" src="{{ hookSize | prepend: '12f-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="6">
+                <img class="red-image" src="{{ hookSize | prepend: '12g-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="5">
+                <img class="red-image" src="{{ hookSize | prepend: '12h-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="4">
+                <img class="red-image" src="{{ hookSize | prepend: '12i-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="3">
+                <img class="red-image" src="{{ hookSize | prepend: '12j-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="2">
+                <img class="red-image" src="{{ hookSize | prepend: '12k-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+
+            <div class="stack" data-hook-size="{{ hookSize }}" data-image-position="1">
+                <img class="red-image" src="{{ hookSize | prepend: '12l-' | append: '-red' | append: '.png' | file_img_url: '1000x1000' }}" loading="lazy" width="1000" height="1000">
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

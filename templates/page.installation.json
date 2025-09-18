@@ -1,0 +1,232 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "custom_css": [],
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_QEFTrG": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_zVALq8": {
+          "type": "heading",
+          "settings": {
+            "heading": "INSTALLATION INSTRUCTIONS",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_zVALq8"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "multicolumn_Q3cecq": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_RGnL8k": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Drywall, Sheetrock, or Concrete Block Walls:</strong>",
+            "text": "<p></p><ol><li>Select <strong>drywall or concrete anchors</strong> that support your preferred weight capacity and are compatible with the screw size (NOT INCLUDED).</li><li>Use <strong>#6 x 1-1/2 inch (3.5mm x 35mm) flathead/countersunk screws</strong> for secure installation (NOT INCLUDED).</li></ol><p></p><p></p><p></p><p></p><h2></h2><p></p><p></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_W8xJWM": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Wood Walls or Wood Mounting Boards:</strong>",
+            "text": "<p></p><ol><li>Use <strong>#6 x 1 inch (3.5mm x 25mm) flathead/countersunk screws </strong>(NOT INCLUDED).</li><li>Longer screws may be used for additional stability if needed.</li></ol>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_RGnL8k",
+        "column_W8xJWM"
+      ],
+      "custom_css": [
+        ".multicolumn {max-width: 1400px; margin: 0 auto;}"
+      ],
+      "settings": {
+        "title": "<strong>Individual Hooks - Standard, Mini & One</strong>",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_wQ8acq": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_WtDWbt": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Drywall, Sheetrock, or Concrete Block Walls:</strong>",
+            "text": "<ul><li>Select drywall or concrete anchors that support your preferred weight capacity and are compatible with the screw size (NOT INCLUDED).</li><li>Use #8 x 1-1/2 inch (4.2mm x 35mm) flathead/countersunk screws for secure installation (NOT INCLUDED).</li></ul>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_L8Gjez": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Wood Walls or Wood Mounting Boards:</strong>",
+            "text": "<ul><li>Use #8 x 1 inch (4.2mm x 25mm) flathead/countersunk screws (NOT INCLUDED).</li><li>Longer screws may be used for additional stability if needed.</li></ul>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_WtDWbt",
+        "column_L8Gjez"
+      ],
+      "custom_css": [
+        ".multicolumn {max-width: 1400px; margin: 0 auto;}"
+      ],
+      "settings": {
+        "title": "<strong>Toughook Max</strong>",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_8mb7UB": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_P3nDBx": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Step 1: Attach Hooks to the Mounting Board</strong>",
+            "text": "<h3></h3><ol><li>Identify the <strong>hooks that do not have a wall mounting hole behind them</strong>.</li><li>Secure the hooks to the board using the <strong>pre-drilled mounting holes</strong> and the <strong>included hardware</strong> (<strong>#6 x 1 inch screws</strong> or <strong>#8 x 1 inch screws</strong>, depending on the hook size).</li><li><strong>Do not install</strong> the hooks that have wall mounting holes behind them at this stage.</li></ol>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_VDEdX8": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Step 2: Secure the Rack to the Wall</strong>",
+            "text": "<ol><li>Select the appropriate <strong>wall anchors</strong> for your wall type (<strong>drywall, wood, concrete, etc.</strong>).</li><li>If unsure whether the included multipurpose anchors are suitable, consult a <strong>local contractor or professional</strong> for guidance.</li><li>Position the <strong>mounting board against the wall</strong> at the desired height and ensure it is level.</li><li>Mark the mounting hole locations by:</li></ol><ul><li>Inserting a <strong>pencil or marker</strong> into the mounting holes while holding the board in place.</li><li>Alternatively, drill <strong>small pilot holes</strong> through the mounting holes while keeping the rack positioned.</li></ul><p>  5.  Secure the board to the wall using the predrilled <strong>hidden mounting holes</strong>:</p><ul><li><strong>For three and six-hook racks:</strong> Mounting holes are located behind the <strong>two end hooks</strong>.</li></ul><p><strong>For nine-hook racks:</strong> An <strong>additional mounting hole</strong> is located behind the <strong>center hook</strong>.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_PEFVfb": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Step 3: Install the Remaining Hooks</strong>",
+            "text": "<p></p><ol><li>Once the rack is securely mounted to the wall, attach the <strong>remaining hooks</strong> (those that have wall mounting holes behind them).</li><li>Use the same <strong>#6 or #8 screws</strong> to fasten these hooks in place.</li><li>Ensure all hooks are <strong>firmly secured</strong>, and give them a slight tug to confirm stability.</li></ol><p></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_BF83m8": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Step 4:  Final Check</strong>",
+            "text": "<p>Ensure the <strong>rack is level</strong> and securely fastened to the wall.<br/> Confirm that <strong>all hooks are properly installed</strong> and tightened.</p><p></p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_P3nDBx",
+        "column_VDEdX8",
+        "column_PEFVfb",
+        "column_BF83m8"
+      ],
+      "custom_css": [
+        ".multicolumn {max-width: 1400px; margin: 0 auto;}"
+      ],
+      "settings": {
+        "title": "<strong>Toughook Coat Racks</strong>",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_cBYUAC": {
+      "type": "rich-text",
+      "blocks": {
+        "text_phdAFm": {
+          "type": "text",
+          "settings": {
+            "text": "<p>That’s it! <strong>Your PerfectFit coat rack is now fully installed and ready for use.</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_phdAFm"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_QEFTrG",
+    "multicolumn_Q3cecq",
+    "multicolumn_wQ8acq",
+    "multicolumn_8mb7UB",
+    "rich_text_cBYUAC"
+  ]
+}

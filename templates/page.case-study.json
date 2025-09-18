@@ -1,0 +1,173 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_hWALzB": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_HfLN8Y": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Case Study: State of Ohio Correctional Facility & The Ultimate Toughook Test</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_hfYdGx": {
+          "type": "text",
+          "settings": {
+            "text": "<h6><strong>Background:</strong>  Correctional facilities require durable, tamper-resistant materials that can withstand extreme conditions and intentional misuse. To test the strength and resilience of Toughook coat hooks, the State of Ohio Correctional Facility conducted a severe durability assessment involving inmates, tools, and extreme force.</h6>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_HfLN8Y",
+        "text_hfYdGx"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_yVNLxp": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_qeLJdR": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>The Test: </strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_jHkTkw": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>The facility designed a stress test where a group of 5 to 6 inmates was placed in a room with various tools they would have direct access to and a set time of approximately one hour. <br/>Their task? Try to destroy the hooks.</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_qeLJdR",
+        "text_jHkTkw"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "multicolumn_c6NDDc": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_tzjzjt": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Bending & Vise Grip Test</strong>",
+            "text": "<p>Inmates attempted to bend or crush the hooks by placing them in a vise and applying extreme force. While some hooks did bend, they returned to their original shape afterward, demonstrating incredible resilience. No hooks suffered permanent structural failure. </p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_3gpE8X": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Load-Bearing Strength Test</strong>",
+            "text": "<p>Facility staff mounted the hooks on block walls and subjected them to over 260 lbs of weight. The hooks maintained peak form and condition, proving their ability to withstand far more than their official 88 lb rating.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_8DdbJe": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Hand & Tool-Based Destruction Attempts</strong>",
+            "text": "<p>Inmates attempted to break the hooks by hand - an impossible task. Some used nylon strings and shoelaces in an attempt to file through the plastic. After an extended period, they were able to create a small indentation, but nothing structurally significant in the time frame given. Even with hammers, inmates were unable to break the hooks.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_tzjzjt",
+        "column_3gpE8X",
+        "column_8DdbJe"
+      ],
+      "custom_css": [
+        ".multicolumn{max-width: 1400px; margin: 0 auto;}"
+      ],
+      "settings": {
+        "title": "<strong>Destruction Attempts & Results</strong>",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 1,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_JXVjgL": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_imMmKh": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>CONCLUSION</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_gTkHyL": {
+          "type": "text",
+          "settings": {
+            "text": "<h6>This rigorous, real-world test reinforced Toughook’s unmatched durability. Even under extreme, intentional destruction attempts with tools, weight, and brute force, Toughooks maintained their strength, shape, and function.</h6><h6>This case study highlights why Toughooks are trusted in high-security environments, where safety, strength, and reliability are non-negotiable. If these hooks can withstand the ultimate stress test in a correctional facility, they can handle anything in schools, gyms, and public spaces.</h6><h6>Want to learn more? <a href=\"/pages/contact\" title=\"Contact Us\">Contact us</a> to see how Toughook can meet your <strong>facility’s durability needs</strong>.</h6>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_imMmKh",
+        "text_gTkHyL"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_hWALzB",
+    "rich_text_yVNLxp",
+    "multicolumn_c6NDDc",
+    "rich_text_JXVjgL"
+  ]
+}

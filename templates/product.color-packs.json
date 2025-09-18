@@ -1,0 +1,509 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        },
+        "discount_table_zVzEer": {
+          "type": "discount_table",
+          "settings": {}
+        },
+        "info_accordian_TXnwdp": {
+          "type": "info_accordian",
+          "settings": {}
+        },
+        "buy_with_xWN8XE": {
+          "type": "buy_with",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "discount_table_zVzEer",
+        "info_accordian_TXnwdp",
+        "buy_with_xWN8XE",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "rich_text_FfkCDx": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_xkp46Y": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why Toughook?",
+            "heading_size": "h1"
+          }
+        },
+        "text_BDpVfc": {
+          "type": "text",
+          "settings": {
+            "text": "<p></p><ul><li>No more injuries from protruding hooks - the Toughook has a flat curve profile</li><li>No more annual hook replacements - the Toughook is unbreakable (we guarantee it)</li><li>No more boring silver - the Toughook comes in 20 colors for you to mix and match however you like</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_xkp46Y",
+        "text_BDpVfc"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_RxteNK": {
+      "type": "rich-text",
+      "blocks": {
+        "text_wCiieb": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.description }}"
+          }
+        }
+      },
+      "block_order": [
+        "text_wCiieb"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "image_with_text_Pd9dah": {
+      "type": "image-with-text",
+      "blocks": {
+        "text_kNwG6p": {
+          "type": "text",
+          "settings": {
+            "text": "<h4>Why Toughook?</h4><ul><li>No more injuries from protruding hooks - the Toughook has a flat curve profile</li><li>No more annual hook replacements - the Toughook is unbreakable (we guarantee it)</li><li>No more boring silver - the Toughook comes in 20 colours for you to mix and match however you like</li></ul>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "text_kNwG6p"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "p {line-height: 25px;}",
+        "li {line-height: 25px;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/toughook-80-schematic_8516d67b-9ec9-477c-821d-97a8722dbb3e.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_banner_cB3wTp": {
+      "type": "image-banner",
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/Screenshot_2025-01-22_144402.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "hp_bullet_points_gGVM3f": {
+      "type": "hp-bullet-points",
+      "blocks": {
+        "bullet_R9gfFW": {
+          "type": "bullet",
+          "settings": {
+            "point": "<p>Each size is available in 20 exciting colours — mix and match however you want with no minimum order</p>"
+          }
+        },
+        "bullet_dhjMyP": {
+          "type": "bullet",
+          "settings": {
+            "point": "<p>Every Toughook is Guaranteeed for life against breakages in normal indoor usage</p>"
+          }
+        },
+        "bullet_A9xyhF": {
+          "type": "bullet",
+          "settings": {
+            "point": "<p>The original unbreakable hook — designed and manufactured in Great Britain</p>"
+          }
+        }
+      },
+      "block_order": [
+        "bullet_R9gfFW",
+        "bullet_dhjMyP",
+        "bullet_A9xyhF"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_padding_top": 0,
+        "section_padding_bottom": 0
+      }
+    },
+    "hp_info_columns_WTQpDb": {
+      "type": "hp-info-columns",
+      "blocks": {
+        "icon_text_MWAM3w": {
+          "type": "icon-text",
+          "settings": {
+            "icon": "shopify://shop_images/colors_76e9de33-c038-4b2f-a982-58c09b596928.png",
+            "text": "Each size is available in many exciting colors – mix and match however you want with no minimum order"
+          }
+        },
+        "icon_text_pzbFmE": {
+          "type": "icon-text",
+          "settings": {
+            "icon": "shopify://shop_images/gurantee.png",
+            "text": "Every Toughook is tough against breakages in normal indoor usage"
+          }
+        },
+        "icon_text_3JgRyc": {
+          "type": "icon-text",
+          "settings": {
+            "icon": "shopify://shop_images/british.png",
+            "text": "The original unbreakable hook – designed and manufactured in Great Britain"
+          }
+        }
+      },
+      "block_order": [
+        "icon_text_MWAM3w",
+        "icon_text_pzbFmE",
+        "icon_text_3JgRyc"
+      ],
+      "settings": {}
+    },
+    "hp_product_quote_slider_zMtxtB": {
+      "type": "hp-product-quote-slider",
+      "blocks": {
+        "quote_slider_BXjQXP": {
+          "type": "quote_slider",
+          "settings": {
+            "author": "Simon F.",
+            "quote": "“I am pleased to state that I highly recommend Toughooks as they are truly very tough. We have installed them in our  school for the past 3 years to replace aluminium hooks which the kids broke very quickly and easily. Not a single Toughook has been destroyed.”"
+          }
+        },
+        "quote_slider_yxMRh7": {
+          "type": "quote_slider",
+          "settings": {
+            "author": "Simon F.",
+            "quote": "“I am pleased to state that I highly recommend Toughooks as they are truly very tough. We have installed them in our  school for the past 3 years to replace aluminium hooks which the kids broke very quickly and easily. Not a single  Toughook has been destroyed.”"
+          }
+        },
+        "quote_slider_kGJnAN": {
+          "type": "quote_slider",
+          "settings": {
+            "author": "M. Smith",
+            "quote": "\"After previously buying the standard size\nToughooks for our School Nursery and\nbeing extremely pleased with it, then we\ndecided to purchase further Toughooks for\nour new reception classes. We chose the\nlarger XL version in order to accommodate\nlarger bags. These are perfect for our\nchildren who love the multi colors. These\nhooks are very strong and are a high\nquality product!\""
+          }
+        }
+      },
+      "block_order": [
+        "quote_slider_BXjQXP",
+        "quote_slider_yxMRh7",
+        "quote_slider_kGJnAN"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": ""
+      }
+    },
+    "featured_collection_NiyaXG": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Related Products",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "picture-frames",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "hp_product_quote_slider_g7hGXQ": {
+      "type": "hp-product-quote-slider",
+      "blocks": {
+        "quote_slider_Tz7WcX": {
+          "type": "quote_slider",
+          "settings": {
+            "author": "Simon F.",
+            "quote": "\"l am pleased to state that / highly\nrecommend Toughooks as they are truly\nvery tough. We have installed them in our\nschool for the past 3 years to replace\naluminium hooks which the kids broke very\nquickly and easily. Not a single Toughook\nhas been destroyed.\""
+          }
+        },
+        "quote_slider_B9pUDT": {
+          "type": "quote_slider",
+          "settings": {
+            "author": "Israel R.",
+            "quote": "\"We bought it for the kids and we decided\nto put some hooks for ourselves. They are\nsturdy and you can hang adult coats and\njackets no problem. It's holding good\""
+          }
+        },
+        "quote_slider_iVc9xD": {
+          "type": "quote_slider",
+          "settings": {
+            "author": "M. Smith",
+            "quote": "\"After previously buying the standard size\nToughooks for our School Nursery and\nbeing extremely pleased with it, then we\ndecided to purchase further Toughooks for\nour new reception classes. We chose the\nlarger XL version in order to accommodate\nlarger bags. These are perfect for our\nchildren who love the multi colors. These\nhooks are very strong and are a high\nquality product!\""
+          }
+        },
+        "quote_slider_FfDdTt": {
+          "type": "quote_slider",
+          "settings": {
+            "author": "Jilly M.",
+            "quote": "“Absolutely thrilled with these tough hooks, they look great on my ‘up cycled’ bench for my hot tub area, really colorful and bright. Feel strong and sturdy for hanging wet towels on!”"
+          }
+        }
+      },
+      "block_order": [
+        "quote_slider_Tz7WcX",
+        "quote_slider_B9pUDT",
+        "quote_slider_iVc9xD",
+        "quote_slider_FfDdTt"
+      ],
+      "settings": {
+        "title": ""
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "Related Products",
+        "heading_size": "h1",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_hYyHgp": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_kLMpUn": {
+          "type": "heading",
+          "settings": {
+            "heading": "Take a closer look",
+            "heading_size": "h1"
+          }
+        },
+        "text_zeRg3V": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Still deciding? Free samples are now available so you can see it, test it and love it. <br/></p>"
+          }
+        },
+        "button_JDmAQe": {
+          "type": "button",
+          "settings": {
+            "button_label": "GET A FREE SAMPLE",
+            "button_link": "shopify://products/sample-product",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_kLMpUn",
+        "text_zeRg3V",
+        "button_JDmAQe"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "hp_text_3_cols_KhDLFX": {
+      "type": "hp-text-3-cols",
+      "blocks": {
+        "feature_cYrWHR": {
+          "type": "feature",
+          "settings": {
+            "title": "The Toughook Guarantee",
+            "subtitle": "UNBREAKABLE TOUGHOOKS",
+            "body": "Toughooks are the perfect coat & backpack hook for changing rooms, cloakrooms, corridors & classrooms. We guarantee Toughooks against breakages for the lifetime of the hook.",
+            "link": "",
+            "color": "yellow",
+            "align": "left"
+          }
+        },
+        "feature_RXtwjr": {
+          "type": "feature",
+          "settings": {
+            "title": "Delivery",
+            "subtitle": "US DELIVERY OPTIONS",
+            "body": "Domestic delivery is free for orders over $50. Choose Expedited or Priority shipping for faster dispatch on your order.",
+            "link": "",
+            "color": "red",
+            "align": "left"
+          }
+        },
+        "feature_V6GLRB": {
+          "type": "feature",
+          "settings": {
+            "title": "Pricing",
+            "subtitle": "BUY DIRECT & SAVE",
+            "body": "Toughook.com is the official home of the Toughook in the USA. We won't be beaten on price for unbreakable plastic backpack hooks.",
+            "link": "",
+            "color": "green",
+            "align": "left"
+          }
+        }
+      },
+      "block_order": [
+        "feature_cYrWHR",
+        "feature_RXtwjr",
+        "feature_V6GLRB"
+      ],
+      "settings": {
+        "max": "100%",
+        "margin": "4rem"
+      }
+    },
+    "1754444304b36a0041": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_FfkCDx",
+    "rich_text_RxteNK",
+    "image_with_text_Pd9dah",
+    "image_banner_cB3wTp",
+    "hp_bullet_points_gGVM3f",
+    "hp_info_columns_WTQpDb",
+    "hp_product_quote_slider_zMtxtB",
+    "featured_collection_NiyaXG",
+    "hp_product_quote_slider_g7hGXQ",
+    "related-products",
+    "rich_text_hYyHgp",
+    "hp_text_3_cols_KhDLFX",
+    "1754444304b36a0041"
+  ]
+}

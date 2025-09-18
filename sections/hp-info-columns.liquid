@@ -1,0 +1,92 @@
+<style>
+  .hp-info-columns {
+    padding: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 1400px;
+  }
+  .hp-info-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 25%;
+    min-height:400px;
+  }
+  .hp-info-content img {
+    width: 100%;
+    max-width: 250px;
+  }
+  .hp-info-content p {
+    margin: 0;
+    text-align: center;
+    font-size: 21px;
+  }
+  @media screen and (max-width: 756px) {
+    .hp-info-columns {
+      padding: 30px;
+      flex-direction: column;
+      
+    }
+    .hp-info-content {
+      width: 70%;
+      min-height:auto;
+    }
+    .hp-info-content img {
+      width: 80%;
+      max-width: 250px;
+    }
+    .hp-info-content p {
+      margin: 0;
+      text-align: center;
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+</style>
+
+<div class="page-width hp-info-columns">
+  {% for block in section.blocks %}
+    {%- case block.type -%}
+      {%- when 'icon-text' -%}
+        <div class="hp-info-content">
+          <img
+            src="{{ block.settings.icon |  image_url  }}"
+            alt=""
+            width="auto"
+            height="auto">
+          <p>{{ block.settings.text }}</p>
+        </div>
+    {% endcase %}
+  {% endfor %}
+</div>
+{% schema %}
+  {
+    "name": "HP Info Columns",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "icon-text",
+        "name": "Icon Text",
+        "limit": 4,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon"
+          }, {
+            "type": "text",
+            "id": "text",
+            "label": "Text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "HP Info Columns"
+      }
+    ]
+  }
+{% endschema %}

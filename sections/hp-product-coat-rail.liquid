@@ -1,0 +1,1769 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+.
+<style>
+    .pdpProductArea {
+        max-width: 1400px;
+        margin: auto;
+    }
+
+    .pdpProductArea .product-link .button {
+        background: transparent;
+        color: black;
+    }
+
+    .pdpProductArea .select-options .button {
+        background: transparent;
+        color: black;
+        font-weight: 700;
+        border: var(--variant-pills-border-width) solid rgba(18, 18, 18, 0.55);
+        border-radius: var(--variant-pills-radius);
+    }
+
+    .pdpProductArea .custom-option.selected {
+        background-color: #191e4c;
+        color: #fff;
+        border-color: #191e4c;
+    }
+
+    #pdpDetails {
+        padding: 15px;
+    }
+
+    img {
+        height: auto;
+        width: 100%;
+    }
+
+    .swatch {
+        display: block !important;
+    }
+
+    .swatch {
+        width: 30px;
+        height: 30px;
+        border: var(--variant-pills-border-width) solid rgba(18, 18, 18, 0.55);
+        border-radius: 50px;
+        cursor: pointer;
+        transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .swatch.selected {
+        border-color: #007aff;
+        box-shadow: 0 0 5px #007aff;
+    }
+
+    .swatch-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    /* General container styles */
+    .container {
+        padding: 2rem 0;
+        width: 100%;
+    }
+
+    .single-option-selector {
+        border: 3px solid #191e4c !important;
+        padding: 15px !important;
+    }
+
+    /* Utility classes converted from Tailwind */
+    .py-8 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .py-0 {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .gap-2 {
+        gap: .5rem;
+    }
+
+    .coat-rail-add-to-cart {
+        width: 70%;
+        margin: 20px 0;
+        font-size: 22px;
+        text-transform: capitalize;
+        font-weight: 900;
+        transition: scale .5s ease-out;
+    }
+
+    .coat-rail-add-to-cart:hover {
+        background-color: #191E4C;
+        scale: 1.05;
+    }
+
+    @media screen and (max-width: 756px) {
+        .coat-rail-add-to-cart {
+            width: 100%;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .md\:grid {
+            display: grid;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .md\:gap-16 {
+            gap: 4rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .lg\:gap-20 {
+            gap: 5rem;
+        }
+    }
+
+
+    @media (min-width: 768px) {
+        .md\:grid-cols-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .md\:grid-cols-3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .md\:col-span-2 {
+            grid-column: span 2 / span 2;
+        }
+    }
+
+    .w-full {
+        width: 100%;
+    }
+
+    @media (min-width: 1024px) {
+        .lg\:mt-20 {
+            margin-top: 5rem;
+        }
+    }
+
+    .my-3 {
+        margin-top: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .text-primaryshade {
+        color: #191e4c; /* Placeholder color, replace with actual "primary shade" color */
+    }
+
+    .font-black {
+        font-weight: 900;
+    }
+
+    .text-3xl {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+    }
+
+    .lg\:text-5xl {
+        font-size: 3rem;
+        line-height: 1;
+    }
+
+    .text-gray-400 {
+        color: #cbd5e1;
+    }
+
+    .text-sm {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+    }
+
+    .mt-4 {
+        margin-top: 1rem;
+    }
+
+    .text-xl {
+        font-size: 21px !important;
+        line-height: 1.75rem;
+    }
+
+    .tracking-wide {
+        letter-spacing: 0.05em;
+    }
+
+    .text-black {
+        color: #000;
+    }
+
+    .font-bold {
+        font-weight: 700;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .bg-secondary {
+        background-color: #007aff; /* Placeholder secondary color */
+    }
+
+    .hover\:bg-white:hover {
+        background-color: #fff;
+    }
+
+    .hover\:text-gray-300:hover {
+        color: #d1d5db;
+    }
+
+    .border {
+        border-width: 1px;
+        border-style: solid;
+    }
+
+    .border-gray-100 {
+        border-color: #f3f4f6;
+    }
+
+    .my-4 {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .p-4 {
+        padding: 1rem;
+    }
+
+    .px-6 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .inline-block {
+        display: inline-block;
+    }
+
+    .mb-8 {
+        margin-bottom: 2rem;
+    }
+
+    .mb-4 {
+        margin-bottom: 1rem;
+    }
+
+    .line-item-property__field {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .bg-yellow-50 {
+        background-color: #fffbeb;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .max-w-sm {
+        max-width: 270px;
+    }
+
+    .railBuilder {
+        background-color: #f3f4f6;
+        padding: 2rem;
+        margin: 2rem 0;
+    }
+
+    .text-xl {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+
+    .lg\:text-3xl {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+    }
+
+    .hooks-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.5rem;
+    }
+
+    .w-full {
+        width: 100%;
+    }
+
+    /* Add more styles as necessary */
+</style>
+<style>
+    /* Hide the native select element */
+    #productSelect {
+        display: none;
+    }
+
+    /* Flex container for the custom options */
+    .custom-options {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    /* Individual custom button style */
+    .custom-option {
+        padding: 15px 15px;
+        /* background-color: #ffffff; */
+        border: 1px solid #ccc;
+        border-radius: 0;
+        cursor: pointer;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .custom-option span {
+        height: 15px;
+    }
+
+    .custom-option:hover {
+        background-color: #191e4c;
+        color: #fff;
+    }
+
+    .custom-option.selected {
+        background-color: #191e4c;
+        color: #fff;
+        border-color: #191e4c;
+    }
+
+    .custom-option.disabled {
+        background-color: #ddd;
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+
+    /* Swatch Container */
+    .swatch-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    /* Swatch Buttons */
+    .swatch {
+        width: 30px;
+        height: 30px;
+        border: var(--variant-pills-border-width) solid rgba(18, 18, 18, 0.55);
+        border-radius: 50px;
+        cursor: pointer;
+        transition: transform 0.2s, border-color 0.2s;
+    }
+
+    /* Hover Effect */
+    .swatch:hover {
+        transform: scale(1.1);
+        border-color: #007aff;
+    }
+
+    /* Selected Swatch */
+    .swatch.selected {
+        border-color: #007aff;
+        box-shadow: 0 0 5px #007aff;
+    }
+
+    /* Hide the Native Dropdown */
+    #hook-colour {
+        display: none;
+    }
+
+    .swatch {
+        display: block !important;
+    }
+
+    select#productSelect-option-0 {
+        display: none;
+    }
+
+    /* Swatch Text (for "Mix and Match") */
+    .swatch-text {
+        display: block; /* Ensures it starts a new line */
+        width: 100%; /* Optional: Takes the full width of the container */
+        margin-bottom: 10px; /* Adds spacing after it */
+        padding: 5px 10px;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+        background: #f5f5f5;
+        font-size: 14px;
+        text-align: center;
+        cursor: pointer;
+        transition: background 0.2s, border-color 0.2s;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .swatch-text:hover {
+        background: #e0e0e0;
+        border-color: #007aff;
+    }
+
+    .swatch-text.selected {
+        border-color: #007aff;
+        background: #e0e0e0;
+    }
+
+    #color-swatches-name {
+        font-size: 21px;
+        font-weight: 900;
+        padding: 5px;
+        letter-spacing: 2px;
+    }
+
+    #color-swatches-name.white, #color-swatches-name.White {
+        text-shadow: 1px 1px 0px black, -1px -1px 0px black, 1px -1px 0px black, -1px 1px 0px black;
+    }
+
+    .coat-wood-type {
+        display: flex;
+        gap: 5px;
+        width: max-content;
+        flex-direction: row;
+    }
+
+    .mix-match-callout {
+        margin-top: 15px;
+    }
+
+    .mix-match-callout {
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .swatch-color-container {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 10px;
+        width: max-content;
+    }
+
+    @media screen and (max-width: 350px) {
+        .swatch-color-container {
+            grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+            width: 100%;
+        }
+    }
+
+    /*  extra large */
+    @media screen and (min-width: 1280px) {
+        .swatch-color-container {
+            display: grid;
+            grid-template-columns: repeat(11, 1fr);
+            gap: 10px;
+            width: max-content;
+        }
+    }
+
+    .selector-wrapper {
+        margin-bottom: 10px;
+    }
+
+    .swatch-container {
+        flex-direction: column-reverse;
+    }
+
+    .swatch-text {
+        max-width: 270px;
+    }
+
+    .hp-coatrail-alert {
+        background-color: rgba(254, 242, 242, 1);
+        padding: 20px;
+        font-size: 21px;
+        line-height: 28px;
+    }
+
+    .coat-wood-type a {
+        border: var(--variant-pills-border-width) solid rgba(18, 18, 18, 0.55);
+        border-radius: var(--variant-pills-radius);
+    }
+
+    /* Manan css for Accordian */
+
+    /* over */
+</style>
+
+{%- assign productmeta = product.metafields.data -%}
+{% assign first_available_variant = product.variant.selected_or_first_available_variant %}
+<script src="{{ 'hp-railbuilder.js' | asset_url }}" defer></script>
+{{ 'hp-railbuilder.css' | asset_url | stylesheet_tag }}
+<div class="page-width container py-0" data-product="{{ product.handle }}">
+    <div class="breadcrumbs"></div>
+    <form
+            action="/cart/add"
+            method="post"
+            enctype="multipart/form-data"
+            id="AddToCartForm"
+            class="form-vertical"
+            data-cart-submit
+    >
+        <div class="pdpProductArea md:grid md:gap-16 lg:gap-20 md:grid-cols-2 w-full">
+            {% render 'hp-rail-images', product: product %}
+
+            <div id="pdpDetails">
+                <h1 class="text-primaryshade font-black text-3xl lg:text-5xl">{{ product.title }}</h1>
+                <div class="star-rating my-3">
+                    <div class="klaviyo-star-rating-widget" data-id="{{ product.id }}" data-product-title="{{ product.title }}" data-product-type="{{ product.type }}"></div>
+                </div>
+                {%- if productmeta.dimensions -%}
+                    <p class="dimensions text-gray-400 text-sm mt-4">{{ productmeta.dimensions }}</p>
+                {%- endif -%}
+
+                <div class="price my-4" data-price>
+                    <p class="price-with-vat text-xl tracking-wide font-bold text-black">
+                        <span data-regular-price>{{ product.selected_or_first_available_variant.price | money }}</span>
+                         <span data-compare-price data-compare-at-price style="text-decoration: line-through; color: gray;">
+                          {{ product.selected_or_first_available_variant.compare_at_price | money }}
+                        </span>
+                        <span class="price-no-vat font-normal text-sm hidden">
+
+                          
+              <span data-price-no-vat>
+                {{- product.selected_or_first_available_variant.price | divided_by: 1.2 | money -}}
+              </span>
+              ex. VAT
+            </span>
+                    </p>
+                </div>
+
+                {% if product.metafields.product.linked_products %}
+                    <div class="product-link font-bold my-4">
+                        <div class="font-normal form-label">Choose Your Finish:</div>
+                        {% if product.metafields.product.linked_product_name == 'Oak' %}
+                            {% assign link_style = 'row-reverse' %}
+                        {% endif %}
+                        <div class="coat-wood-type" style="flex-direction: {{ link_style }};">
+                            <a
+                                    class=" test button cursor-not-allowed hover:text-gray-300 text-white no-underline border border-gray-100 my-4 p-4 px-6 inline-block"
+                                    href="#"
+                                    name="{{ product.title }}"
+                                    style="background-color: #191e4c;color:white;"
+                            >
+                                {{ product.metafields.product.linked_product_name }}
+                            </a>
+                            {% for linked in product.metafields.product.linked_products %}
+                                {% assign linked_product = all_products[linked] %}
+                                <a
+                                        class="button hover:text-white no-underline border border-gray-100 my-4 p-4 px-6 inline-block"
+                                        href="{{ linked_product.url }}"
+                                        name="{{ linked_product.title }}"
+                                        data="{{ linked }}"
+                                >
+                                    {{ linked_product.metafields.product.linked_product_name }}
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+
+                <div class="mb-8">
+                    <div class="select-options mb-4">
+                        <div class="selector-wrapper">
+                            <label for="productSelect-option-0" style="font-weight:700;">No. of Hooks:</label>
+                            <select name="id" id="productSelect" class="single-option-selector product-single__variants mb-8">
+                                {% for variant in product.variants %}
+                                    {% if variant.available %}
+                                        <option
+                                                {% if variant == first_available_variant %}
+                                                    selected="selected"
+                                                {% endif %}
+                                                data-sku="{{ variant.sku }}"
+                                                value="{{ variant.id }}"
+                                                data-stockcount="{{ variant.inventory_quantity }}"
+                                                data-title="{{ variant.title }}"
+                                        >
+                                            {{ variant.title }}
+                                        </option>
+                                    {% else %}
+                                        <option disabled="disabled">{{ variant.title }}
+                                            - {{ 'products.product.sold_out' | t }}</option>
+                                    {% endif %}
+                                {% endfor %}
+                            </select>
+                            <div class="custom-options"></div>
+                        </div>
+
+
+                        <div class="selector-wrapper">
+                            <p class="line-item-property__field">
+                                <label class="form-label" style="font-weight:700;">Hook Color:</label>
+
+                                <select
+                                        required
+                                        class="single-option-selector required"
+                                        id="hook-colour"
+                                        name="properties[Hook Colour]"
+                                >
+                                    <option value="Rainbow" selected>Rainbow</option>
+                                    <option value="Black">Black</option>
+                                    <option value="Graphite">Graphite</option>
+                                    <option value="Dark Grey">Dark Grey</option>
+                                    <option value="Mid Grey">Mid Grey</option>
+                                    <option value="Light Grey">Light Grey</option>
+                                    <option value="White">White</option>
+                                    <option value="Antique White">Antique White</option>
+                                    <option value="Terracotta">Terracotta</option>
+                                    <option value="Candy Red">Candy Red</option>
+                                    <option value="Hot Pink">Hot Pink</option>
+                                    <option value="Deep Purple">Deep Purple</option>
+                                    <option value="Orange">Orange</option>
+                                    <option value="Yellow">Yellow</option>
+                                    <option value="Emerald Green">Emerald Green</option>
+                                    <option value="Peppermint Green">Peppermint Green</option>
+                                    <option value="Garden Green">Garden Green</option>
+                                    <option value="Fern Green">Fern Green</option>
+                                    <option value="Navy Blue">Navy Blue</option>
+                                    <option value="Sky Blue">Sky Blue</option>
+                                    <option value="Powder Blue">Powder Blue</option>
+                                    <option value="Mixed">Choose your color mix</option>
+                                </select>
+                            <div id="color-swatches-name"></div>
+                            <div class="swatch-container">
+                                <!-- <div id="color-swatches-name"></div> -->
+                            </div>
+                            <div class="mix-match-callout p-4 bg-yellow-50 text-sm text-center max-w-sm mb-4">
+                                <b>Mix and Match</b>
+                                <p>Choose mix and match to create your perfect coat rack before your eyes with millions
+                                    of possible combinations!</p>
+                            </div>
+                            <!-- Before here was swatch container -->
+                            </p>
+                        </div>
+
+
+                        <div class="bg-gray-100 my-8 p-8 railBuilder" style="display:none;">
+                            <div class="railBuilder-container">
+                                <h3 class="text-center text-xl lg:text-3xl font-bold">Build your rack</h3>
+
+                                <div class="railBuilder-section my-4 hooks-3">
+                                    <div class="md:grid grid-cols-3 gap-2">
+                                        <div class="line-item-property__field">
+                                            <label>Hook Position 1</label>
+                                            <select
+                                                    required
+                                                    class="hook-colour-choice single-option-selector required w-full"
+                                                    id="hook-position-1"
+                                                    name="properties[Hook Position 1]"
+                                                    onchange="colour_update(this)"
+                                                    data-hook-target="1"
+                                            >
+                                                <option>-</option>
+                                                {% render 'hp-rail-colour-options' %}
+                                            </select>
+                                        </div>
+
+                                        <div class="line-item-property__field">
+                                            <label>Hook Position 2</label>
+                                            <select
+                                                    required
+                                                    class="hook-colour-choice single-option-selector required w-full"
+                                                    id="hook-position-2"
+                                                    name="properties[Hook Position 2]"
+                                                    onchange="colour_update(this)"
+                                                    data-hook-target="2"
+                                            >
+                                                <option>-</option>
+                                                {% include 'hp-rail-colour-options' %}
+                                            </select>
+                                        </div>
+
+                                        <div class="line-item-property__field">
+                                            <label>Hook Position 3</label>
+                                            <select
+                                                    class="hook-colour-choice single-option-selector w-full"
+                                                    id="hook-position-3"
+                                                    name="properties[Hook Position 3]"
+                                                    onchange="colour_update(this)"
+                                                    data-hook-target="3"
+                                            >
+                                                <option>-</option>
+                                                {% include 'hp-rail-colour-options' %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="railBuilder-section my-4 hooks-6">
+                                    <div class="md:grid grid-cols-3 gap-2">
+                                        <div class="line-item-property__field">
+                                            <label>Hook Position 4</label>
+                                            <select
+                                                    class="hook-colour-choice single-option-selector w-full"
+                                                    id="hook-position-4"
+                                                    name="properties[Hook Position 4]"
+                                                    onchange="colour_update(this)"
+                                                    data-hook-target="4"
+                                            >
+                                                <option>-</option>
+                                                {% include 'hp-rail-colour-options' %}
+                                            </select>
+                                        </div>
+
+                                        <div class="line-item-property__field">
+                                            <label>Hook Position 5</label>
+                                            <select
+                                                    class="hook-colour-choice single-option-selector w-full"
+                                                    id="hook-position-5"
+                                                    name="properties[Hook Position 5]"
+                                                    onchange="colour_update(this)"
+                                                    data-hook-target="5"
+                                            >
+                                                <option>-</option>
+                                                {% include 'hp-rail-colour-options' %}
+                                            </select>
+                                        </div>
+
+                                        <div class="line-item-property__field">
+                                            <label>Hook Position 6</label>
+                                            <select
+                                                    class="hook-colour-choice single-option-selector w-full"
+                                                    id="hook-position-6"
+                                                    name="properties[Hook Position 6]"
+                                                    onchange="colour_update(this)"
+                                                    data-hook-target="6"
+                                            >
+                                                <option>-</option>
+                                                {% include 'hp-rail-colour-options' %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="railBuilder-section my-4 hooks-9">
+                                    <div class="md:grid grid-cols-3 gap-2">
+                                        <div class="line-item-property__field">
+                                            <label>Hook Position 7</label>
+                                            <select
+                                                    class="hook-colour-choice single-option-selector w-full"
+                                                    id="hook-position-7"
+                                                    name="properties[Hook Position 7]"
+                                                    onchange="colour_update(this)"
+                                                    data-hook-target="7"
+                                            >
+                                                <option>-</option>
+                                                {% include 'hp-rail-colour-options' %}
+                                            </select>
+                                        </div>
+
+                                        <div class="line-item-property__field">
+                                            <label>Hook Position 8</label>
+                                            <select
+                                                    class="hook-colour-choice single-option-selector w-full"
+                                                    id="hook-position-8"
+                                                    name="properties[Hook Position 8]"
+                                                    onchange="colour_update(this)"
+                                                    data-hook-target="8"
+                                            >
+                                                <option>-</option>
+                                                {% include 'hp-rail-colour-options' %}
+                                            </select>
+                                        </div>
+
+                                        <div class="line-item-property__field">
+                                            <label>Hook Position 9</label>
+                                            <select
+                                                    class="hook-colour-choice single-option-selector w-full"
+                                                    id="hook-position-9"
+                                                    name="properties[Hook Position 9]"
+                                                    onchange="colour_update(this)"
+                                                    data-hook-target="9"
+                                            >
+                                                <option>-</option>
+                                                {% include 'hp-rail-colour-options' %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="railBuilder-section my-4 hooks-12">
+                                    <div class="md:grid grid-cols-3 gap-2">
+                                        <div class="line-item-property__field">
+                                            <label>Hook Position 10</label>
+                                            <select
+                                                    class="hook-colour-choice single-option-selector w-full"
+                                                    id="hook-position-10"
+                                                    name="properties[Hook Position 10]"
+                                                    onchange="colour_update(this)"
+                                                    data-hook-target="10"
+                                            >
+                                                <option>-</option>
+                                                {% include 'hp-rail-colour-options' %}
+                                            </select>
+                                        </div>
+
+                                        <div class="line-item-property__field">
+                                            <label>Hook Position 11</label>
+                                            <select
+                                                    class="hook-colour-choice single-option-selector w-full"
+                                                    id="hook-position-11"
+                                                    name="properties[Hook Position 11]"
+                                                    onchange="colour_update(this)"
+                                                    data-hook-target="11"
+                                            >
+                                                <option>-</option>
+                                                {% include 'hp-rail-colour-options' %}
+                                            </select>
+                                        </div>
+
+                                        <div class="line-item-property__field">
+                                            <label>Hook Position 12</label>
+                                            <select
+                                                    class="hook-colour-choice single-option-selector w-full"
+                                                    id="hook-position-12"
+                                                    name="properties[Hook Position 12]"
+                                                    onchange="colour_update(this)"
+                                                    data-hook-target="12"
+                                            >
+                                                <option>-</option>
+                                                {% include 'hp-rail-colour-options' %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {% comment %} <div class="grid gap-4 items-center mt-8">
+                                  <button
+                                    class="btn add-to-cart block"
+                                    type="submit"
+                                    name="add"
+                                    id="AddToCart"
+                                    aria-label="{{ 'products.product.add_to_cart' | t }}"
+                                    data-add-to-cart
+                                  >
+                                    <img class="inline mr-2 h-4 loader-gif" src="{{ 'ajax-loader.gif' | asset_url }}"
+                                    ><span id="AddToCartText">{{ 'products.product.add_to_cart' | t }}</span>
+                                  </button>
+                                </div> {% endcomment %}
+                            </div>
+                        </div>
+                    </div>
+
+                    {% liquid
+                        render 'hp-quantity-select'
+                        render 'hp-inventory-notice'
+                    %}
+
+                    <button
+                            class="button add-to-cart block coat-rail-add-to-cart"
+                            type="submit"
+                            name="add"
+                            id="AddToCart"
+                            aria-label="{{ 'products.product.add_to_cart' | t }}"
+                            data-add-to-cart
+
+                    >
+                        <!-- <img
+              class="inline mr-2 h-4 loader-gif"
+              src="{{ 'ajax-loader.gif' | asset_url }}"
+              loading="lazy"
+              height=""
+              width=""
+            >-->
+                        <span id="AddToCartText" style="display:block;">{{ 'products.product.add_to_cart' | t }}</span>
+                    </button>
+
+                    <span class="link-text_01" style="display:block;"><b>For schools who qualify for tax exemption, please <a href="https://toughook.com/pages/tax-exampt" target="_blank" style="color: #0077cc; text-decoration: underline;">click here.</a></b></span>
+
+                    <div class="hp-coatrail-alert" data-translatable>
+            <span
+            ><b>Please note:</b> Coat racks are a bespoke product built to your order and are <em>non&#8209;returnable</em>. <br>All coat racks are sent flat-packed, hardware included. Assembly is required.</span
+            >
+                    </div>
+
+                    <p>
+                        <a href="https://cdn.shopify.com/s/files/1/0906/7320/files/toughook-uk-colour-sheet.pdf" target="_blank"
+                        >Download a PDF color guide</a
+                        >
+                    </p>
+                </div>
+
+                {% comment %}
+                <div class="rte">
+                  {%- if productmeta['short-description'] -%}
+                    {{ productmeta['short-description'] }}
+                  {%- endif -%}
+                </div>
+                {% endcomment %}
+                <div class="rte">
+                    {% comment %}
+                   {{ product.description }}
+                    {% endcomment %}
+                </div>
+
+                <!-- Manan Code for Acc -->
+
+                {% render 'hp-description-accordion' product: product %}
+                {% render 'hp-buy-with' %}
+                <!-- over -->
+
+            </div>
+        </div>
+    </form>
+</div>
+
+<!--prodcut page script  -->
+<script>
+  $(document).ready(function () {
+    let DEBUG = false;
+    let variantsInfo = {
+      {% for variant in product.variants -%}
+      {{ variant.id }} :
+    "{{ variant.inventory_policy }}"{% unless forloop.last %},{% endunless %}
+      {% endfor -%}
+  }
+
+    if (DEBUG) console.log('Document Ready')
+
+    let optionSelectorsHasTriggered = false;
+
+    $('.image-nav').on('init', function (event, slick) {
+      $('.image-nav').removeClass('invisible');
+      $('.image-nav img').removeClass('hidden');
+    });
+
+    $('.main-image').on('init', function (event, slick) {
+      $('.main-image img').removeClass('hidden');
+    });
+
+    $('.main-image').slick({
+      lazyLoad: 'progressive',
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      asNavFor: '.image-nav'
+    });
+
+    $('.image-nav').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      asNavFor: '.main-image',
+      dots: false,
+      focusOnSelect: true,
+      arrows: true
+    });
+
+    var selectCallback = function (variant, selector) {
+      if (DEBUG) console.log('Select Callback!', variant)
+      var addToCartButton = $('[data-add-to-cart]');
+      var addToCartButtonText = $('[data-add-to-cart-text]');
+      var pdpContactForm = $('[data-unavailable-contact-form]');
+      var pdpProductInput = $('#ContactFormProduct');
+
+      const $inventoryNotice = $('#pdpInventoryNotice');
+      const $quantityInput = $('#Quantity');
+
+      if (variant) {
+
+        // Runs immediately without user interaction
+        if (!optionSelectorsHasTriggered) {
+
+          /**
+           ***     Let jQuery take over from HTML
+           ***
+           ***     Default browser feedback delays
+           ***     showing user notice. We’ll give it
+           ***     immediately.
+           **/
+
+          removeMaxAttr($quantityInput);
+          optionSelectorsHasTriggered = true;
+        }
+
+        // Bind input capper
+        // resetBind(
+        //     $quantityInput,
+        //     'change.orderNum',
+        //     updateInventoryUi,
+        //     [ variant.sku ]
+        // );
+
+        /**
+         ***     Run input capper on variant switch
+         ***
+         ***     Will set input to max inventory
+         ***     when switching to lower-stock variant.
+         **/
+        $quantityInput.trigger('change.orderNum');
+
+        if (variant.available) {
+          if (DEBUG) console.log('Available');
+          addToCartButton.prop('disabled', false).addClass('enabled').removeClass('disabled');
+          addToCartButtonText.text("{{ 'products.product.add_to_cart' | t }}");
+          pdpContactForm.hide();
+
+        } else {
+          if (DEBUG) console.log('Not Available');
+          addToCartButton.prop('disabled', true).addClass('disabled').removeClass('enabled');
+          addToCartButtonText.text("{{ 'products.product.sold_out' | t }}");
+          pdpContactForm.show();
+          pdpProductInput.val(variant.name);
+        }
+
+        $('[data-regular-price]').html(Shopify.formatMoney(variant.price));
+        $('[data-price-no-vat]').html(Shopify.formatMoney(variant.price));
+
+        if (variant.compare_at_price > variant.price) {
+          $('[data-compare-at-price]').html(Shopify.formatMoney(variant.compare_at_price)).show();
+        } else {
+          $('[data-compare-at-price]').hide();
+        }
+
+        slideToVariantImage(variant);
+
+      }
+    };
+
+    function slideToVariantImage(variant) {
+      variantImage = variant.featured_media?.id;
+      variantImagePos = $('.main-image .slick-list [data-image-id=' + variantImage + ']').data('slick-index');
+      $('.main-image').slick('slickGoTo', variantImagePos);
+    }
+
+    new Shopify.OptionSelectors('productSelect', {
+      product: {{ product | json }},
+      onVariantSelected: selectCallback,
+      enableHistoryState: true
+    });
+
+
+    $('[data-open-order-form]').click(function () {
+      $('[data-order-form]').slideToggle();
+      $('[data-order-form-text-button]').toggle();
+    });
+
+    const removeMaxAttr = function ($sel) {
+      $sel.removeAttr('max');
+    }
+
+    // Avoid spawning a bazillion bound events
+    const resetBind = function ($sel, bindName, callback, callbackParamsArr) {
+      $sel.off(bindName).on(bindName, function () {
+        callback(...callbackParamsArr)
+      });
+    }
+
+    const updateInventoryUi = function (sku) {
+
+      const $feedbackUi = $('#pdpInventoryNotice');
+      const $userInput = $('#Quantity');
+      const maxInventory = getInventoryQuantity(sku);
+
+      let hitMaxInventory = maybeEnforceInputCap($userInput, maxInventory);
+      // let isLowStock      = maxInventory <= {{ settings.limited_stock_trigger | escape }};
+      let isLowStock = maxInventory <= 10;
+      let feedbackMessageType;
+
+      if (hitMaxInventory) {
+        feedbackMessageType = 'limit'
+      } else {
+        feedbackMessageType = isLowStock ? 'lowStock' : 'reset'
+      }
+
+      updateFeedback($feedbackUi, feedbackMessageType, maxInventory);
+
+    }
+
+    const maybeEnforceInputCap = function ($input, max) {
+      const currentValue = $input.val();
+      const needsCapping = currentValue >= max;
+
+      let currentVariantId = getCurrentVariantId();
+      let currentVariantPolicy = variantsInfo[currentVariantId];
+
+      if (currentVariantPolicy === "deny" && 'number' === typeof max) {
+        $input.val(
+          needsCapping ? max : currentValue
+        );
+      }
+
+      return needsCapping;
+    }
+
+    const getInventoryQuantity = function (variantSku) {
+      return $('#productSelect option[data-sku="' + variantSku + '"]').data('stockcount');
+    };
+
+    const updateFeedback = function ($feedbackContainer, type = 'reset', maxInventory = 0) {
+
+      const $messageContainer = $feedbackContainer.find('span');
+      const classNamesMap = {
+        'limit': 'js-limit',
+        'lowStock': 'js-lowStock',
+        'reset': '',
+      };
+      const allClassNames = Object.values(classNamesMap);
+
+      let currentVariantId = getCurrentVariantId();
+      let currentVariantPolicy = variantsInfo[currentVariantId];
+
+      switch (type) {
+
+        case 'limit' :
+          if (currentVariantPolicy === "deny") {
+            $messageContainer.text(theme.strings.isOrderLimit);
+          } else if (currentVariantPolicy === "continue") {
+            $messageContainer.text(theme.strings.isNoOrderLimit);
+          }
+          $feedbackContainer.show();
+          break;
+
+        case 'lowStock' :
+          $messageContainer.text(theme.strings.hasLimitedStock.replace('[inventory_quantity]', maxInventory));
+          $feedbackContainer.show();
+          break;
+
+        default:
+          $feedbackContainer.hide();
+      }
+
+      $feedbackContainer.removeClass(allClassNames).addClass(classNamesMap[type]);
+
+    }
+
+    /* $('#AddToCart').on( 'click', function( event ) {
+        event.preventDefault();
+
+        const currentVariant = getCurrentVariantId();
+        const numberToAdd   = $('#Quantity').val();
+        console.log( currentVariant );
+        console.log( numberToAdd );
+        if( currentVariant && numberToAdd ) {
+            CartJS.addItem(
+                currentVariant,
+                numberToAdd,
+                {},
+                {
+                    "success": function(data, textStatus, jqXHR) {
+                        showCartUpdateMessage();
+                    },
+                    "error": function(jqXHR, textStatus, errorThrown) {
+
+                        let resp;
+                        if( jqXHR && jqXHR.responseJSON && jqXHR.responseJSON.description ) {
+                            resp = jqXHR.responseJSON.description;
+                        }
+
+                        if( resp ) {
+                            showErrorMessage( resp );
+                        } else {
+                            showErrorMessage();
+                        }
+
+                    }
+                }
+            );
+        }
+
+    }); */
+
+    const getCurrentVariantId = function () {
+      const variantName = $('#productSelect-option-0 option:selected').text();
+      const variantId = $('#productSelect option')
+        .filter(
+          function () {
+            return $(this).data('title') === variantName;
+          }
+        ).val();
+
+      return variantId;
+    }
+
+    const showBoilerplateMessage = function (type, customMessage) {
+
+      let heading, text, icon;
+
+      switch (type) {
+        case 'error' :
+          heading = 'Error';
+          text = 'Oops! Something went wrong. Please let us know';
+          icon = 'error';
+          break;
+
+        case 'cartUpdated' :
+          heading = 'Cart Updated';
+          text = 'The cart was successfully updated';
+          icon = 'success';
+          break;
+      }
+      ;
+
+      if (customMessage) text = customMessage;
+
+      if (heading && text && icon) {
+        $.toast({
+          heading: heading,
+          text: text,
+          showHideTransition: 'plain',
+          icon: icon,
+          hideAfter: 2000,
+          position: 'top-right',
+        });
+      }
+
+    }
+
+    const showErrorMessage = function (text) {
+      showBoilerplateMessage('error', text);
+    }
+
+    const showCartUpdateMessage = function (text) {
+      showBoilerplateMessage('cartUpdated', text);
+    }
+
+  });
+
+  $(document).on('cart.requestComplete', function (event, cart) {
+
+    var cartUpdateMessage = 'There are now ' + cart.item_count + ' items in your cart';
+    $.toast({
+      heading: 'Cart Updated',
+      text: cartUpdateMessage,
+      showHideTransition: 'fade',
+      icon: 'success',
+      hideAfter: 3000,
+      position: 'top-right',
+    })
+  });
+</script>
+<!--end of product page script  -->
+
+<script>
+  $(document).ready(function () {
+
+    let DEBUG = false;
+    update_options();
+
+    $(".selector-wrapper select").change(function () {
+      update_options();
+      if (DEBUG) console.log('Update Product Select');
+    });
+
+    $("#hook-colour").change(function () {
+      update_options();
+      if (DEBUG) console.log('Update Hook Colour');
+    });
+
+    $(".hook-colour-choice").change(function () {
+      var notReady = check_colour_choices();
+      if (DEBUG) console.log('Not ready to proceed', notReady)
+      if (notReady) {
+        disable_add();
+      } else {
+        enable_add()
+      }
+    });
+
+    function check_colour_choices() {
+      var notReady = false;
+      $(".hook-colour-choice:enabled").each(function () {
+        if ($(this).val() == '-') {
+          notReady = true;
+          return false;
+        }
+      });
+      return notReady;
+    }
+
+    function disable_add() {
+      $('[data-add-to-cart]').attr('disabled', 'disabled');
+    }
+
+    function enable_add() {
+      if ($('[data-add-to-cart]').hasClass('disabled')) {
+        if (DEBUG) console.log('Add is disabled by variant');
+      } else {
+        $('[data-add-to-cart]').removeAttr('disabled');
+      }
+    }
+
+    function build_image_url(colour, hooks) {
+      // TODO: remove this
+      // Don't think we need this
+        {% if product.title contains "Oak" %}
+        {% assign railColour = "oak" %}
+        {% else %}
+        {% assign railColour = "white" %}
+        {% endif %}
+
+        {% if product.title contains "Original" %}
+        {% assign hookSize = "original" %}
+        {% else %}
+        {% assign hookSize = "xl" %}
+        {% endif % %}
+
+      // colour.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-$/, '').replace(/^-/, '');
+      var rail_colour = '{{ railColour }}';
+      var hook_size = '{{ hookSize }}';
+      var number_hooks = hooks.replace(' hooks', '');
+      var image_url = number_hooks + '-' + hook_size + '-' + rail_colour + '-' + colour;
+      image_url_handle = image_url.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-$/, '').replace(/^-/, '');
+      return image_url_handle;
+
+    }
+
+    function single_colour_builder(colour, hooks) {
+      // Set the railbuilder with a single colour
+      if (hooks == '3 Hooks') {
+        var rainbow_colours = ['Yellow', 'Navy Blue', 'Candy Red'];
+      } else if (hooks == '6 Hooks') {
+        var rainbow_colours = ['Navy Blue', 'Fern Green', 'Yellow', 'Orange', 'Candy Red', 'Deep Purple'];
+      } else if (hooks == '9 Hooks') {
+        var rainbow_colours = ['Navy Blue', 'Sky Blue', 'Garden Green', 'Fern Green', 'Yellow', 'Orange', 'Hot Pink', 'Candy Red', 'Deep Purple'];
+      } else if (hooks == '12 Hooks') {
+        var rainbow_colours = ['Navy Blue', 'Fern Green', 'Yellow', 'Orange', 'Candy Red', 'Deep Purple', 'Navy Blue', 'Fern Green', 'Yellow', 'Orange', 'Candy Red', 'Deep Purple'];
+      }
+      var target = document.querySelectorAll(".active-railbuilder .stack");
+      if (colour == 'Rainbow') {
+        for (let i = 0; i < target.length; i++) {
+          target[i].setAttribute('data-colour', rainbow_colours[i]);
+        }
+      } else {
+        for (let i = 0; i < target.length; i++) {
+          target[i].setAttribute('data-colour', colour);
+        }
+      }
+    }
+
+    function set_select_colours() {
+      var target = document.querySelectorAll(".active-railbuilder .stack");
+      var builder_selects = document.querySelectorAll(".railBuilder-section .hook-colour-choice")
+
+      // this will reset all colours on the image
+      // for (let i = 0; i < target.length; i++) {
+      //     target[i].setAttribute('data-colour', '');
+      // }
+
+      // This sets each colour according to what is already displayed
+      for (let i = 0; i < target.length; i++) {
+        var select_to_change = document.querySelector(".railBuilder-section .hook-colour-choice[data-hook-target='" + target[i].dataset.imagePosition + "']");
+        console.log(target[i].dataset.colour);
+        select_to_change.value = target[i].dataset.colour;
+        select_to_change.dispatchEvent(new Event('change', {'bubbles': true}));
+      }
+
+
+    }
+
+    function update_options() {
+
+      const target = $("#productSelect-option-0").val();
+      const mixed = $("#hook-colour").val();
+
+      $("#pdpImages").hide("fast");
+      $("#railImages").show("slow");
+
+      $("[data-rail-length='" + target + "']").show().addClass('active-railbuilder');
+      $("[data-rail-length]").not("[data-rail-length='" + target + "']").hide().removeClass('active-railbuilder');
+
+      if (mixed == "Mixed") {
+        // $("#pdpImages").hide( "fast");
+        // $("#railImages").show( "slow");
+        $(".railBuilder").show("slow");
+        $([document.documentElement, document.body]).animate({
+          scrollTop: $(".railBuilder").offset().top
+        }, 1300);
+
+        if (target == "3 Hooks") {
+          disable_add()
+          $("[data-]").show("slow"); // Not sure what this is doing here
+          $(".hooks-3").show("slow");
+          $(".hooks-6").hide("slow");
+          $(".hooks-9").hide("slow");
+          $(".hooks-12").hide("slow");
+          $(".hooks-3 select").val("-").removeAttr("disabled", "disabled");
+          $(".hooks-6 select").attr("disabled", "disabled");
+          $(".hooks-9 select").attr("disabled", "disabled");
+          $(".hooks-12 select").attr("disabled", "disabled");
+
+          set_select_colours();
+          check_colour_choices()
+        } else if (target == "6 Hooks") {
+          disable_add()
+          $(".hooks-3").show("slow");
+          $(".hooks-6").show("slow");
+          $(".hooks-9").hide("slow");
+          $(".hooks-12").hide("slow");
+          $(".hooks-3 select").val("-").removeAttr("disabled", "disabled");
+          $(".hooks-6 select").val("-").removeAttr("disabled", "disabled");
+          $(".hooks-9 select").attr("disabled", "disabled");
+          $(".hooks-12 select").attr("disabled", "disabled");
+
+          set_select_colours();
+          check_colour_choices()
+        } else if (target == "9 Hooks") {
+          disable_add()
+          $(".hooks-3").show("slow");
+          $(".hooks-6").show("slow");
+          $(".hooks-9").show("slow");
+          $(".hooks-12").hide("slow");
+          $(".hooks-3 select").val("-").removeAttr("disabled", "disabled");
+          $(".hooks-6 select").val("-").removeAttr("disabled", "disabled");
+          $(".hooks-9 select").val("-").removeAttr("disabled", "disabled");
+          $(".hooks-12 select").attr("disabled", "disabled");
+
+          set_select_colours();
+          check_colour_choices()
+        } else if (target == "12 Hooks") {
+          disable_add()
+          $(".hooks-3").show("slow");
+          $(".hooks-6").show("slow");
+          $(".hooks-9").show("slow");
+          $(".hooks-12").show("slow");
+          $(".hooks-3 select").val("-").removeAttr("disabled", "disabled");
+          $(".hooks-6 select").val("-").removeAttr("disabled", "disabled");
+          $(".hooks-9 select").val("-").removeAttr("disabled", "disabled");
+          $(".hooks-12 select").val("-").removeAttr("disabled", "disabled");
+
+          set_select_colours();
+          check_colour_choices()
+        }
+
+      } else {
+        enable_add();
+        // $("#pdpImages").show( "slow");
+        // $("#railImages").hide( "fast");
+        $(".railBuilder").hide("fast");
+        $(".hooks-3 select").attr("disabled", "disabled");
+        $(".hooks-6 select").attr("disabled", "disabled");
+        $(".hooks-9 select").attr("disabled", "disabled");
+        $(".hooks-12 select").attr("disabled", "disabled");
+
+        single_colour_builder(mixed, target);
+
+      }
+
+      // This disables rainbow if you don't choose 6, don't think we're doing that now
+
+      // if (target == "3 Hooks") {
+
+      //     if ( mixed == 'Rainbow' ){
+      //         $("#hook-colour").val('Black');
+      //     }
+
+      //     $("#hook-colour option[value='Rainbow']").prop('disabled', true);
+
+      // }
+
+      // else if (target == "6 Hooks") {
+      //     $("#hook-colour option[value='Rainbow']").prop('disabled', false);
+      // }
+
+      // else if (target == "9 Hooks") {
+
+      //     if ( mixed == 'Rainbow' ){
+      //         $("#hook-colour").val('Candy Red');
+      //     }
+
+      //     $("#hook-colour option[value='Rainbow']").prop('disabled', true);
+
+      // }
+
+      // else if (target == "12 Hooks") {
+
+      //     if ( mixed == 'Rainbow' ){
+      //         $("#hook-colour").val('Candy Red');
+      //     }
+
+      //     $("#hook-colour option[value='Rainbow']").prop('disabled', true);
+
+      // }
+
+    }
+
+    function choose_from_image() {
+
+      var variantSelect = $("#productSelect-option-0").val();
+      var hookColour = $("#hook-colour").val();
+
+      var image = $(event.target);
+
+      var imageUrl = image.data('image-full-src');
+
+      var size = image.data("image-size");
+      var length = image.data("image-length");
+      var color1 = image.data("image-hook-color-1");
+      var color2 = image.data("image-hook-color-2");
+      var color3 = image.data("image-hook-color-3");
+      var color4 = image.data("image-hook-color-4");
+      var color5 = image.data("image-hook-color-5");
+      var color6 = image.data("image-hook-color-6");
+      var color7 = image.data("image-hook-color-7");
+      var color8 = image.data("image-hook-color-8");
+      var color9 = image.data("image-hook-color-9");
+      var color10 = image.data("image-hook-color-10");
+      var color11 = image.data("image-hook-color-11");
+      var color12 = image.data("image-hook-color-12");
+
+      if (length == 1) {
+        $("#productSelect-option-0").val(size + ' Hooks').trigger('change');
+        $("#hook-colour").val(color1).trigger('change');
+        $("#ProductPhotoImg").attr("src", imageUrl);
+      }
+
+      if (length == 3) {
+        $("#productSelect-option-0").val('3 Hooks').trigger('change');
+        $("#hook-colour").val('Mixed').trigger('change');
+        $("#hook-position-1").val(color1);
+        $("#hook-position-2").val(color2);
+        $("#hook-position-2").val(color3);
+
+        var image = $("#ProductPhotoImg");
+        image.fadeOut('fast', function () {
+          image.attr('src', imageUrl);
+          image.fadeIn('fast');
+        });
+
+        //$("#ProductPhotoImg").attr("src",imageUrl);
+
+      } else if (length == 6) {
+        $("#productSelect-option-0").val('6 Hooks').trigger('change');
+        //update_options();
+        $("#hook-colour").val('Mixed').trigger('change');
+        $("#hook-position-1").val(color1);
+        $("#hook-position-2").val(color2);
+        $("#hook-position-3").val(color3);
+        $("#hook-position-4").val(color4);
+        $("#hook-position-4").val(color5);
+        $("#hook-position-4").val(color6);
+        $("#ProductPhotoImg").attr("src", imageUrl);
+
+      } else if (length == 9) {
+        $("#productSelect-option-0").val('9 Hooks').trigger('change');
+        //update_options();
+        $("#hook-colour").val('Mixed').trigger('change');
+        $("#hook-position-1").val(color1);
+        $("#hook-position-2").val(color2);
+        $("#hook-position-3").val(color3);
+        $("#hook-position-4").val(color4);
+        $("#hook-position-5").val(color5);
+        $("#hook-position-6").val(color6);
+        $("#hook-position-7").val(color7);
+        $("#hook-position-8").val(color8);
+        $("#hook-position-9").val(color9);
+        $("#ProductPhotoImg").attr("src", imageUrl);
+
+      } else if (length == 12) {
+        $("#productSelect-option-0").val('12 Hooks').trigger('change');
+        //update_options();
+        $("#hook-colour").val('Mixed').trigger('change');
+        $("#hook-position-1").val(color1);
+        $("#hook-position-2").val(color2);
+        $("#hook-position-3").val(color3);
+        $("#hook-position-4").val(color4);
+        $("#hook-position-5").val(color5);
+        $("#hook-position-6").val(color6);
+        $("#hook-position-7").val(color7);
+        $("#hook-position-8").val(color8);
+        $("#hook-position-9").val(color9);
+        $("#hook-position-10").val(color10);
+        $("#hook-position-11").val(color11);
+        $("#hook-position-12").val(color12);
+        $("#ProductPhotoImg").attr("src", imageUrl);
+
+      }
+
+    }
+
+    $(".product-single__thumbnail img").click(function () {
+      choose_from_image();
+    });
+
+    $("#productSelect-option-0").val('6 Hooks');
+    update_options();
+
+  });
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    let observer;
+    let observerTimeout;
+
+    // Function to handle custom options
+    function setupCustomOptions(selectorElement) {
+      const customOptionsContainer = document.querySelector(".custom-options");
+      customOptionsContainer.innerHTML = ""; // Clear existing buttons
+
+      // Create buttons for each option in the visible selector
+      Array.from(selectorElement.options).forEach((option) => {
+        const button = document.createElement("div");
+        const buttonText = document.createElement("span");
+        button.className = "button custom-option";
+
+        // button.textContent = option.textContent;
+        buttonText.textContent = option.textContent;
+        button.append(buttonText);
+
+        // Disable button if the option is disabled
+        if (option.disabled) {
+          button.classList.add("disabled");
+        }
+
+        // Mark the initially selected option
+        if (option.selected) {
+          button.classList.add("selected");
+        }
+
+        // Handle button clicks
+        button.addEventListener("click", () => {
+          if (!option.disabled) {
+            // Update the visible select value
+            selectorElement.value = option.value;
+
+            // Remove 'selected' class from all buttons
+            document.querySelectorAll(".custom-option").forEach((btn) =>
+              btn.classList.remove("selected")
+            );
+
+            // Add 'selected' class to the clicked button
+            button.classList.add("selected");
+
+            // Trigger a change event on the visible selector
+            selectorElement.dispatchEvent(new Event("change", {bubbles: true}));
+          }
+        });
+
+        customOptionsContainer.appendChild(button);
+      });
+    }
+
+    // Observe changes to detect when the selector is replaced
+    function observeSelectorChanges() {
+      const parentContainer = document.querySelector(".selector-wrapper");
+      if (!parentContainer) return;
+
+      // Use a MutationObserver to watch for changes
+      observer = new MutationObserver(() => {
+        clearTimeout(observerTimeout);
+        observerTimeout = setTimeout(() => {
+          const visibleSelector = document.querySelector(
+            ".selector-wrapper select:not([style*='display: none'])"
+          );
+          if (visibleSelector) {
+            observer.disconnect(); // Stop observing during setup
+            setupCustomOptions(visibleSelector);
+            observeSelectorChanges(); // Reattach observer after setup
+          }
+        }, 100); // Throttle the updates with a 100ms delay
+      });
+
+      observer.observe(parentContainer, {childList: true, subtree: true});
+    }
+
+    // Initialize observer and custom options
+    const initialSelector = document.querySelector(
+      ".selector-wrapper select:not([style*='display: none'])"
+    );
+    if (initialSelector) {
+      setupCustomOptions(initialSelector);
+    }
+    observeSelectorChanges();
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const selectElement = document.getElementById("hook-colour");
+    const swatchContainer = document.querySelector(".swatch-container");
+    const swatchColorName = document.querySelector('#color-swatches-name');
+
+    const colorMap = {
+      Mixed: "#CCCCCC",
+      Rainbow: "linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet)",
+      Black: "#000000",
+      Graphite: "#4B4B4B",
+      "Dark Grey": "#A9A9A9",
+      "Mid Grey": "#C0C0C0",
+      "Light Grey": "#D3D3D3",
+      White: "#FFFFFF",
+      "Antique White": "#FAEBD7",
+      Terracotta: "#E2725B",
+      "Candy Red": "#FF0800",
+      "Hot Pink": "#FF69B4",
+      "Deep Purple": "#673AB7",
+      Orange: "#FFA500",
+      Yellow: "#FFFF00",
+      "Emerald Green": "#0F4813",
+      "Peppermint Green": "#A7D3A0",
+      "Garden Green": "#14771F",
+      "Fern Green": "#16B210",
+      "Navy Blue": "#000080",
+      "Sky Blue": "#87CEEB",
+      "Powder Blue": "#B0E0E6",
+    };
+
+    // Generate Swatches
+    const swatch_contain = document.createElement("div"); //for contain the only color swathes
+    Array.from(selectElement.options).forEach((option, index) => {
+      const swatch = document.createElement("div");
+      swatch_contain.className = "swatch-color-container";
+      if (option.value === "Mixed") {
+        // Handle "Mix and Match" as text
+        swatch.className = "swatch-text";
+        swatch.textContent = option.text;
+        swatchContainer.appendChild(swatch);
+      } else {
+        // Create color swatches for other options
+        swatch.className = "swatch";
+        const color = colorMap[option.value] || "#CCCCCC";
+
+        swatch.style.background = color;
+        swatch_contain.appendChild(swatch);
+      }
+
+      swatch.title = option.value;
+
+      // Pre-select the currently selected value
+      if (option.selected) {
+        swatch.classList.add("selected");
+      }
+
+      // Handle Swatch Click
+      swatch.addEventListener("click", () => {
+        // Remove selection from all swatches
+        document.querySelectorAll(".swatch, .swatch-text").forEach((s) => s.classList.remove("selected"));
+
+        // Mark this swatch as selected
+        swatch.classList.add("selected");
+
+        swatchColorName.innerHTML = option.value;
+        swatchColorName.className = '';
+        swatchColorName.classList.add(option.value.toLowerCase().replace(/\s+/g, '-'));
+        swatchColorName.style.color = colorMap[option.value];
+        // Update the hidden dropdown
+        selectElement.selectedIndex = index;
+
+        // Trigger the change event programmatically
+        const changeEvent = new Event("change", {bubbles: true});
+        selectElement.dispatchEvent(changeEvent);
+      });
+
+      // swatchContainer.appendChild(swatch);
+    });
+    swatchContainer.appendChild(swatch_contain);
+  });
+
+
+</script>
+
+
+{% schema %}
+{
+  "name": "HP Product (Comm-Rail)",
+  "presets": [
+    {
+      "name": "HP Product Card (Comm-Rail)"
+    }
+  ]
+}
+{% endschema %}

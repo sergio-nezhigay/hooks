@@ -1,0 +1,79 @@
+<style>
+  .about-design-text {
+    background: #ffe082;
+    position: relative;
+    padding: 120px 80px 180px;
+    margin-top: 0;
+    margin-bottom:50px;
+    border-radius: 0 0 150px 150px;
+  }
+  .about-design-text-container {
+    text-align: center;
+    font-size:21px;
+  }
+  .about-design-text img {
+    max-width: 800px;
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @media screen and (max-width: 756px) {
+    .about-design-text img {
+      width: 70%;
+    }
+    .about-design-text {
+      padding: 0px 50px 50px;
+      border-radius: 0 0 100px 100px;
+    }
+  }
+
+  h1 {
+    padding: 30px;
+    margin: auto;
+    font-size: 30px;
+    line-height: 35px;
+    text-align: center;
+    max-width: 450px;
+  }
+  @media screen and (max-width: 756px) {
+    h1 {
+      font-size: 20px;
+      line-height: 25px;
+    }
+  }
+</style>
+
+<h1 id="page-header">The original, vibrant, and unbreakable hooks.</h1>
+
+<div class="page-width about-design-text-main">
+
+  <div class="about-design-text">
+    <div class="about-design-text-container">{{ section.settings.text }}</div>
+    <img
+      class="ml-auto"
+      src="//toughook.com/cdn/shop/files/dom_XL-6-rainbow_2d7f6c44-0628-4e4d-a8fa-9be004715ab6_500x-removebg-preview_500x.png?v=1730315602"
+        alt="6 Rainbow Hook Rack - Perfect for hanging School Bags, Jackets, Raincoats, Robes, and more"
+      width="auto"
+      height="auto">
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "HP About Design Head",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</p>"
+      }
+    ],
+    "presets": [
+      {
+        "name": "HP About Page Design Head"
+      }
+    ]
+  }
+{% endschema %}

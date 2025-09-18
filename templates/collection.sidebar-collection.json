@@ -1,0 +1,97 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "custom_css": [
+        "@media screen and (min-width: 756px) {.collection-hero__text-wrapper {margin-top: 30px; }}",
+        "@media screen and (min-width: 750px) {.collection-hero__title + .collection-hero__description {font-size: 150%; }}"
+      ],
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "none",
+        "enable_filtering": false,
+        "filter_type": "vertical",
+        "enable_sorting": true,
+        "columns_mobile": "1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "hp_text_3_cols_NK3QR7": {
+      "type": "hp-text-3-cols",
+      "blocks": {
+        "feature_cH3XNb": {
+          "type": "feature",
+          "settings": {
+            "title": "The Toughook Guarantee",
+            "subtitle": "UNBREAKABLE TOUGHOOKS",
+            "body": "Toughooks are the perfect coat & backpack hook for changing rooms, cloakrooms, corridors & classrooms. We guarantee Toughooks against breakages for the lifetime of the hook.",
+            "link": "",
+            "color": "yellow",
+            "align": "left"
+          }
+        },
+        "feature_jCJRAj": {
+          "type": "feature",
+          "settings": {
+            "title": "Delivery",
+            "subtitle": "US DELIVERY OPTIONS",
+            "body": "Domestic delivery is free for orders over $50. Choose Expedited or Priority shipping for faster despatch on your order.",
+            "link": "",
+            "color": "red",
+            "align": "left"
+          }
+        },
+        "feature_rPhM7b": {
+          "type": "feature",
+          "settings": {
+            "title": "Pricing",
+            "subtitle": "BUY DIRECT & SAVE",
+            "body": "Buy from Toughook.com the official home of the Toughook in the USA. We won't be beaten on price for unbreakable plastic backpack hooks.",
+            "link": "",
+            "color": "green",
+            "align": "left"
+          }
+        }
+      },
+      "block_order": [
+        "feature_cH3XNb",
+        "feature_jCJRAj",
+        "feature_rPhM7b"
+      ],
+      "settings": {
+        "max": "100%",
+        "margin": "4rem"
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid",
+    "hp_text_3_cols_NK3QR7"
+  ]
+}

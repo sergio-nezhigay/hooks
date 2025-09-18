@@ -1,0 +1,259 @@
+
+<style>
+  
+.text-features-container {
+    margin: auto;
+}
+
+/* Grid Layout */
+.text-features {
+    display: grid;
+    gap: 24px; /* Matches gap-6 */
+}
+
+@media (min-width: 768px) {
+    .text-features {
+        grid-template-columns: repeat(3, 1fr); /* Matches md:grid-cols-3 */
+    }
+}
+
+/* Feature Block Styling */
+.text-feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 32px; /* Matches p-8 */
+}
+
+@media (min-width: 1024px) {
+    .text-feature {
+        padding: 64px; /* Matches lg:p-16 */
+        flex-direction: row; /* Matches md:flex-row */
+    }
+}
+
+.guarantee-link:hover {
+    color:#5c4fff !important; /* Change this to your desired hover color */
+}
+
+  
+/* Colors */
+.bg-t-yellow {
+    background-color: #ffdf82;
+}
+
+.bg-t-blue {
+    background-color: #ebf8ff;
+}
+
+.bg-t-red {
+    background-color: #e37c72;
+}
+
+.bg-t-green {
+    background-color: #76c262;
+}
+
+/* Typography and Alignment */
+.text-primaryshade {
+    color: #333; /* Default text color */
+}
+
+.subtitle {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+}
+
+.title {
+    font-weight: 900;
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+@media (min-width: 1024px) {
+    .title {
+        font-size: 32px; /* Matches lg:text-4xl */
+    }
+}
+
+.body-text {
+    margin: 16px 0; /* Matches my-4 */
+    text-align: left; /* Default alignment */
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #007acc;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+/* Image Styling */
+.feature-image {
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+</style>
+<div class="page-width text-features-container three-cols" style="margin: {{ section.settings.margin }} auto;">
+    <div class="text-features">
+        {% for block in section.blocks %}
+        <div class="text-feature bg-t-{{ block.settings.color }}">
+            <div class="text-primaryshade">
+                {% if block.settings.image %}
+                <img class="feature-image" src="{{ block.settings.image | img_url: 'medium'}}" alt="{{ block.settings.title }}">
+                {% endif %}
+                <span class="subtitle">{{ block.settings.subtitle }}</span>
+                <h2 class="title">
+                   {{ block.settings.title | replace: "Guarantee", '<a href="https://toughook.com/pages/lifetime-warranty " style="color: #121212; text-decoration: none;" class="guarantee-link">Guarantee</a>' }}
+                </h2>
+                <!-- <h2 class="title">{{ block.settings.title }}</h2> -->
+
+              <p class="body-text text-{{ block.settings.align }}">
+                {{ block.settings.body | replace: "guarantee", '<a href="https://toughook.com/pages/lifetime-warranty" style="color: #121212; text-decoration: none;" class="guarantee-link">guarantee</a>' }}
+             </p>
+              
+                <!-- <p class="body-text text-{{ block.settings.align }}">{{ block.settings.body }}</p> -->
+              
+                {% if block.settings.link %}
+                <a class="btn" href="{{ block.settings.link }}">Shop Now</a>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% schema %}
+{
+"name": "HP Text Feature (3 cols)",
+"settings": [
+    {
+                "type": "select",
+                "id": "max",
+                "label": "Choose a container width to use",
+                "options": [
+                    {
+                        "value": "100%",
+                        "label": "100%"
+                    },
+                    {
+                        "value": "1600px",
+                        "label": "1600px"
+                    },
+                    {
+                        "value": "1280px",
+                        "label": "1280px"
+                    }
+                ]
+          },
+   {
+                "type": "select",
+                "id": "margin",
+                "label": "Choose a container width to use",
+                "options": [
+                    {
+                        "value": "4rem",
+                        "label": "4rem"
+                    },
+                    {
+                        "value": "2rem",
+                        "label": "2rem"
+                    }
+                ]
+          }
+],
+"blocks": [
+    {
+        "type": "feature",
+        "name": "Add Text Feature",
+        "settings": [
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title of Feature"
+            },
+            {
+                "type": "text",
+                "id": "subtitle",
+                "label": "The eyebrow subtitle"
+            },
+            {
+                "type": "text",
+                "id": "body",
+                "label": "Main Text of Feature"
+            },
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+            },
+            {
+                "type": "url",
+                "id": "link",
+                "label": "Link"
+            },
+            {
+                "type": "select",
+                "id": "color",
+                "label": "Choose a color to use",
+                "options": [
+                    {
+                        "value": "yellow",
+                        "label": "Yellow"
+                    },
+                    {
+                        "value": "blue",
+                        "label": "Blue"
+                    },
+                    {
+                        "value": "red",
+                        "label": "Red"
+                    },
+                    {
+                        "value": "green",
+                        "label": "green"
+                    }
+                ]
+            },
+          {
+                "type": "select",
+                "id": "align",
+                "label": "Choose a text alignment to use",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "left"
+                    },
+                    {
+                        "value": "center",
+                        "label": "center"
+                    }
+                ]
+          }
+        ]
+    }
+],
+"presets": [
+    {
+      "name": "HP Text Feature (3 cols)",
+    }
+  ]
+}
+{% endschema %}

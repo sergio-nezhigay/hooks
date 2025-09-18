@@ -1,0 +1,118 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "newsletter_JCMmr4": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_RJj7Ta": {
+          "type": "heading",
+          "settings": {
+            "heading": "GET HOOKED",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_dtGrr9": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Subscribe and never miss out on sales, new releases and more. <br/>Plus, get 10% off on your next order!</p>"
+          }
+        },
+        "email_form_RNek9J": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_RJj7Ta",
+        "paragraph_dtGrr9",
+        "email_form_RNek9J"
+      ],
+      "custom_css": [
+        ".newsletter {max-width: 2000px; margin: auto; width: 100%;}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 36,
+        "padding_bottom": 52
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "feature_B4bbb6": {
+          "type": "feature",
+          "settings": {
+            "body": "<p>The world’s best-selling unbreakable hooks.<br/>Available to order as individuals, sets, bulk, or customized for your project.</p>",
+            "show_reviews": true,
+            "link_text": "See all reviews",
+            "link": "https://www.google.com/search?sca_esv=804bf02857783378&biw=1920&bih=911&si=APYL9bs7Hg2KMLB-4tSoTdxuOx8BdRvHbByC_AuVpNyh0x2KzVyP3X3hs1hGH8dGKt4lkOHmqlNxlDEg1VDd3qyLZbCIm_M91bwYxoX36PtlNAGQ0GUuzTLNGH8_71e4J399kc7d_Ww2&q=Toughook+USA+Reviews&sa=X&ved=2ahUKEwiKwaOI47yMAxXCMlkFHXgXEjsQ0bkNegQIPRAE",
+            "bottom_text": "Not affiliated with Tough Hook LLC – USA Hanger product",
+            "desktop_body_size": 18,
+            "desktop_bottom_size": 14,
+            "mobile_body_size": 18,
+            "mobile_bottom_size": 14
+          }
+        },
+        "links_qzWKWB": {
+          "type": "links",
+          "settings": {
+            "heading": "QUICK LINKS",
+            "menu_link": "footer-one",
+            "desktop_menu_heading_size": 24,
+            "desktop_link_size": 19,
+            "mobile_menu_heading_size": 24,
+            "mobile_link_size": 19
+          }
+        },
+        "links_tHPDQh": {
+          "type": "links",
+          "settings": {
+            "heading": "INFORMATION",
+            "menu_link": "information",
+            "desktop_menu_heading_size": 24,
+            "desktop_link_size": 19,
+            "mobile_menu_heading_size": 24,
+            "mobile_link_size": 19
+          }
+        },
+        "contact_UUrLG9": {
+          "type": "contact",
+          "settings": {
+            "heading": "CONTACT US",
+            "address": "<p>TOUGHOOK USA<br/>1 Fairfield Rd<br/>North Caldwell, NJ 07006</p>",
+            "phone": "973-901-9535",
+            "email": "info@toughookusa.com",
+            "desktop_heading_size": 24,
+            "desktop_body_size": 19,
+            "mobile_heading_size": 24,
+            "mobile_body_size": 19
+          }
+        }
+      },
+      "block_order": [
+        "feature_B4bbb6",
+        "links_qzWKWB",
+        "links_tHPDQh",
+        "contact_UUrLG9"
+      ],
+      "settings": {
+        "logo-size": 77
+      }
+    }
+  },
+  "order": [
+    "newsletter_JCMmr4",
+    "footer"
+  ]
+}

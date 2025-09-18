@@ -1,0 +1,100 @@
+{% assign maxQuantity = %}
+
+<style>
+  .quantity-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    width: fit-content;
+}
+
+.quantity-btn {
+ 
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #191e4c;
+    transition: background-color 0.2s;
+}
+
+.quantity-btn:hover {
+color: #ed8177;
+}
+
+.quantity-selector {
+    width: 100px; /* Adjust width as needed */
+    text-align: center;
+    border: none;
+    outline: none;
+    -moz-appearance: textfield; /* Hides up/down arrows in Firefox */
+}
+
+.quantity-selector::-webkit-outer-spin-button,
+.quantity-selector::-webkit-inner-spin-button {
+    -webkit-appearance: none; /* Hides up/down arrows in Chrome */
+}
+.quantity-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    width: fit-content;
+}
+
+.quantity-btn {
+ 
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #191e4c;
+    transition: background-color 0.2s;
+}
+
+.quantity-btn:hover {
+    color: #ed8177;
+}
+
+.quantity-selector {
+    width: 100px; /* Adjust width as needed */
+    text-align: center;
+    border: none;
+    outline: none;
+    -moz-appearance: textfield; /* Hides up/down arrows in Firefox */
+}
+
+.quantity-selector::-webkit-outer-spin-button,
+.quantity-selector::-webkit-inner-spin-button {
+    -webkit-appearance: none; /* Hides up/down arrows in Chrome */
+}
+
+</style>
+
+
+
+<div class="quantity-wrapper select-quantity mb-4">
+    <button type="button" class="quantity-btn" onclick="decreaseQuantity()">-</button>
+    <input type="number" id="Quantity" name="quantity" value="1" min="1" class="quantity-selector form-input">
+    <button type="button" class="quantity-btn" onclick="increaseQuantity()">+</button>
+</div>
+
+
+<script>
+  function decreaseQuantity() {
+    const quantityInput = document.getElementById("Quantity");
+    const currentValue = parseInt(quantityInput.value);
+    if (currentValue > 1) {
+        quantityInput.value = currentValue - 1;
+    }
+}
+
+function increaseQuantity() {
+    const quantityInput = document.getElementById("Quantity");
+    quantityInput.value = parseInt(quantityInput.value) + 1;
+}
+
+</script>

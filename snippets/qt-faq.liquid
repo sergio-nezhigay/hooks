@@ -1,0 +1,125 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<style>
+  .faq-page {
+    margin: 20px;
+    width: 100%;
+    --tw-bg-opacity: 1;
+    background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
+    /* Adjust page margins */
+    padding: 20px;
+  }
+
+  .faq-page .subheadline {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #22294f;
+    /* Text color */
+  }
+
+  .faq-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    /* Separator between FAQ items */
+    padding-bottom: 10px;
+  }
+
+  .question {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin: 10px 0; */
+    /* Spacing around question */
+  }
+
+  .question-text {
+    font-size: 18px;
+    /* Adjust text size */
+    font-weight: bold;
+    margin-bottom: 5px;
+    letter-spacing: -0.5px;
+    color: #22294f;
+    /* Primary color for question text */
+  }
+
+  .chevron-icon {
+    font-size: 1.25rem;
+    /* Icon size */
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .answer {
+    display: none;
+    /* Hidden by default */
+    /* padding: 10px 0; */
+    margin-top: 5px;
+  }
+  .answer p {
+    margin-top: 0;
+    font-size: 16px;
+  }
+  .answer.rte {
+    font-size: 1rem;
+    color: #666;
+    /* Text color */
+  }
+  @media screen and (max-width: 750px) {
+    .faq-page {
+      margin: 0;
+    }
+  }
+
+</style>
+<div
+  class="faq-page"
+  itemscope
+  itemtype="https://schema.org/FAQPage">
+  <h2 class="subheadline">Frequently Asked Questions</h2>
+  {% for block in section.blocks %}
+    <div class="faq-item">
+      <div
+        class="question"
+        itemscope
+        itemprop="mainEntity"
+        itemtype="https://schema.org/Question">
+        <div class="question-text" itemprop="name">{{ block.settings.question }}</div>
+        <!-- Chevron Icon with Font Awesome -->
+        <div class="chevron-icon">
+          <i class="fas fa-chevron-down"></i>
+        </div>
+      </div>
+      <div
+        class="answer"
+        itemscope
+        itemprop="acceptedAnswer"
+        itemtype="https://schema.org/Answer">
+        <div itemprop="text">
+          {{ block.settings.answer }}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<script>
+    $('.question').click(function(){
+        console.log('Clicked');
+        $('.answer', this).slideToggle();
+    });
+  document.querySelectorAll('.question').forEach((question) => {
+    question.addEventListener('click', () => {
+        const chevron = question.querySelector('.chevron-icon i');
+        const answer = question.nextElementSibling;
+        console.log('click');
+        // Toggle answer visibility
+        if (answer.style.display === 'block') {
+            answer.style.display = 'none';
+            chevron.style.transform = 'rotate(0deg)';
+        } else {
+            answer.style.display = 'block';
+            chevron.style.transform = 'rotate(180deg)';
+        }
+    });
+  });
+</script>

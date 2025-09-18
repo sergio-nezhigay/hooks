@@ -1,0 +1,202 @@
+<style>
+
+
+  .qt-collection-list {
+    padding: 150px 30px
+  }
+
+
+  .qt-collection-list-main-collection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    max-width:calc(var(--page-width) - 400px);
+    margin:auto;
+  }
+  .qt-intro-section {
+    margin-bottom: 70px;
+  }
+  .qt-collection-item {
+    width: calc(25% - 20px);
+    box-sizing: border-box;
+    margin-bottom: 50px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 590px;
+  }
+  .qt-collection-list-main-headline {
+    text-align: center;
+    font-size: 36px;
+    color: #22294f;
+    font-weight: 800;
+  }
+
+  .qt-collection-title {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 21px;
+    font-weight: 800;
+    padding: 20px;
+    color: #22294f;
+  }
+
+  .qt-collection-image-wrapper {
+  ;
+
+  /* height: 150px; */
+  /* Set fixed height for image container */
+  /* overflow: hidden; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+.qt-collection-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.qt-collection-image img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.qt-collection-button {
+  background-color: #09213a;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: auto;
+  width: 100%;
+  margin-bottom: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.qt-collection-button a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.dynamic-height {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 100px;
+  padding: 20px;
+}
+@media (max-width: 1400px) {
+  .qt-collection-item {
+   min-height: 510px;
+}
+
+@media (max-width: 600px) {
+  .qt-collection-item {
+    flex: 0 1 100%;
+  }
+}
+
+</style>
+<div class="page-width qt-collection-list">
+  <div class="qt-intro-section">
+    <h1 class="qt-collection-list-main-headline">{{ section.settings.title }}</h1>
+    <div class="qt-collection-list-main-description">{{ section.settings.description }}</div>
+  </div>
+
+  <div class="qt-collection-list-main-collection">
+    {% for block in section.blocks %}
+      {% assign thisCollection = collections[block.settings.collection] %}
+
+      <div class="qt-collection-item" style="background-color: {{ block.settings.bgcolor }};">
+        <h2 class="qt-collection-title">
+          {% if block.settings.title != '' %}
+            {{ block.settings.title }}
+          {% else %}
+            {{ thisCollection.title }}
+          {% endif %}
+        </h2>
+        <div class="qt-collection-image-wrapper">
+          <a href="{{ thisCollection.url }}" class="qt-collection-image">
+            {% if block.settings.image %}
+              <img
+                src="{{ block.settings.image | img_url: 'original' }}"
+                width="auto"
+                height="auot">
+            {% else %}
+              <img
+                src="{{ thisCollection.image | img_url: 'original' }}"
+                width="auto"
+                height="auto">
+            {% endif %}
+          </a>
+        </div>
+
+        <a href="{{ thisCollection.url }}" class="qt-collection-button">Shop Now</a>
+      </div>
+    {% endfor %}
+  </div>
+
+</div>
+
+
+{% schema %}
+  {
+    "name": "QT Collection List",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Page Title"
+      }, {
+        "type": "richtext",
+        "id": "description",
+        "label": "Page Description"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Collection",
+        "settings": [
+          {
+            "type": "collection",
+            "id": "collection",
+            "label": "Choose the collection to appear"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title for the collection"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text Description for the collection"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "An image instead of the collection image"
+          }, {
+            "type": "color",
+            "id": "bgcolor",
+            "label": "The Background Colour",
+            "default": "#fafafa"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "QT Collection List"
+      }
+    ]
+  }
+{% endschema %}

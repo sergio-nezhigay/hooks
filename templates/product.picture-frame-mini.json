@@ -1,0 +1,458 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "discount_table_zVzEer": {
+          "type": "discount_table",
+          "settings": {}
+        },
+        "info_accordian_TXnwdp": {
+          "type": "info_accordian",
+          "settings": {}
+        },
+        "buy_with_ETRYLM": {
+          "type": "buy_with",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "discount_table_zVzEer",
+        "info_accordian_TXnwdp",
+        "buy_with_ETRYLM",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "hp_feature_heading_j76F9c": {
+      "type": "hp-feature-heading",
+      "custom_css": [
+        ".hp-feature-heading h2 {max-width: 80%; font-size: 45px;}",
+        ".hp-feature-heading {padding-top: 90px;}",
+        "@media screen and (max-width: 756px) {.hp-feature-heading h2 {max-width: 100%; font-size: 30px; line-height: 30px; }}"
+      ],
+      "settings": {
+        "heading": "Introducing the Toughook Picture Frame",
+        "text": ""
+      }
+    },
+    "image_with_text_gHJg6A": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_qJK6j8": {
+          "type": "heading",
+          "settings": {
+            "heading": "Fits Behind Any Toughook",
+            "heading_size": "h1"
+          }
+        },
+        "text_B43Vww": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The Toughook Picture Frame fits snugly behind the toughook and uses the same screws that holds the hook in place. It's sturdy, practical, and easy to install.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_qJK6j8",
+        "text_B43Vww"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/4.png",
+        "height": "small",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "zoom-in",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_cHBXkz": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_HwgPFX": {
+          "type": "heading",
+          "settings": {
+            "heading": "Available in 20 Colors",
+            "heading_size": "h1"
+          }
+        },
+        "text_X8GXUw": {
+          "type": "text",
+          "settings": {
+            "text": "<p>With twenty distinct colors you can pair the frames with your favorite toughook colors or mix and match for a brilliant rainbow effect. </p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_HwgPFX",
+        "text_X8GXUw"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Toughook_One_Frame_Composite.png",
+        "height": "small",
+        "desktop_image_width": "small",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "zoom-in",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_9zXmtB": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_LkHVWe": {
+          "type": "heading",
+          "settings": {
+            "heading": "Easy Retrofits",
+            "heading_size": "h1"
+          }
+        },
+        "text_PW4Ftr": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Because the toughook photo frame uses the same screws that holds the hook in place, it's easy to add to existing hooks. Just unscrew the hook, add the frame, and screw it back in place. No extra drilling required. </p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_LkHVWe",
+        "text_PW4Ftr"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/5.png",
+        "height": "small",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "zoom-in",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "hp_info_columns_WTQpDb": {
+      "type": "hp-info-columns",
+      "blocks": {
+        "icon_text_MWAM3w": {
+          "type": "icon-text",
+          "settings": {
+            "icon": "shopify://shop_images/colors_76e9de33-c038-4b2f-a982-58c09b596928.png",
+            "text": "Each size is available in many exciting colors – mix and match however you want with no minimum order"
+          }
+        },
+        "icon_text_pzbFmE": {
+          "type": "icon-text",
+          "settings": {
+            "icon": "shopify://shop_images/gurantee.png",
+            "text": "Every Toughook is tough against breakages in normal indoor usage"
+          }
+        },
+        "icon_text_3JgRyc": {
+          "type": "icon-text",
+          "settings": {
+            "icon": "shopify://shop_images/british.png",
+            "text": "The original unbreakable hook – designed and manufactured in Great Britain"
+          }
+        }
+      },
+      "block_order": [
+        "icon_text_MWAM3w",
+        "icon_text_pzbFmE",
+        "icon_text_3JgRyc"
+      ],
+      "settings": {}
+    },
+    "hp_product_quote_slider_zMtxtB": {
+      "type": "hp-product-quote-slider",
+      "blocks": {
+        "quote_slider_BXjQXP": {
+          "type": "quote_slider",
+          "settings": {
+            "author": "Andrea B.",
+            "quote": "“Amazing hooks! They hold the weight of a backpack really well and I love that there’s 2 hook options in the 1 hook - so 1 hook can have a back pack and then a sweater or coat on the hook above. The colors are also really fun!”"
+          }
+        },
+        "quote_slider_yxMRh7": {
+          "type": "quote_slider",
+          "settings": {
+            "author": "Simon F.",
+            "quote": "\"We bought it for the kids and we decided to put some hooks for ourselves. They are sturdy and you can hang adult coats and jackets no problem. It's holding good\""
+          }
+        },
+        "quote_slider_kGJnAN": {
+          "type": "quote_slider",
+          "settings": {
+            "author": "M.Smith",
+            "quote": "\"After previously buying the standard size Toughooks for our School Nursery and being extremely pleased with it, then we decided to purchase further Toughooks for our new reception classes. We chose the larger XL version in order to accommodate larger bags. These are perfect for our children who love the multi colors. These hooks are very strong and are a high quality product!\""
+          }
+        },
+        "quote_slider_GtdhQy": {
+          "type": "quote_slider",
+          "settings": {
+            "author": "Claire N.",
+            "quote": "“Ordered this product to hang gym bags, heavy coats and other accessories in a dressing room. Excellent product and value for money. Very sturdy and well made. Delivery was superfast considering it was NI. Would recommend this to others.”"
+          }
+        }
+      },
+      "block_order": [
+        "quote_slider_BXjQXP",
+        "quote_slider_yxMRh7",
+        "quote_slider_kGJnAN",
+        "quote_slider_GtdhQy"
+      ],
+      "settings": {
+        "title": ""
+      }
+    },
+    "featured_collection_NiyaXG": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Related Products",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "picture-frames",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "Related Products",
+        "heading_size": "h1",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_RXNgKm": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_rkG7Ey": {
+          "type": "heading",
+          "settings": {
+            "heading": "Take a closer look",
+            "heading_size": "h1"
+          }
+        },
+        "text_L9frrq": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Still deciding? Free samples are now available so you can see it, test it and love it. <br/></p>"
+          }
+        },
+        "button_fr4Qxx": {
+          "type": "button",
+          "settings": {
+            "button_label": "GET A FREE SAMPLE",
+            "button_link": "shopify://products/sample-product",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_rkG7Ey",
+        "text_L9frrq",
+        "button_fr4Qxx"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "hp_text_3_cols_KhDLFX": {
+      "type": "hp-text-3-cols",
+      "blocks": {
+        "feature_cYrWHR": {
+          "type": "feature",
+          "settings": {
+            "title": "The Toughook Guarantee",
+            "subtitle": "UNBREAKABLE TOUGHOOKS",
+            "body": "Toughooks are the perfect coat & backpack hook for changing rooms, cloakrooms, corridors & classrooms. We guarantee Toughooks against breakages for the lifetime of the hook.",
+            "link": "",
+            "color": "yellow",
+            "align": "left"
+          }
+        },
+        "feature_RXtwjr": {
+          "type": "feature",
+          "settings": {
+            "title": "Delivery",
+            "subtitle": "US DELIVERY OPTIONS",
+            "body": "Domestic delivery is free for orders over $50. Choose Expedited or Priority shipping for faster dispatch on your order.",
+            "link": "",
+            "color": "red",
+            "align": "left"
+          }
+        },
+        "feature_V6GLRB": {
+          "type": "feature",
+          "settings": {
+            "title": "Pricing",
+            "subtitle": "BUY DIRECT & SAVE",
+            "body": "Toughook.com is the official home of the Toughook in the USA. We won't be beaten on price for unbreakable plastic backpack hooks.",
+            "link": "",
+            "color": "green",
+            "align": "left"
+          }
+        }
+      },
+      "block_order": [
+        "feature_cYrWHR",
+        "feature_RXtwjr",
+        "feature_V6GLRB"
+      ],
+      "settings": {
+        "max": "100%",
+        "margin": "4rem"
+      }
+    },
+    "175444432602214c7c": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hp_feature_heading_j76F9c",
+    "image_with_text_gHJg6A",
+    "image_with_text_cHBXkz",
+    "image_with_text_9zXmtB",
+    "hp_info_columns_WTQpDb",
+    "hp_product_quote_slider_zMtxtB",
+    "featured_collection_NiyaXG",
+    "related-products",
+    "rich_text_RXNgKm",
+    "hp_text_3_cols_KhDLFX",
+    "175444432602214c7c"
+  ]
+}

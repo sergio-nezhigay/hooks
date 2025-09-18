@@ -1,0 +1,58 @@
+<style>
+  .hp-feature-heading {
+    padding: 30px;
+  }
+  .hp-feature-heading h2 {
+    margin: auto;
+    font-size: 30px;
+    line-height: 35px;
+    text-align: center;
+    max-width: 450px;
+  }
+  .hp-feature-heading p {
+    /* text-transform: capitalize; */
+    font-family: McLaren;
+    margin: 40px auto;
+    line-height: 30px;
+    font-size: 16px;
+    font-weight: 400;
+    max-width: 450px;
+  }
+  @media screen and (max-width: 756px) {
+    .hp-feature-heading h2 {
+      font-size: 20px;
+      line-height: 25px;
+    }
+  }
+</style>
+<div class="page-width hp-feature-heading">
+  <h2>
+    {{ section.settings.heading }}
+  </h2>
+  {% if section.settings.text != blank %}
+    <p>
+      {{ section.settings.text }}
+    </p>
+  {% endif %}
+</div>
+{% schema %}
+  {
+    "name": "HP Feature Heading",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      }, {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      }
+    ],
+    "presets": [
+      {
+        "name": "HP Feature Heading"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,308 @@
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+<style>
+  #shopify-section-{{ section.id }} .landing-page-quote {
+    min-height: auto;
+    background: #ffff;
+    border-radius: 39px;
+    /* padding: 50px 0; */
+    padding: 0px;
+    text-align: center;
+    margin: 0 5px;
+  }
+
+  #shopify-section-{{ section.id }} .home-quote {
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  #shopify-section-{{ section.id }} .home-quote-sec {
+    /* background-color: #f9f9f9; /* Replaces `bg-color-light` */ */
+    padding: 3rem 0; /* Equivalent to `py-12` */
+    margin-top: 4.5rem; /* Equivalent to `mt-18` */
+  }
+
+  #shopify-section-{{ section.id }} .home-quote-sec-lg {
+    /* padding: 6rem 0; /* Equivalent to `lg:py-24` */ */
+    margin-top: 7.5rem; /* Equivalent to `lg:mt-30` */
+  }
+
+  #shopify-section-{{ section.id }} .home-quote-slider {
+    height: auto;
+    display: flex;
+    /* flex-wrap: wrap; */
+    padding: 0 2rem; /* Equivalent to `px-8 py-0` */
+  }
+
+  #shopify-section-{{ section.id }} .home-quote-slider-md {
+    padding: 0; /* Equivalent to `md:px-0` */
+  }
+
+  #shopify-section-{{ section.id }} .container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    max-height: 680px;  /* Manan css */
+}
+  @media screen and (max-width: 431px) {
+  .slick-track {
+    max-height: 775px;  /* Manan css */
+ }
+}
+
+  @media only screen and (min-width: 1022px) {
+    #shopify-section-{{ section.id }} .home-quote {
+      width: 33%;
+    }
+
+    #shopify-section-{{ section.id }} .landing-page-quote {
+      margin: 0 25px;
+    }
+  }
+  .subheadline {
+    margin: 1rem 0;
+    padding-bottom: 1rem;
+  }
+</style>
+<style>
+  .landing-page-quote {
+    height: auto;
+  }
+
+  .landing-page-quote.flex-layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .landing-page-quote.flex-layout-lg {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .landing-page-quote img {
+    padding: 2rem 0; /* Replaces `py-8` */
+    margin: 0 auto;
+    max-width: 150px;
+  }
+
+  .content-wrapper {
+    margin: 0 auto;
+    width: 83.333%; /* Equivalent to `w-10/12` */
+    max-width: 100rem; /* Equivalent to `max-w-3xl` */
+  }
+
+  .content-wrapper .stars {
+    margin: 0 auto;
+    max-width: 150px;
+  }
+
+  .home-quote-sec blockquote {
+    /* font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif, 
+      "Apple Color Emoji", "Segoe UI Emoji" !important; */
+    padding: 0;
+    margin:0;
+    border: 0;
+    /* font-size:16px; */
+    font-size:45px;
+    /* line-height:21px; */
+    line-height:40px;
+  }
+
+  cite {
+    color: #146E99; /* Replace `text-primary` */
+    font-weight: 900; /* Replaces `font-black` */
+    display: grid;
+    margin-top: 1rem; /* Replaces `mt-4` */
+    font-style: normal; /* Replaces `not-italic` */
+  }
+
+  .cite-lg {
+    font-size: 4rem; 
+    /* font-size: 2rem;/* Equivalent to `lg:text-2xl` */ */
+  }
+
+  .verified-reviewer {
+    font-weight: bold; /* Replaces `font-bold` */
+    font-size: 0.875rem; /* Equivalent to `text-sm` */
+  }
+
+  .verified-reviewer-lg {
+    /* font-size: 1rem; /* Equivalent to `lg:text-base` */ */
+    font-size: 2rem;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .landing-page-quote.flex-layout {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+ .my-arrow-prev{
+   /* color: white; */
+    /* height: 30px; */
+    /* width: 30px; */
+    padding: 15px;
+    display: flex;
+    border-radius: 50%;
+    align-self: center;
+    font-size: 25px;
+    /* background: gray; */
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+   transform: rotate(180deg);
+  }
+  .my-arrow-next{
+    /* color: white; */
+    /* height: 30px; */
+    /* width: 30px; */
+    padding: 15px;
+    display: flex;
+    border-radius: 50%;
+    align-self: center;
+    font-size: 25px;
+    /* background: gray; */
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    /* transform: rotate(180deg); */
+  }
+    .my-arrow-next svg, .my-arrow-prev svg{
+      fill: #146e99;
+    width: 16px;
+    height: 16px;
+    }
+  .my-arrow-next:hover svg, .my-arrow-prev:hover svg{
+      fill: white;
+    }
+  .my-arrow-next:hover, .my-arrow-prev:hover {
+      background: #146e99;
+    }
+  
+  @media screen and (max-width:768px){
+ .my-arrow-prev{
+    margin-left: 10px;
+    margin-right: 20px;
+  }
+  .my-arrow-next{
+   margin-right: 10px;
+    margin-left: 20px;
+  }
+    
+  }
+  @media screen and (max-width:431px){
+    .home-quote-sec blockquote {
+     font-size:19px;
+              line-height: 21px;
+    }
+  }
+</style>
+
+
+<div class="page-width home-quote-sec home-quote-sec-lg" style="margin:0 auto;">
+  <div class="container">
+    <h2 class="subheadline">{{ section.settings.title }}</h2>
+    <div class="home-quote-slider home-quote-slider-md">
+      {%- for block in section.blocks -%}
+        <div class="home-quote">
+          {% assign quote = block.settings.quote %}
+          {% assign  author = block.settings.author %}
+         <div class="landing-page-quote {% if quoteImage %}flex-layout flex-layout-lg{% endif %}">
+       {% if quoteImage %}
+        <img src="{{ quoteImage }}" alt="Quote Image">
+        {% endif %}
+
+    <div class="content-wrapper">
+        <div class="stars">
+            <img src="{{ 'stars.svg' | asset_url }}" alt="Stars">
+        </div>
+
+        <blockquote>
+            {{ quote }}
+            <cite class="cite-lg">
+                {{ author }}
+                <span class="verified-reviewer verified-reviewer-lg">Verified Reviewer</span>
+            </cite>
+        </blockquote>
+    </div>
+</div>
+
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+<svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <symbol id="sv-slarrow" viewBox="0 0 14 26">
+      <path d="M11.4559 25.1537L11.4558 25.1539L11.4497 25.1478L2.21477 15.9128C2.21448 15.9125 2.2142 15.9122 2.21391 15.912C1.42818 15.1409 1.00649 14.0987 1.00649 13.0002C1.00649 11.8991 1.44406 10.8582 2.21304 10.0892L11.4497 0.85254C11.9582 0.344075 12.7965 0.344075 13.3049 0.85254C13.8134 1.361 13.8134 2.1993 13.3049 2.70776L4.06826 11.9444C3.4859 12.5268 3.4859 13.4735 4.06826 14.0559L13.3049 23.2925C13.8134 23.801 13.8134 24.6393 13.3049 25.1478C13.0431 25.4096 12.7092 25.5326 12.3773 25.5326C12.0381 25.5326 11.7095 25.3904 11.4559 25.1537Z" 
+        stroke="#146E99" stroke-width="0.5" />
+    </symbol>
+  </defs>
+</svg>
+        
+
+        
+<script>
+  $('.home-quote-slider').slick({
+          infinite:true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: false,
+          prevArrow: '<div href="#" class="my-arrow-next"><svg class="svg sv-srarrow" aria-hidden="true" width="24" height="24" role="img"><use href="#sv-slarrow" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sv-slarrow"></use></svg></div>',
+          nextArrow: '<div href="#" class="my-arrow-prev"><svg class="svg sv-srarrow" aria-hidden="true" width="24" height="24" role="img"><use href="#sv-slarrow" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sv-slarrow"></use></svg></div>',
+          responsive: [
+          {
+          breakpoint: 768,
+          settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+          }
+        }
+       ]
+      });
+</script>
+{% schema %}
+{
+  "name":"HP Product Quote Slider",
+  "settings":[
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    }
+  ],
+  "blocks":[
+    {
+      "type": "quote_slider",
+      "name": "Quote Slide",
+      "settings": [
+        {
+          "type": "text",
+          "id": "author",
+          "label": "The author"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "The quote"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name":"HP Product Quote Slider"
+    }
+  ]
+}
+{% endschema %}

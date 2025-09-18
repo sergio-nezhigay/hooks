@@ -1,0 +1,185 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "hp_product_quote_slider_taceMx": {
+      "type": "hp-product-quote-slider",
+      "blocks": {
+        "quote_slider_ifMVE3": {
+          "type": "quote_slider",
+          "settings": {
+            "author": "Isreal B.",
+            "quote": "\"We bought it for the kids and we decided to put some hooks for ourselves. They are sturdy and you can hang adult coats and jackets no problem. It's holding good\""
+          }
+        },
+        "quote_slider_byeQz3": {
+          "type": "quote_slider",
+          "settings": {
+            "author": "M.Smith.",
+            "quote": "\"After previously buying the standard size Toughooks for our School Nursery and being extremely pleased with it, then we decided to purchase further Toughooks for our new reception classes. We chose the larger XL version in order to accommodate larger bags. These are perfect for our children who love the multi colors. These hooks are very strong and are a high quality product!\""
+          }
+        },
+        "quote_slider_JCRpg4": {
+          "type": "quote_slider",
+          "settings": {
+            "author": "Jilly M.",
+            "quote": "“Absolutely thrilled with these tough hooks, they look great on my ‘up cycled’ bench for my hot tub area, really colorful and bright. Feel strong and sturdy for hanging wet towels on!”"
+          }
+        },
+        "quote_slider_zWDHmH": {
+          "type": "quote_slider",
+          "settings": {
+            "author": "Claire N.",
+            "quote": "“Ordered this product to hang gym bags, heavy coats and other accessories in a dressing room. Excellent product and value for money. Very sturdy and well made. Delivery was superfast considering it was NI. Would recommend this to others.”"
+          }
+        },
+        "quote_slider_rpJci7": {
+          "type": "quote_slider",
+          "settings": {
+            "author": "Simon F.",
+            "quote": "“I am pleased to state that I highly recommend Toughooks as they are truly very tough. We have installed them in our school for the past 3 years to replace aluminum hooks which the kids broke very quickly and easily. Not a single Toughook has been destroyed.”"
+          }
+        },
+        "quote_slider_GghcmK": {
+          "type": "quote_slider",
+          "settings": {
+            "author": "Alan T.",
+            "quote": "“We've just started a family daycare in Finland and we needed somewhere to hang kids' bags and winter coats. We love the way they look (in rainbow order) and we're pretty sure the wall will give way before these hooks break.”"
+          }
+        },
+        "quote_slider_dbccLT": {
+          "type": "quote_slider",
+          "settings": {
+            "author": "Andrea B.",
+            "quote": "“Amazing hooks! They hold the weight of a backpack really well and I love that there’s 2 hook options in the 1 hook - so 1 hook can have a back pack and then a sweater or coat on the hook above. The colors are also really fun!”"
+          }
+        }
+      },
+      "block_order": [
+        "quote_slider_ifMVE3",
+        "quote_slider_byeQz3",
+        "quote_slider_JCRpg4",
+        "quote_slider_zWDHmH",
+        "quote_slider_rpJci7",
+        "quote_slider_GghcmK",
+        "quote_slider_dbccLT"
+      ],
+      "custom_css": [
+        ".subheadline {font-weight: bold; font-size: 28px; text-align: center;}"
+      ],
+      "settings": {
+        "title": "Here's What Our Customers Are Saying..."
+      }
+    },
+    "hp_text_3_cols_QtpANg": {
+      "type": "hp-text-3-cols",
+      "blocks": {
+        "feature_GPd9JU": {
+          "type": "feature",
+          "settings": {
+            "title": "The Toughook Guarantee",
+            "subtitle": "UNBREAKABLE TOUGHOOKS",
+            "body": "Toughooks are the perfect coat & backpack hook for changing rooms, cloakrooms, corridors & classrooms. We guarantee Toughooks against breakages for the lifetime of the hook.",
+            "link": "",
+            "color": "yellow",
+            "align": "left"
+          }
+        },
+        "feature_G6gme8": {
+          "type": "feature",
+          "settings": {
+            "title": "Delivery",
+            "subtitle": "US DELIVERY OPTIONS",
+            "body": "Domestic delivery is free for orders over $50. Choose Expedited or Priority shipping for faster dispatch on your order.",
+            "link": "",
+            "color": "red",
+            "align": "left"
+          }
+        },
+        "feature_htbUy3": {
+          "type": "feature",
+          "settings": {
+            "title": "Pricing",
+            "subtitle": "BUY DIRECT & SAVE",
+            "body": "Toughook.com is the official home of the Toughook in the USA. We won't be beaten on price for unbreakable plastic backpack hooks.",
+            "link": "",
+            "color": "green",
+            "align": "left"
+          }
+        }
+      },
+      "block_order": [
+        "feature_GPd9JU",
+        "feature_G6gme8",
+        "feature_htbUy3"
+      ],
+      "settings": {
+        "max": "100%",
+        "margin": "4rem"
+      }
+    },
+    "rich_text_xDWMAt": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_8PzEfK": {
+          "type": "heading",
+          "settings": {
+            "heading": "Take a closer look",
+            "heading_size": "h1"
+          }
+        },
+        "text_dTf39e": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Still deciding? Free samples are now available so you can see it, test it and love it. <br/></p>"
+          }
+        },
+        "button_LGjFrw": {
+          "type": "button",
+          "settings": {
+            "button_label": "GET A FREE SAMPLE",
+            "button_link": "shopify://products/sample-product",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_8PzEfK",
+        "text_dTf39e",
+        "button_LGjFrw"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hp_product_quote_slider_taceMx",
+    "hp_text_3_cols_QtpANg",
+    "rich_text_xDWMAt"
+  ]
+}

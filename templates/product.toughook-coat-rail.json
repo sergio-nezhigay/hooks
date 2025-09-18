@@ -1,0 +1,568 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "info_accordian_TXnwdp": {
+          "type": "info_accordian",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "info_accordian_TXnwdp",
+        "share"
+      ],
+      "disabled": true,
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "hp_product_coat_rail_CDeBFF": {
+      "type": "hp-product-coat-rail",
+      "custom_css": [
+        "p.price-with-vat.text-xl.tracking-wide.font-bold.text-black {margin-top: 2px; margin-bottom: 2px;}",
+        ".coat-wood-type {margin-top: -12px;}",
+        ".custom-options {margin-top: -12px;}",
+        ".swatch-container {margin-top: -8px;}"
+      ],
+      "settings": {}
+    },
+    "image_with_text_EECYyj": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_EeYFge": {
+          "type": "heading",
+          "settings": {
+            "heading": "Dimensions",
+            "heading_size": "h1"
+          }
+        },
+        "text_aXyBEn": {
+          "type": "text",
+          "settings": {
+            "text": "<p>3 hook rack - 330 x 95mm x 20mm<br/>6 hook rack - 660 x 95mm x 20mm<br/>9 hook rack - 990 x 95mm x 20mm</p><p></p><p><strong>Also Available by special order</strong></p><p>12 hook rack* - 1320 x 95mm x 20mm<br/>15 hook rack* - 1650mm x 95mm x 20mm<br/>18 hook rack* - 1980mm x 95mm x 20mm<br/>*Available by special order only, minimum order quantity of 20x racks applies as we need to create a custom run with our laminate supplier - contact us for more details.<br/></p><p></p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_EeYFge",
+        "text_aXyBEn"
+      ],
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/original-6-dark-grey.png",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "zoom-in",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_gHJg6A": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_pbMeFK": {
+          "type": "heading",
+          "settings": {
+            "heading": "Commercial Coat Racks for Professional Installers",
+            "heading_size": "h1"
+          }
+        },
+        "text_B43Vww": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Complete your school, gym, or changing room swiftly with our fully modular commercial-grade coat racks. </p><p>Our racks are delivered flat-packed, complete with screws, hooks (in your choice of colors), and a backing board with pre-drilled holes, saving you hours of skilled labor on each project. No more measuring and drilling hooks individually.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_pbMeFK",
+        "text_B43Vww"
+      ],
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/original-6-rainbow_rerender_may21.png",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "zoom-in",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_LA6C4M": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_nNBFzi": {
+          "type": "heading",
+          "settings": {
+            "heading": "Consistent Spacing",
+            "heading_size": "h1"
+          }
+        },
+        "text_FLKg7N": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Every hook is perfectly spaced, even when joining two or more racks together, the finish will be perfectly consistent.</p><p>Hooks are spaced 110mm from each other and 55mm from the end of the racks. So when two racksare joined the spacing is exactly the same, allowing to create seamless runs of any length.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_nNBFzi",
+        "text_FLKg7N"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/original-3-dark-grey.png",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "image_behavior": "zoom-in",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_BcmKUy": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_HXUNxq": {
+          "type": "heading",
+          "settings": {
+            "heading": "Perfect Every Time",
+            "heading_size": "h1"
+          }
+        },
+        "text_A7Rn63": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our racks are made from 20mm ABS Shell Laminate MDF finished with Formica Natural Oak (F1079). The laminate finish gives a perfect consistency in size and finish. Each and every hook is perfectly and consistently spaced, even when joining two or more racks. </p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_HXUNxq",
+        "text_A7Rn63"
+      ],
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/original-12-dark-grey.png",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "zoom-in",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_YAG3Cf": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_e3bExK": {
+          "type": "heading",
+          "settings": {
+            "heading": "Hidden Fixings",
+            "heading_size": "h1"
+          }
+        },
+        "text_DybKRb": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Each new rack has two pre-drilled holes (9-hook racks have 3) to attach to the wall hidden neatly behind the end hooks. Your mountings will be perfectly hidden behind the hook for clean looks and added security.<br/><br/>Attach the rack directly to your walls using the suitable hardware for your wall type. Ensure that the supplied hardware is approved by a professional to guarantee its suitability for your specific use.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_e3bExK",
+        "text_DybKRb"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/toughook_newrail-demo-2.jpg",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "zoom-in",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_Q4fwg3": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_U3Hkpk": {
+          "type": "heading",
+          "settings": {
+            "heading": "Twenty Hook Colors",
+            "heading_size": "h1"
+          }
+        },
+        "text_6McEEg": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The new coat rack is available with any of our twenty standard coat hook colors from Black to Hot Pink. You can choose any single color for all of your hooks, our best-selling Rainbow selection (purple, red, orange, yellow, green and blue) or <strong>mix and match </strong>your own completely custom design (over 64 million possible variations!).</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_U3Hkpk",
+        "text_6McEEg"
+      ],
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/toughook-original-all-colours.jpg",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "zoom-in",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "hp_info_columns_WTQpDb": {
+      "type": "hp-info-columns",
+      "blocks": {
+        "icon_text_MWAM3w": {
+          "type": "icon-text",
+          "settings": {
+            "icon": "shopify://shop_images/colors_76e9de33-c038-4b2f-a982-58c09b596928.png",
+            "text": "Each size is available in many exciting colors – mix and match however you want with no minimum order"
+          }
+        },
+        "icon_text_pzbFmE": {
+          "type": "icon-text",
+          "settings": {
+            "icon": "shopify://shop_images/gurantee.png",
+            "text": "Every Toughook is tough against breakages in normal indoor usage"
+          }
+        },
+        "icon_text_3JgRyc": {
+          "type": "icon-text",
+          "settings": {
+            "icon": "shopify://shop_images/british.png",
+            "text": "The original unbreakable hook – designed and manufactured in Great Britain"
+          }
+        }
+      },
+      "block_order": [
+        "icon_text_MWAM3w",
+        "icon_text_pzbFmE",
+        "icon_text_3JgRyc"
+      ],
+      "settings": {}
+    },
+    "hp_product_quote_slider_zMtxtB": {
+      "type": "hp-product-quote-slider",
+      "blocks": {
+        "quote_slider_BXjQXP": {
+          "type": "quote_slider",
+          "settings": {
+            "author": "Tessa H",
+            "quote": "“Arrived quickly - perfect hooks for coats etc. Great selection of colors. Well made.”"
+          }
+        },
+        "quote_slider_yxMRh7": {
+          "type": "quote_slider",
+          "settings": {
+            "author": "Jilly M.",
+            "quote": "“Absolutely thrilled with these tough hooks, they look great on my ‘up cycled’ bench for my hot tub area, really colorful and bright. Feel strong and sturdy for hanging wet towels on!”"
+          }
+        },
+        "quote_slider_kGJnAN": {
+          "type": "quote_slider",
+          "settings": {
+            "author": "M.Smith.",
+            "quote": "\"After previously buying the standard size Toughooks for our School Nursery and being extremely pleased with it, then we decided to purchase further Toughooks for our new reception classes. We chose the larger XL version in order to accommodate larger bags. These are perfect for our children who love the multi colors. These hooks are very strong and are a high quality product!\""
+          }
+        },
+        "quote_slider_bCQnf3": {
+          "type": "quote_slider",
+          "settings": {
+            "author": "Simon F.",
+            "quote": "“I am pleased to state that I highly recommend Toughooks as they are truly very tough. We have installed them in our school for the past 3 years to replace aluminum hooks which the kids broke very quickly and easily. Not a single Toughook has been destroyed.”"
+          }
+        }
+      },
+      "block_order": [
+        "quote_slider_BXjQXP",
+        "quote_slider_yxMRh7",
+        "quote_slider_kGJnAN",
+        "quote_slider_bCQnf3"
+      ],
+      "settings": {
+        "title": ""
+      }
+    },
+    "featured_collection_NiyaXG": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Related Products",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "coat-rails",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "Related Products",
+        "heading_size": "h1",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "1",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_7XcFb7": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_pmDUCH": {
+          "type": "heading",
+          "settings": {
+            "heading": "Take a closer look",
+            "heading_size": "h1"
+          }
+        },
+        "text_KKUEwB": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Still deciding? Free samples are now available so you can see it, test it and love it. <br/></p>"
+          }
+        },
+        "button_EJDxVR": {
+          "type": "button",
+          "settings": {
+            "button_label": "GET A FREE SAMPLE",
+            "button_link": "shopify://products/sample-product",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_pmDUCH",
+        "text_KKUEwB",
+        "button_EJDxVR"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "hp_text_3_cols_KhDLFX": {
+      "type": "hp-text-3-cols",
+      "blocks": {
+        "feature_cYrWHR": {
+          "type": "feature",
+          "settings": {
+            "title": "The Toughook Guarantee",
+            "subtitle": "UNBREAKABLE TOUGHOOKS",
+            "body": "Toughooks are the perfect coat & backpack hook for changing rooms, cloakrooms, corridors & classrooms. We guarantee Toughooks against breakages for the lifetime of the hook.",
+            "link": "",
+            "color": "yellow",
+            "align": "left"
+          }
+        },
+        "feature_RXtwjr": {
+          "type": "feature",
+          "settings": {
+            "title": "Delivery",
+            "subtitle": "US DELIVERY OPTIONS",
+            "body": "Domestic delivery is free for orders over $50. Choose Expedited or Priority shipping for faster dispatch on your order.",
+            "link": "",
+            "color": "red",
+            "align": "left"
+          }
+        },
+        "feature_V6GLRB": {
+          "type": "feature",
+          "settings": {
+            "title": "Pricing",
+            "subtitle": "BUY DIRECT & SAVE",
+            "body": "Toughook.com is the official home of the Toughook in the USA. We won't be beaten on price for unbreakable plastic backpack hooks.",
+            "link": "",
+            "color": "green",
+            "align": "left"
+          }
+        }
+      },
+      "block_order": [
+        "feature_cYrWHR",
+        "feature_RXtwjr",
+        "feature_V6GLRB"
+      ],
+      "settings": {
+        "max": "100%",
+        "margin": "4rem"
+      }
+    },
+    "1754444411dfc5bb62": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hp_product_coat_rail_CDeBFF",
+    "image_with_text_EECYyj",
+    "image_with_text_gHJg6A",
+    "image_with_text_LA6C4M",
+    "image_with_text_BcmKUy",
+    "image_with_text_YAG3Cf",
+    "image_with_text_Q4fwg3",
+    "hp_info_columns_WTQpDb",
+    "hp_product_quote_slider_zMtxtB",
+    "featured_collection_NiyaXG",
+    "related-products",
+    "rich_text_7XcFb7",
+    "hp_text_3_cols_KhDLFX",
+    "1754444411dfc5bb62"
+  ]
+}

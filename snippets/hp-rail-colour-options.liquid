@@ -1,0 +1,136 @@
+<style>
+  /* Hide the native dropdown */
+.hidden {
+  display: none;
+}
+
+/* Swatches container styling */
+.swatches-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Individual swatch */
+.swatch {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+/* Swatch hover effect */
+.swatch:hover {
+  transform: scale(1.1);
+  border-color: #007aff;
+}
+
+/* Selected swatch */
+.swatch.selected {
+  border-color: #007aff;
+  box-shadow: 0 0 5px #007aff;
+}
+
+/* Selected color label */
+.selected-color-name {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+</style>
+
+    <option value="Black">Black</option>
+    <option value="Graphite">Graphite</option>
+    <option value="Dark Grey">Dark Grey</option>
+    <option value="Mid Grey">Mid Grey</option>
+    <option value="Light Grey">Light Grey</option>
+    <option value="White">White</option>
+    <option value="Antique White">Antique White</option>
+    <option value="Terracotta">Terracotta</option>
+    <option value="Candy Red">Candy Red</option>
+    <option value="Hot Pink">Hot Pink</option>
+    <option value="Deep Purple">Deep Purple</option>
+    <option value="Orange">Orange</option>
+    <option value="Yellow">Yellow</option>
+    <option value="Emerald Green">Emerald Green</option>
+    <option value="Peppermint Green">Peppermint Green</option>
+    <option value="Garden Green">Garden Green</option>
+    <option value="Fern Green">Fern Green</option>
+    <option value="Navy Blue">Navy Blue</option>
+    <option value="Sky Blue">Sky Blue</option>
+    <option value="Powder Blue">Powder Blue</option>
+  <!-- <!-- Swatches Container -->
+  <div class="swatches-container"></div>
+
+  <!-- Selected Color Label -->
+  <div class="selected-color-name">Selected Color: <span id="selectedColorName">Black</span></div>
+ -->
+
+<!-- <script>
+  document.addEventListener("DOMContentLoaded", function () {
+  const selectElement = document.getElementById("hook-colour");
+  const swatchesContainer = document.querySelector(".swatches-container");
+  const selectedColorName = document.getElementById("selectedColorName");
+
+  const colorMap = {
+    Black: "#000000",
+    Graphite: "#4B4B4B",
+    "Dark Grey": "#A9A9A9",
+    "Mid Grey": "#C0C0C0",
+    "Light Grey": "#D3D3D3",
+    White: "#FFFFFF",
+    "Antique White": "#FAEBD7",
+    Terracotta: "#E2725B",
+    "Candy Red": "#FF0800",
+    "Hot Pink": "#FF69B4",
+    "Deep Purple": "#673AB7",
+    Orange: "#FFA500",
+    Yellow: "#FFFF00",
+    "Emerald Green": "#50C878",
+    "Peppermint Green": "#AAF0D1",
+    "Garden Green": "#008000",
+    "Fern Green": "#4F7942",
+    "Navy Blue": "#000080",
+    "Sky Blue": "#87CEEB",
+    "Powder Blue": "#B0E0E6",
+  };
+
+  // Render swatches dynamically
+  Array.from(selectElement.options).forEach((option) => {
+    const swatch = document.createElement("div");
+    swatch.className = "swatch";
+    swatch.style.backgroundColor = colorMap[option.value] || "#CCCCCC"; // Default grey if no match
+    swatch.title = option.value; // Show color name on hover
+
+    // Add selected class if it's the default selected option
+    if (option.selected) {
+      swatch.classList.add("selected");
+      selectedColorName.textContent = option.value; // Set the initial selected color
+    }
+
+    // Handle swatch click
+    swatch.addEventListener("click", () => {
+      // Remove 'selected' class from all swatches
+      document.querySelectorAll(".swatch").forEach((s) => s.classList.remove("selected"));
+
+      // Add 'selected' class to the clicked swatch
+      swatch.classList.add("selected");
+
+      // Update the `<select>` value
+      selectElement.value = option.value;
+
+      // Update the selected color label
+      selectedColorName.textContent = option.value;
+
+      // Trigger change event for `<select>` if needed
+      selectElement.dispatchEvent(new Event("change"));
+    });
+
+    swatchesContainer.appendChild(swatch);
+  });
+});
+
+</script> -->

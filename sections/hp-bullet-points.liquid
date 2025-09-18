@@ -1,0 +1,100 @@
+<style>
+  .hp-bullet-points-{{ section.id }} {
+    padding-top: {{ section.settings.section_padding_top }}px;
+    padding-bottom: {{ section.settings.section_padding_bottom }}px;
+    padding-left:0;
+    padding-right:0;
+    background-color:#20284a;
+  }
+  .hp-bullet-points-container{
+    padding:25px 50px;
+    max-width:1400px;
+    color:white;
+    margin:auto;
+  }
+  .qt-bullet{
+    display:flex;
+  }
+  .qt-bullet span{
+    font-size: 25px;
+    font-weight: 900;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 15px;
+  }
+  .qt-bullet p{
+    font-size: 21px;
+    font-weight: 900;
+    margin: 9px 0;
+  }
+  @media screen and (max-width:756px){
+    .hp-bullet-points-container{
+    padding:20px 20px;
+  }
+    .qt-bullet span{
+    font-size: 20px;
+  }
+  .qt-bullet p{
+    font-size: 14px;
+  }
+  }
+</style>
+<div class="page-width  hp-bullet-points-{{ section.id }}">
+  <div class="hp-bullet-points-container">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'bullet' %}
+        {% if block.settings.point != blank %}  
+        <div class="qt-bullet">
+         <span>✓</span> {{ block.settings.point }}
+        </div>
+        {% endif %}
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "HP Bullet Points",
+    "settings": [
+      {
+        "type": "range",
+        "id": "section_padding_top",
+        "label": "Section Padding Top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 50
+      }, {
+        "type": "range",
+        "id": "section_padding_bottom",
+        "label": "Section Padding Bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 50
+      }
+    ],
+    "blocks": [
+      {
+        "type": "bullet",
+        "name":"Bullet",
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "point",
+            "label": "Text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "HP Bullet Points"
+      }
+    ]
+  }
+{% endschema %}

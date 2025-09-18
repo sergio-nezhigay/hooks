@@ -1,0 +1,302 @@
+<style>
+  .shop-collection-{{ section.id }} {
+    padding-top: {{ section.settings.section_padding_top }}px;
+    padding-bottom: {{ section.settings.section_padding_bottom }}px;
+  }
+  .shop-collection-heading {
+    text-align: center;
+    font-family: 'McLaren'
+    , sans-serif;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .shop-collection-heading {
+    font-size: {{ section.settings.heading_size }}px;
+    padding: 30px 0 0;
+  }
+  .shop-collection-sub-heading {
+    text-align: center;
+    font-size: 30px;
+    line-height: 34px;
+    color: #2c2e35;
+    font-weight: 300;
+    font-family: "Zain";
+  }
+  .shop-collection-columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 70px;
+    padding: 50px 0;
+  }
+  .shop-collection-column {
+    /* width: 295px; */
+    /* height: 290px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 37px;
+  }
+  .shop-collection-img {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+  }
+  .shop-collection-img a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .shop-collection-img img {
+    /* width: 70%; */
+    object-fit: contain;
+  }
+  .shop-collection-link {
+    z-index: 2;
+    font-size: 30px;
+    line-height: 31px;
+
+    font-weight: bold;
+    font-family: "Zain";
+    text-align: center;
+    margin: 20px 0;
+  }
+  .shop-collection-link a {
+    text-decoration: none;
+    color: #22294F;
+  }
+
+  @media screen and (max-width: 756px) {
+    .shop-collection-{{ section.id }} {
+      padding-top: {{ section.settings.section_padding_top }}px;
+      padding-bottom: {{ section.settings.section_padding_bottom }}px;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    .shop-collection-heading {
+      text-align: center;
+      font-family: 'McLaren'
+      , sans-serif;
+      font-weight: normal;
+      font-style: normal;
+    }
+    .shop-collection-heading h1 {
+      font-size: 21px;
+      margin: 0;
+    }
+    .shop-collection-sub-heading {
+      margin: 0;
+      text-align: center;
+      font-size: 18px;
+      line-height: 34px;
+      color: #2c2e35;
+      font-weight: 300;
+      font-family: "Zain";
+    }
+    .shop-collection-sub-heading p {
+      margin: 40px 0;
+      font-family: McLaren;
+      font-size: 18px;
+      line-height: 20px;
+      font-weight: 400;
+      color: #22294f;
+    }
+    .shop-collection-columns {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-direction: column;
+      gap: 70px;
+      padding: 50px 0;
+    }
+    .shop-collection-column {
+      /* width: 295px; */
+      /* height: 290px; */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 37px;
+    }
+    .shop-collection-img {
+      width: 100%;
+      height: 80%;
+      display: flex;
+      justify-content: center;
+    }
+    .shop-collection-img img {
+      /* width: 70%; */
+      object-fit: contain;
+    }
+    .shop-collection-link {
+      z-index: 2;
+      font-size: 30px;
+      line-height: 31px;
+
+      font-weight: bold;
+      font-family: "Zain";
+      text-align: center;
+      margin: 20px 0;
+    }
+    .shop-collection-link a {
+      text-decoration: none;
+      color: #22294F;
+    }
+  }
+</style>
+
+
+<div class="page-width shop-collection-{{ section.id }}">
+  <div class="shop-collection-buttons">
+    <div class="shop-collection-button"></div>
+    <div class="shop-collection-button"></div>
+  </div>
+  <div class="shop-collection-heading">
+    {{ section.settings.heading }}
+  </div>
+  <div class="shop-collection-sub-heading">
+    {{ section.settings.sub_heading }}
+  </div>
+  <!--
+    {% comment %} 
+<div class="shop-collection-columns">
+       {% for block in section.blocks %}
+       {% case block.type %}
+       {% when 'collection-cols' %}
+       <div class="shop-collection-column" style="border: 5px solid {{ block.settings.col_border_color }};">
+          <div class="shop-collection-img">
+             {% if block.settings.col_img %}
+             <img
+                src="{{ block.settings.col_img | image_url  }}"
+                width="100%"
+                height="auto"
+                style="scale:{{ block.settings.block_image_scale }};" />
+             {% endif %}
+          </div>
+          <div class="shop-collection-link">
+             <a href="{{ block.settings.collection_link }}">{{ block.settings.collection_link_text }}</a>
+          </div>
+       </div>
+       {% endcase %}
+       {% endfor %}
+    </div>
+  {% endcomment %} -->
+  <div class="shop-collection-columns">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'collection-cols' %}
+        
+          <div class="shop-collection-column" styles="border: 5px solid {{ block.settings.col_border_color }};">
+            
+            <div class="shop-collection-img">
+              {% if block.settings.col_img %}
+                <a href="{{ block.settings.collection_link }}">
+                 <img
+                   src="{{ block.settings.col_img | image_url }}"
+                   style="width: 100%; height:auto; transform: scale({{ block.settings.block_image_scale }});"
+                   alt="Image description"
+                  />
+                 </a>
+              {% endif %}
+            </div>
+            <div class="shop-collection-link">
+              <a href="{{ block.settings.collection_link }}">{{ block.settings.collection_link_text }}</a>
+            </div>
+            
+          </div>
+        
+      {% endcase %}
+    {% endfor %}
+  </div>
+
+</div>
+
+{% schema %}
+  {
+    "name": "HP Collection Columns",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "range",
+        "id": "heading_size",
+        "label": "Heading Font Size",
+        "min": 12,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 25
+      },
+      {
+        "type": "richtext",
+        "id": "sub_heading",
+        "label": "Sub Heading"
+      },
+      {
+        "type": "range",
+        "id": "section_padding_top",
+        "label": "Section Padding Top",
+        "min": 12,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 50
+      }, {
+        "type": "range",
+        "id": "section_padding_bottom",
+        "label": "Section Padding Bottom",
+        "min": 12,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 50
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection-cols",
+        "name": "Column",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "col_img",
+            "label": "Png Image"
+          },
+          {
+            "type": "color",
+            "id": "col_border_color",
+            "label": "Border Color"
+          },
+          {
+            "type": "range",
+            "id": "block_image_scale",
+            "label": "Image size",
+            "min": 1,
+            "max": 5,
+            "step": 0.1,
+            "unit": "%",
+            "default": 1
+          },
+          {
+            "type": "text",
+            "id": "collection_link_text",
+            "label": "Collection Text"
+          }, {
+            "type": "url",
+            "id": "collection_link",
+            "label": "Collection Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "HP Collection Columns"
+      }
+    ]
+  }
+{% endschema %}

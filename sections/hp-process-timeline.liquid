@@ -1,0 +1,528 @@
+<style>
+  .process-section-{{ section.id }} {
+    padding-top: {{ section.settings.section_padding_top }}px;
+    padding-bottom: {{ section.settings.section_padding_bottom }}px;
+    background: url('/cdn/shop/files/TH-Process-BG.png?v=1727580370');
+    background-size: 100% 100%;
+    margin-bottom: 40px;
+    margin-top: 40px;
+
+  }
+  .process-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 2100px;
+  }
+
+  .p-left {
+    /* max-width:600px; */
+    width: 40%;
+    border-radius: 0 0 0 350px;
+    display: flex;
+    flex-direction: column;
+  }
+  .process-heading-content {
+    padding: 100px;
+    margin-left: 100px;
+  }
+
+  .process-subheading {
+    font-size: 35px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "McLaren";
+  }
+  .process-heading {
+    font-weight: 400;
+    font-family: "McLaren";
+    margin-bottom: 10px;
+  }
+  .process-desc {
+    font-size: 28px;
+    color: #2c2e35;
+    font-weight: 300;
+    font-family: "Zain";
+  }
+
+  .process-img {
+    margin-top: -170px;
+    transform: translateY(170px);
+  }
+  .process-img img {
+    width: 90%;
+  }
+  .p-right {
+    /* max-width:840px; */
+    width: 60%;
+    padding: 100px 100px 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .process-timeline {
+    position: relative;
+  }
+  .p-timeline-col {
+    display: flex;
+    gap: 50px;
+    flex-direction: row;
+    /* margin: 50px 0; */
+    margin-bottom: 70px;
+  }
+  .process-timeline:first-child::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background-color: #fff4d3;
+    top: -30px;
+    left: 20px;
+  }
+  .p-timeline-marker {
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    background-color: #fff4d3;
+    padding: 10px 0 0 18px;
+    z-index: 999;
+    font-family: 'McLaren';
+    font-weight: 800;
+  }
+  .p-timeline-block {
+    width: 60%;
+  }
+  .p-timeline-heading {
+    font-size: 30px;
+    color: #2c2e35;
+    font-weight: bold;
+    font-family: "Zain";
+    margin-bottom: 10px;
+  }
+  .p-timeline-desc {
+    font-size: 28px;
+    line-height: 30px;
+    color: #2c2e35;
+    font-weight: 300;
+    font-family: "Zain";
+  }
+  .p-timeline-desc-box {
+    margin-top: 20px;
+    padding: 20px;
+    width: 470px;
+    background-color: #fff4d3;
+    outline: 2px solid black;
+    font-size: 18px;
+    line-height: 20px;
+    color: #2c2e35;
+    font-weight: 300;
+    font-family: "Zain";
+    text-align: center;
+  }
+  .process-quote {
+    font-size: 37px;
+    line-height: 36px;
+    color: #09213a;
+    font-weight: 300;
+    font-family: "Zain";
+  }
+  .process-fotter {
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .p-fotter-title {
+    font-size: 34px;
+    color: #ed8177;
+    font-weight: 300;
+    font-family: "Zain";
+  }
+  .p-fotter-button {}
+.p-fotter-button a {
+  font-size: 37px;
+  color: #ffffff;
+  font-weight: 300;
+  font-family: "Zain";
+  display: inline-block;
+  padding: 5px 50px;
+  background: #ea8076;
+  text-decoration: none;
+  border-radius: 0 40px 0 0;
+}
+@media screen and (max-width: 1400px) {
+   .process-heading-content {
+    padding: 50px;
+    margin-left: 50px;
+  }
+}
+@media screen and (max-width: 765px) {
+
+  .process-section-{{ section.id }} {
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-size: cover;
+    background: #ffdf82;
+  }
+
+  .process-main {
+    flex-direction: column;
+  }
+
+  .p-left,
+  .p-right {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .process-heading-content {
+    padding: 10px;
+    margin-left: 0;
+  }
+
+  .process-subheading {
+    font-size: 18px;
+  }
+
+  .process-subheading p {
+    margin: 0;
+  }
+
+  .process-heading {
+    font-size: 30px;
+    line-height: 28px;
+  }
+
+  .process-heading p {
+    margin: 0;
+  }
+
+  .process-desc {
+    margin: 0;
+    font-size: 21px;
+    line-height: 24px;
+  }
+  .process-desc p {
+    margin: 0;
+  }
+  .process-img img {
+    width: 100%;
+    transform: translateY(0);
+    margin-top: 0;
+  }
+
+  .p-timeline-col {
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+  }
+
+  .p-timeline-marker {
+    margin: 0;
+  }
+
+  .p-timeline-block {
+    width: 100%;
+    text-align: left;
+  }
+  .process-col.p-left {
+    flex-direction: row;
+  }
+  .process-timeline:first-child::before {
+    left: -20px;
+  }
+
+  .p-timeline-heading {
+    font-size: 20px;
+    position: relative;
+    top: -35px;
+    left: 60px;
+  }
+
+  .p-timeline-desc {
+    margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+    position: relative;
+    top: -20px;
+  }
+  .p-timeline-desc p {
+    font-size: 14px;
+    line-height: 20px;
+    position: relative;
+    top: -20px;
+  }
+
+  .p-timeline-desc-box {
+    width: 100%;
+    padding: 15px;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+
+  .process-quote {
+    font-size: 16px;
+    text-align: left;
+    padding: 10px;
+    line-height: 21px;
+  }
+
+  .process-fotter {
+    padding: 20px;
+  }
+
+  .p-fotter-title {
+    font-size: 18px;
+  }
+
+  .p-fotter-button a {
+    font-size: 18px;
+    padding: 5px 20px;
+  }
+
+}
+
+</style>
+
+
+<div class="page-width process-section-{{ section.id }} process-section">
+  <div class="process-main">
+    <div class="process-col p-left">
+      <div class="process-heading-content">
+        <div class="process-subheading" style="color={{ section.settings.sub_heading_color }};">
+          {{ section.settings.sub_heading }}
+        </div>
+        <div class="process-heading" style="color={{ section.settings.heading_color }};font-size:{{ section.settings.heading_size }}px">
+          {{ section.settings.heading }}
+        </div>
+        <div class="process-desc" style="color={{ section.settings.se }}">
+          {{ section.settings.description }}
+        </div>
+      </div>
+      <div class="process-img">
+        {% if section.settings.img %}
+          <img
+            src="{{ section.settings.img | image_url }}"
+            width="100%"
+            height="auto" />
+        {% endif %}
+      </div>
+    </div>
+    <div class="process-col p-right">
+      <div class="process-timeline">
+        <div class="p-timeline-col">
+          <div class="p-timeline-marker">1</div>
+          <div class="p-timeline-block">
+            <div class="p-timeline-heading">
+              REQUEST A SAMPLE
+            </div>
+            <div class="p-timeline-desc">
+              Test it out for yourself with a zero-commitment sample in the size you need
+            </div>
+          </div>
+        </div>
+
+        <div class="p-timeline-col">
+          <div class="p-timeline-marker">2</div>
+          <div class="p-timeline-block">
+            <div class="p-timeline-heading">
+              DETAILED SPEC PLANS
+            </div>
+            <div class="p-timeline-desc">
+              Have your contractor draw up the exact
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+         dimensions and spec for racks and hooks
+         that will be best for your space
+            </div>
+            <div class="p-timeline-desc-box">
+              No contractor on your project? No worries! Our team will guide
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+you through every step of the process to ensure you are ordering
+the correct quantities and sizes for exactly what you need.
+            </div>
+          </div>
+        </div>
+
+        <div class="p-timeline-col">
+          <div class="p-timeline-marker">3</div>
+          <div class="p-timeline-block">
+            <div class="p-timeline-heading">
+              PLACE YOUR ORDER
+            </div>
+            <div class="p-timeline-desc">
+              In-stock items ship next business day<br>
+              Custom orders ship in as little as 10 days
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="process-quote">
+        “Toughook is a professional company, providing
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+great service a fast response time. They are a great pick
+for schools and home or anywhere for that matter.”
+      </div>
+    </div>
+  </div>
+
+<!-- <div class="process-fotter">
+  <div class="p-fotter-title">
+    {{ section.settings.fotter_title }}
+  </div>
+  <div class="p-fotter-button">
+    <a href="{{ section.settings.button_url }}" style="background={{ section.settings.button_color }}">{{ section.settings.button }}</a>
+  </div>
+</div> -->
+</div>
+
+{% schema %}
+  {
+    "name": "HP Process Timline",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Left Section Headings"
+      },
+      {
+        "type": "richtext",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "color",
+        "id": "heading_color",
+        "label": "Heading Color"
+      },
+      {
+        "type": "range",
+        "id": "heading_size",
+        "label": "Heading Font Size",
+        "min": 12,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 25
+      }, {
+        "type": "richtext",
+        "id": "sub_heading",
+        "label": "Sub Heading"
+      }, {
+        "type": "color",
+        "id": "sub_heading_color",
+        "label": "Sub Heading Color"
+      }, {
+        "type": "richtext",
+        "id": "description",
+        "label": "Description"
+      }, {
+        "type": "color",
+        "id": "desc_color",
+        "label": "Description Color"
+      }, {
+        "type": "image_picker",
+        "id": "img",
+        "label": "Image"
+      }, {
+        "type": "header",
+        "content": "Fotter Button"
+      }, {
+        "type": "text",
+        "id": "fotter_title",
+        "label": "Fotter Title"
+      }, {
+        "type": "text",
+        "id": "button",
+        "label": "Button Text"
+      }, {
+        "type": "url",
+        "id": "button_url",
+        "label": "Button Url"
+      }, {
+        "type": "color",
+        "id": "button_color",
+        "label": "Button Color"
+      }, {
+        "type": "range",
+        "id": "section_padding_top",
+        "label": "Section Padding Top",
+        "min": 12,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 50
+      }, {
+        "type": "range",
+        "id": "section_padding_bottom",
+        "label": "Section Padding Bottom",
+        "min": 12,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 50
+      }
+    ],
+    "presets": [
+      {
+        "name": "HP Process Timline"
+      }
+    ]
+  }
+{% endschema %}

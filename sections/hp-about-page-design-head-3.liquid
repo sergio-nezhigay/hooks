@@ -1,0 +1,55 @@
+<style>
+  .about-design-text-3-main {
+    padding: 30px;
+  }
+  .about-design-text-3 {
+    background: #76c262;
+    position: relative;
+    padding: 80px;
+    margin-top: 0;
+    border-radius: 0 0 150px 150px;
+  }
+  .about-design-text-container-3-content h3{
+    margin:5px;
+    text-align:center;
+  }
+  @media screen and (max-width: 756px) {
+    .about-design-text-3 {
+      padding: 60px;
+      margin-top: 0;
+      border-radius: 0 0 100px 100px;
+    }
+  }
+</style>
+<div class="page-width about-design-text-3-main">
+  <div class="about-design-text-3">
+    <div class="about-design-text-container-3">
+      <h2>{{ section.settings.heading }}</h2>
+      <div class="about-design-text-container-3-content">
+        {{ section.settings.text }}
+      </div>
+      </p>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "HP About Design Head 3",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      }, {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+      }
+    ],
+    "presets": [
+      {
+        "name": "HP About Page Design Head 3"
+      }
+    ]
+  }
+{% endschema %}

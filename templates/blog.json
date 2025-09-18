@@ -1,0 +1,36 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-blog",
+      "custom_css": [
+        ".card.article-card.card--card.article-card__image--medium.card--media.color-scheme-2.gradient {border-radius: 0px 0px 70px 0px;}",
+        ".card__content {border-radius: 0px 0px 65px 0px;}",
+        ".card:not(.ratio) {justify-content: end;}",
+        ".card__media .media img {object-position: center left;}",
+        "@media screen and (min-width: 756px) {.blog-articles {grid-template-columns: 1fr 1fr 1fr; column-gap: 15px; row-gap: 15px; } .card:not(.ratio) > .card__content {display: flex; max-height: 50%; }}",
+        ".card__heading .full-unstyled-link {color: #121212;}"
+      ],
+      "settings": {
+        "layout": "grid",
+        "show_image": true,
+        "image_height": "medium",
+        "show_date": false,
+        "show_author": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

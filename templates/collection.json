@@ -1,0 +1,181 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "custom_css": [
+        "@media screen and (min-width: 756px) {.collection-hero__text-wrapper {margin-top: 30px; }}",
+        "@media screen and (min-width: 750px) {.collection-hero__title + .collection-hero__description {font-size: 150%; }}"
+      ],
+      "settings": {
+        "content_alignment": "left",
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "enable_side_description": true,
+        "collection_details": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1754874373b4618ad7": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "collection_list_pYPAR6": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_yGMALk": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "backpack-and-coat-hanging-hooks"
+          }
+        },
+        "featured_collection_R3aXPP": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "boat-cabin-storage-hooks-hook-racks"
+          }
+        },
+        "featured_collection_DX6kVr": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "color-packs"
+          }
+        },
+        "featured_collection_AC7ByM": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "individual-coat-hooks"
+          }
+        },
+        "featured_collection_3GAmjB": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "school-backpack-hanging-hook-rails"
+          }
+        },
+        "featured_collection_mMQr9i": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "coat-rails"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_yGMALk",
+        "featured_collection_R3aXPP",
+        "featured_collection_DX6kVr",
+        "featured_collection_AC7ByM",
+        "featured_collection_3GAmjB",
+        "featured_collection_mMQr9i"
+      ],
+      "custom_css": [
+        ".card--card {border: 2px solid #09213a !important;}"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "PRODUCТ CATEGORIES",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "opened_faqs_BKTdRp": {
+      "type": "opened-faqs",
+      "name": "Simple FAQ",
+      "settings": {
+        "heading": "Frequently Asked Questions"
+      }
+    },
+    "hp_text_3_cols_NK3QR7": {
+      "type": "hp-text-3-cols",
+      "blocks": {
+        "feature_cH3XNb": {
+          "type": "feature",
+          "settings": {
+            "title": "The Toughook Guarantee",
+            "subtitle": "UNBREAKABLE TOUGHOOKS",
+            "body": "Toughooks are the perfect coat & backpack hook for changing rooms, cloakrooms, corridors & classrooms. We guarantee Toughooks against breakages for the lifetime of the hook.",
+            "link": "",
+            "color": "yellow",
+            "align": "left"
+          }
+        },
+        "feature_jCJRAj": {
+          "type": "feature",
+          "settings": {
+            "title": "Delivery",
+            "subtitle": "US DELIVERY OPTIONS",
+            "body": "Domestic delivery is free for orders over $50. Choose Expedited or Priority shipping for faster despatch on your order.",
+            "link": "",
+            "color": "red",
+            "align": "left"
+          }
+        },
+        "feature_rPhM7b": {
+          "type": "feature",
+          "settings": {
+            "title": "Pricing",
+            "subtitle": "BUY DIRECT & SAVE",
+            "body": "Buy from Toughook.com the official home of the Toughook in the USA. We won't be beaten on price for unbreakable plastic backpack hooks.",
+            "link": "",
+            "color": "green",
+            "align": "left"
+          }
+        }
+      },
+      "block_order": [
+        "feature_cH3XNb",
+        "feature_jCJRAj",
+        "feature_rPhM7b"
+      ],
+      "settings": {
+        "max": "100%",
+        "margin": "4rem"
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid",
+    "1754874373b4618ad7",
+    "collection_list_pYPAR6",
+    "opened_faqs_BKTdRp",
+    "hp_text_3_cols_NK3QR7"
+  ]
+}

@@ -1,0 +1,217 @@
+<style>
+  .quote-section-{{ section.id }} {
+    padding-top: {{ section.settings.section_padding_top }}px;
+    padding-bottom: {{ section.settings.section_padding_bottom }}px;
+    padding-left:0;
+    padding-right:0;
+  }
+  .quote-main {
+    background-image: linear-gradient(209deg, #76c176 0%, #b5f7b5 44%, #b5f7b5 67%, #76c176 100%);
+    padding: 60px;
+    position: relative;
+  }
+  .quote-main::before {
+    content: "";
+    background: url("{{ 'quote-1.webp' | asset_url }}");
+    height: 180px;
+    width: 284px;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: .4;
+    top: -30px;
+    left: 30px;
+  }
+  .quote-main::after {
+    content: "";
+    background: url("{{ 'quote-2.webp' | asset_url }}");
+    height: 180px;
+    width: 284px;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: .4;
+    bottom: -30px;
+    right: 0;
+  }
+
+  .line {
+    margin: auto;
+    background-color: #000000;
+    border: 1px solid #ffe082;
+    width: 50%;
+  }
+  .quote-heading {
+    text-align: center;
+    font-family: 'McLaren'
+    , sans-serif;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .quote-heading {
+    font-size: 37px;
+    line-height: 50px;
+    font-weight: 400;
+    margin: 20px 0;
+  }
+  .quote-content {
+    text-align: center;
+    font-size: 28px;
+    line-height: 30px;
+    font-weight: 300;
+    font-family: "Zain";
+    margin: 20px 0;
+  }
+  .quote-from {
+    text-align: center;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: bold;
+    color: #146e99;
+    margin: 20px 0;
+  }
+
+  @media screen and (max-width: 756px) {
+    .quote-section-{{ section.id }} {
+      padding-top: {{ section.settings.section_padding_top }}px;
+      padding-bottom: {{ section.settings.section_padding_bottom }}px;
+
+    }
+    .quote-main {
+      background-image: linear-gradient(209deg, #76c176 0%, #b5f7b5 44%, #b5f7b5 67%, #76c176 100%);
+      padding: 30px;
+      position: relative;
+    }
+    .quote-main::before {
+      content: "";
+      height: 70px;
+      width: 100px;
+      top: -30px;
+      left: 30px;
+    }
+    .quote-main::after {
+      content: "";
+      height: 70px;
+      width: 100px;
+      bottom: -30px;
+      right: 0;
+    }
+
+    .line {
+      margin: auto;
+      background-color: #000000;
+      border: 1px solid #ffe082;
+      width: 50%;
+    }
+    .quote-heading {
+      text-align: center;
+      font-family: 'McLaren'
+      , sans-serif;
+      font-weight: normal;
+      font-style: normal;
+    }
+    .quote-heading {
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 400;
+      margin: 20px 0;
+    }
+    .quote-content {
+      text-align: center;
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 300;
+      margin: 10px 0;
+    }
+    .quote-from {
+      text-align: center;
+      font-size: 16px;
+      line-height: 20px;
+      margin: 20px 0;
+    }
+  }
+</style>
+
+
+<div class="page-width quote-section-{{ section.id }}">
+  <div class="quote-main">
+    <div class="quote-heading" style="color={{ section.settings.heading_color }}">
+      {{ section.settings.heading }}
+    </div>
+    <div class="line"></div>
+    <div class="quote-content" style="color={{ section.settings.sub_heading_color }}">
+      {{ section.settings.sub_heading }}
+    </div>
+    <div class="quote-from" style="color={{ section.settings.from-_color }}">
+      {{ section.settings.from }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "HP Quote Slider",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "color",
+        "id": "heading_color",
+        "label": "Heading Color"
+      },
+      {
+        "type": "range",
+        "id": "heading_size",
+        "label": "Heading Font Size",
+        "min": 12,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 25
+      },
+      {
+        "type": "richtext",
+        "id": "sub_heading",
+        "label": "Sub Heading"
+      }, {
+        "type": "color",
+        "id": "sub_heading_color",
+        "label": "Sub Heading Color"
+      }, {
+        "type": "richtext",
+        "id": "from",
+        "label": "From"
+      }, {
+        "type": "color",
+        "id": "from-_color",
+        "label": "From Color"
+      }, {
+        "type": "range",
+        "id": "section_padding_top",
+        "label": "Section Padding Top",
+        "min": 12,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 50
+      }, {
+        "type": "range",
+        "id": "section_padding_bottom",
+        "label": "Section Padding Bottom",
+        "min": 12,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 50
+      }
+    ],
+    "presets": [
+      {
+        "name": "HP Quote Slider"
+      }
+    ]
+  }
+{% endschema %}

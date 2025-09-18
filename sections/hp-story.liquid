@@ -1,0 +1,416 @@
+<style>
+  .learn-more-{{ section.id }} {
+    padding-top: {{ section.settings.section_padding_top }}px;
+    padding-bottom: {{ section.settings.section_padding_bottom }}px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .learn-more-heading-main {
+    text-align: center;
+    font-family: 'McLaren'
+    , sans-serif;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .learn-more-heading {
+    position: relative;
+  }
+  .learn-more-heading-main {
+    font-size: {{ section.settings.heading_size }}px;
+    padding: 20px 100px;
+    text-align: left;
+    border-radius: 90px 0 0 0;
+    margin-left: 294px;
+    position: relative;
+    z-index: 2;
+  }
+  .learn-more-sub-head {
+    border-radius: 150px 0 0 0;
+    padding: 80px 250px 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+    position: relative;
+    z-index: 1;
+    transform: translateY(-35px);
+    background-image: linear-gradient(210deg, #09213a 0%, #094483 36%, #094483 67%, #09213a 100%) !important;
+    font-size: 32px;
+    line-height:42px;
+    font-weight: 300;
+    font-family: "Zain";
+  }
+  .learn-more-button {
+    width: 100%;
+    margin-top: 40px;
+    text-align: center;
+
+  }
+
+  .learn-more-cols {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    padding: 25px 60px 60px;
+  }
+  .learn-more-col {
+    width: 47%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 650px;
+  }
+  .learn-more-col img {
+    max-width: 320px;
+  }
+  .learn-more-col-heading {
+    margin: 0;
+    font-size: 30px;
+    line-height: 34px;
+    color: #2c2e35;
+    font-weight: bold;
+  }
+  .learn-more-col-heading p {
+    margin: 0;
+  }
+  .learn-more-cols-desc {
+    font-size: 28px;
+    line-height: 34px;
+    color: #2c2e35;
+    font-weight: 300;
+    text-align: center;
+  }
+  .learn-more-fotter {
+    padding: 40px 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+    background-image: linear-gradient(210deg, #09213a 0%, #094483 36%, #094483 67%, #09213a 100%) !important;
+    border-radius: 0 0 100px 100px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+        align-items: center;
+  }
+  .learn-more-fotter-content {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    color: white;
+    gap: 10px;
+    width: 40%;
+  }
+  .learn-more-fotter-content a {
+   color: #ffe082;
+    text-decoration:underline;
+    white-space: nowrap;
+  }
+  .learn-more-fotter-content img {
+    max-width: 80px;
+    width: 80px;
+    height: 80px;
+    /* margin: auto; */
+  }
+  .learn-more-fotter-content p {
+      font-size: 20px;
+    }
+  @media screen and (max-width: 920px) {
+      .learn-more-sub-head {
+    margin-left: 30px;
+    margin-right: 30px;
+      }
+     .learn-more-fotter {
+    /* margin-left: 300px; */
+    /* margin-right: 300px;} */
+  }
+  }
+  @media screen and (max-width: 756px) {
+    .learn-more-{{ section.id }} {
+      padding-top: {{ section.settings.section_padding_top }}px;
+      padding-bottom: {{ section.settings.section_padding_bottom }}px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .learn-more-heading-main {
+      font-size: 21px;
+      padding: 10px 30px;
+      text-align: left;
+      border-radius: 50px 0 0 0;
+      margin-left: 20%;
+      position: relative;
+      z-index: 2;
+    }
+    .learn-more-heading-main h1 {
+      font-size: 18px;
+      margin-left: 10px;
+      text-align: right;
+    }
+    .learn-more-sub-head {
+      border-radius: 80px 0 0 0;
+      padding: 30px 30px 50px;
+      margin-left: 10px;
+      margin-right: 10px;
+      transform: translateY(-15px);
+      font-size: 16px;
+      line-height: 20px;
+
+    }
+    .learn-more-button {
+      margin-top: 10px;
+    }
+
+    .learn-more-cols {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 30px;
+    }
+    .learn-more-col {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .learn-more-col img {
+      max-width: 320px;
+    }
+    .learn-more-col-heading {
+      margin: 0;
+      font-size: 18px;
+      line-height: 24px;
+      color: #2c2e35;
+      font-weight: bold;
+      text-align: center;
+    }
+    .learn-more-col-heading p {
+      margin: 0;
+    }
+    .learn-more-cols-desc {
+      font-size: 16px;
+      line-height: 22px;
+      color: #2c2e35;
+      font-weight: 300;
+      text-align: center;
+    }
+    .learn-more-fotter {
+      padding: 25px;
+      margin-left: 10px;
+      margin-right: 10px;
+      background-image: linear-gradient(210deg, #09213a 0%, #094483 36%, #094483 67%, #09213a 100%) !important;
+      border-radius: 0 0 80px 80px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .learn-more-fotter-content {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      flex-direction: row;
+      color: white;
+      gap: 10px;
+      width: 100%;
+    }
+    .learn-more-fotter-content p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 20px;
+      display: flex;
+      align-items: center;
+    }
+    .learn-more-fotter-content img {
+      max-width: 50px;
+      width: 50px;
+      height: 50px;
+      /* margin: auto; */
+    }
+  }
+    
+  @media screen and (max-width: 450px) {
+    .learn-more-fotter-content {
+        justify-content: start;   
+    }  
+}
+
+  /* Manan Css */
+  @media screen and (min-width: 451px) {
+    .mobile-img {
+      display:none;
+    }
+}
+  @media screen and (max-width: 450px) {
+    .desktop-img {
+      display:none;
+    }
+}
+</style>
+
+
+<div class="page-width learn-more-{{ section.id }} ">
+  <div class="learn-more-heading">
+    <div class="learn-more-heading-main" style="background:{{ section.settings.heading_background }};color:{{ section.settings.heading_color }}">
+      {{ section.settings.heading }}
+    </div>
+    <div class="learn-more-sub-head" style="background:{{ section.settings.sub_heading_background }}; color:{{ section.settings.sub_heading_color }}">
+      {{ section.settings.sub_heading }}
+      <div class="learn-more-button">
+        <a
+          class="button primary-btn"
+          href="{{ section.settings.button_url }}"
+          style="background: {{ section.settings.button_color }}">{{ section.settings.button }}</a>
+      </div>
+    </div>
+  </div>
+  <div class="learn-more-cols">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'columns' %}
+          <div class="learn-more-col">
+            <img class="desktop-img"
+              src="{{ block.settings.col_img | image_url }}"
+              width="100%"
+              height="auto" />
+            <img class="mobile-img"
+              src="{{ block.settings.mob_img1 | image_url }}"
+              width="100%"
+              height="auto" />
+            <h3 class="learn-more-col-heading">
+              {{ block.settings.col_heading }}
+            </h3>
+            <div class="learn-more-cols-desc">
+              {{ block.settings.col_description }}
+            </div>
+          </div>
+      {% endcase %}
+    {% endfor %}
+  </div>
+  <div class="learn-more-fotter">
+    <div class="learn-more-fotter-content">
+      <img
+        src="https://toughook.com/cdn/shop/files/TH-Benefit-Icons_small.png?v=1727215374"
+        alt=""
+        width="auto"
+        height="auto">
+      <p>
+        Proudly made and assembled in the UK and USA</p>
+    </div>
+    <div class="learn-more-fotter-content">
+      <img
+        src="	https://toughook.com/cdn/shop/files/TH-Benefit-Icons2_small.png?v=1727215374"
+        alt=""
+        width="auto"
+        height="auto">
+      <p>
+        TIPS approved vendor for all participating school districts <a href="https://www.tips-usa.com/vendorProfile.cfm?RecordID=6C943FA0914374854777D107B50FA2E1">View vendor profile</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "HP Story",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "heading",
+        "label": "Heading",
+        "default": "<p>Heading</p>"
+      },
+      {
+        "type": "color",
+        "id": "heading_color",
+        "label": "Heading Color"
+      },
+      {
+        "type": "color",
+        "id": "heading_background",
+        "label": "Heading Background"
+      },
+      {
+        "type": "range",
+        "id": "heading_size",
+        "label": "Heading Font Size",
+        "min": 12,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 25
+      }, {
+        "type": "richtext",
+        "id": "sub_heading",
+        "label": "Sub Heading"
+      }, {
+        "type": "color",
+        "id": "sub_heading_color",
+        "label": "Sub Heading Color"
+      }, {
+        "type": "color",
+        "id": "sub_heading_background",
+        "label": "Sub Heading Background"
+      }, {
+        "type": "text",
+        "id": "button",
+        "label": "Button Text"
+      }, {
+        "type": "url",
+        "id": "button_url",
+        "label": "Button Url"
+      }, {
+        "type": "color",
+        "id": "button_color",
+        "label": "Button Color"
+      }, {
+        "type": "range",
+        "id": "section_padding_top",
+        "label": "Section Padding Top",
+        "min": 12,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 50
+      }, {
+        "type": "range",
+        "id": "section_padding_bottom",
+        "label": "Section Padding Bottom",
+        "min": 12,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 50
+      }
+    ],
+    "blocks": [
+      {
+        "type": "columns",
+        "name": "Column",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "col_img",
+            "label": "Desktop Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "mob_img1",
+            "label": "Mobile Image"
+          }, {
+            "type": "richtext",
+            "id": "col_heading",
+            "label": "Heading"
+          }, {
+            "type": "richtext",
+            "id": "col_description",
+            "label": "Content text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "HP Story"
+      }
+    ]
+  }
+{% endschema %}

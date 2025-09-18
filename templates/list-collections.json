@@ -1,0 +1,198 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-list-collections",
+      "disabled": true,
+      "settings": {
+        "title": "Collections",
+        "sort": "alphabetical",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "columns_mobile": "2"
+      }
+    },
+    "collection_list_JQtTUn": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_6xVgiL": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "individual-coat-hooks"
+          }
+        },
+        "featured_collection_mGJ7my": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "color-packs"
+          }
+        },
+        "featured_collection_Mdex46": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "coat-rails"
+          }
+        },
+        "featured_collection_mdRKHd": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "robe-hooks"
+          }
+        },
+        "featured_collection_WDR8Ak": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "picture-frames"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_6xVgiL",
+        "featured_collection_mGJ7my",
+        "featured_collection_Mdex46",
+        "featured_collection_mdRKHd",
+        "featured_collection_WDR8Ak"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Collections",
+        "heading_size": "h0",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "qt_collection_list_FnrPnp": {
+      "type": "qt-collection-list",
+      "blocks": {
+        "collection_fHBN3e": {
+          "type": "collection",
+          "settings": {
+            "collection": "individual-coat-hooks",
+            "title": "",
+            "text": "",
+            "image": "shopify://shop_images/c1_5534bc2e-7d40-4d06-915d-215c0bbc8450.png",
+            "bgcolor": "#fafafa"
+          }
+        },
+        "collection_8DaL6G": {
+          "type": "collection",
+          "settings": {
+            "collection": "color-packs",
+            "title": "",
+            "text": "",
+            "image": "shopify://shop_images/c2_93e897f5-0675-49c6-b1b3-ccdb87f20672.png",
+            "bgcolor": "#fafafa"
+          }
+        },
+        "collection_RUchbB": {
+          "type": "collection",
+          "settings": {
+            "collection": "coat-rails",
+            "title": "Perfect Fit Coat Rails for Schools",
+            "text": "",
+            "image": "shopify://shop_images/c3.png",
+            "bgcolor": "#fafafa"
+          }
+        },
+        "collection_iT84Cn": {
+          "type": "collection",
+          "settings": {
+            "collection": "robe-hooks",
+            "title": "",
+            "text": "",
+            "image": "shopify://shop_images/c4.png",
+            "bgcolor": "#fafafa"
+          }
+        },
+        "collection_YcYjP7": {
+          "type": "collection",
+          "settings": {
+            "collection": "picture-frames",
+            "title": "",
+            "text": "",
+            "image": "shopify://shop_images/toughook-picture-frame-composite.png",
+            "bgcolor": "#fafafa"
+          }
+        }
+      },
+      "block_order": [
+        "collection_fHBN3e",
+        "collection_8DaL6G",
+        "collection_RUchbB",
+        "collection_iT84Cn",
+        "collection_YcYjP7"
+      ],
+      "settings": {
+        "title": "Collections",
+        "description": ""
+      }
+    },
+    "hp_text_3_cols_qnDRC4": {
+      "type": "hp-text-3-cols",
+      "blocks": {
+        "feature_fVVdpm": {
+          "type": "feature",
+          "settings": {
+            "title": "The Toughook Guarantee",
+            "subtitle": "UNBREAKABLE TOUGHOOKS",
+            "body": "Toughooks are the perfect coat & backpack hook for changing rooms, cloakrooms, corridors & classrooms. We guarantee Toughooks against breakages for the lifetime of the hook.",
+            "link": "",
+            "color": "yellow",
+            "align": "left"
+          }
+        },
+        "feature_hRLWiA": {
+          "type": "feature",
+          "settings": {
+            "title": "Delivery",
+            "subtitle": "US DELIVERY OPTIONS",
+            "body": "Domestic delivery is free for orders over $50. Choose Expedited or Priority shipping for faster despatch on your order.",
+            "link": "",
+            "color": "red",
+            "align": "left"
+          }
+        },
+        "feature_xMBLbR": {
+          "type": "feature",
+          "settings": {
+            "title": "Pricing",
+            "subtitle": "BUY DIRECT & SAVE",
+            "body": "Buy from Toughook.com the official home of the Toughook in the USA. We won't be beaten on price for unbreakable plastic backpack hooks.",
+            "link": "",
+            "color": "green",
+            "align": "left"
+          }
+        }
+      },
+      "block_order": [
+        "feature_fVVdpm",
+        "feature_hRLWiA",
+        "feature_xMBLbR"
+      ],
+      "settings": {
+        "max": "100%",
+        "margin": "4rem"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "collection_list_JQtTUn",
+    "qt_collection_list_FnrPnp",
+    "hp_text_3_cols_qnDRC4"
+  ]
+}

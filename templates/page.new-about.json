@@ -1,0 +1,221 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "custom_html_RehxTi": {
+      "type": "CUSTOM_HTML",
+      "settings": {
+        "content": "<br>\n<br>\n<br>\n<br>"
+      }
+    },
+    "hp_feature_heading_btnnbd": {
+      "type": "hp-feature-heading",
+      "disabled": true,
+      "settings": {
+        "heading": "The original, vibrant, and unbreakable hooks.",
+        "text": ""
+      }
+    },
+    "hp_about_page_design_head_JeVJNQ": {
+      "type": "hp-about-page-design-head",
+      "custom_css": [
+        "p {font-size: 18px; line-height: 24px;}",
+        "@media screen and (min-width: 750px) {p {font-size: 24px; line-height: 40px; }}"
+      ],
+      "settings": {
+        "text": "<p><br/>Toughook USA, the exclusive U.S. distributor of Toughook UK products,<br/> offers durable, child-friendly hooks that enhance classroom organization. <br/>Available in over 20 colors and four sizes, our unique, flat design is crafted <br/>with <strong>safety</strong> and <strong>durability</strong> in mind, making it ideal for children <strong>as young as pre-k.</strong> <br/>With affordable pricing, students can enjoy their preferred<br/> colors and sizes as they grow.<br/></p>"
+      }
+    },
+    "image_with_text_P9FHpb": {
+      "type": "image-with-text",
+      "blocks": {
+        "text_BGfd8d": {
+          "type": "text",
+          "settings": {
+            "text": "<p>In 2018, former e-commerce executive Eli C. saw his son’s graduation marred by an unorganized mess of coats, backpacks, and lunchboxes piling up on classroom floors. Fragile metal hooks had snapped under the weight, leaving jagged edges that tore through fabric—and sometimes even skin. Concerned about his son’s learning environment, Eli sought a safer solution and discovered Toughook. When the school dismissed his recommendation, Eli was undeterred. Driven to bring these durable, child-safe hooks to the U.S., he connected with Toughook UK, partnering with them to become their exclusive U.S. distributor. Since 2006, Toughook has helped keep schools organized and safe, with its products trusted by customers worldwide.<br/></p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "text_BGfd8d"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 750px) {.image-with-text .grid--3-col-tablet .grid__item {width: calc(40% - var(--grid-desktop-horizontal-spacing) * 2 / 3); } p {font-size: 24px; }}",
+        "img {object-fit: contain;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/all_hooks_side-by-side_2000x_480x480_b829e430-30e8-4809-8945-1fde7ee88bff.webp",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_qnDBUq": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_HwbaED": {
+          "type": "heading",
+          "settings": {
+            "heading": "Hooks strong enough, that you can create a climbing wall with them",
+            "heading_size": "h1"
+          }
+        },
+        "text_EXAYai": {
+          "type": "text",
+          "settings": {
+            "text": "<h4>But please, don’t try this at home.</h4><p>A climbing center in Glasgow placed an order for the brightly colored hooks. Being the perfect opportunity to showcase how strong and lasting these hooks are, Tony asked the gym to put them to the test. The climbing gym responded by creating a <a href=\"https://www.toughook.co.uk/blogs/articles/89135875-the-worlds-first-climbing-wall-made-from-coat-hooks\"><strong>climbing wall </strong></a>out of them.  A hook that can support the weight of a person climbing <strong>will</strong> support the weight of your bag, coat, and more!</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_HwbaED",
+        "text_EXAYai"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 750px) {p {font-size: 24px; } h4 {font-size: 25px; }}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/attaching-the-hooks_large_7b831789-60e8-4aa6-84ef-91085cd7e70f.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_R7qr9R": {
+      "type": "rich-text",
+      "blocks": {
+        "text_YyLe6n": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Read a fascinating case study performed at an Ohio correctional facility.</p>"
+          }
+        },
+        "button_zeptWp": {
+          "type": "button",
+          "settings": {
+            "button_label": "READ THE CASE STUDY",
+            "button_link": "shopify://pages/case-study",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "text_YyLe6n",
+        "button_zeptWp"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "hp_about_page_design_head_2_tLLbMY": {
+      "type": "hp-about-page-design-head-2",
+      "custom_css": [
+        "@media screen and (min-width: 750px) {p {font-size: 24px; } h2 {font-size: 26px; }}"
+      ],
+      "settings": {
+        "heading": "The hook that’s made to last",
+        "text": "<p>The metal hooks that have become standard everywhere are more than an eyesore… the slender and rounded design of the hooks you grew up with are dangerous and break easy. <br/>Founder and creator, Tony, wanted a safer alternative that was strong and colorful. In 2006, Toughook was born. With their flat design, these hooks solved the problems about safety and durability.  The vibrant colors turned any dreary area into a brighter space.<br/>After selling thousands of hooks to educational furniture retailers. It was time for these unique hooks to evolve.<br/>Toughook became the official brand of the product in 2012.</p>"
+      }
+    },
+    "hp_feature_heading_VMyRdy": {
+      "type": "hp-feature-heading",
+      "custom_css": [
+        "p {margin: 0;}"
+      ],
+      "settings": {
+        "heading": "Don’t be fooled by imitations.",
+        "text": ""
+      }
+    },
+    "hp_about_page_design_head_3_APhUFf": {
+      "type": "hp-about-page-design-head-3",
+      "settings": {
+        "heading": "",
+        "text": "<h3>Imitation may be the sincerest form of flattery, but you cannot replicate greatness.</h3><h3>There is only one Toughook, and it is now available in the U.S.</h3><h3> Try us out today and see why nothing compares to the original.</h3>"
+      }
+    },
+    "rich_text_yEDCdq": {
+      "type": "rich-text",
+      "blocks": {
+        "button_iVXKUf": {
+          "type": "button",
+          "settings": {
+            "button_label": "SHOP NOW",
+            "button_link": "shopify://collections/all",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "button_iVXKUf"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_html_RehxTi",
+    "hp_feature_heading_btnnbd",
+    "hp_about_page_design_head_JeVJNQ",
+    "image_with_text_P9FHpb",
+    "image_with_text_qnDBUq",
+    "rich_text_R7qr9R",
+    "hp_about_page_design_head_2_tLLbMY",
+    "hp_feature_heading_VMyRdy",
+    "hp_about_page_design_head_3_APhUFf",
+    "rich_text_yEDCdq"
+  ]
+}

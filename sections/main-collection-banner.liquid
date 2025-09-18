@@ -1,0 +1,124 @@
+{% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
+{{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .collection-hero__text-wrapper.content-align-left h1.collection-hero__title {
+      text-align: left;
+  }
+
+  .collection-hero__text-wrapper.content-align-left .collection-hero__description.rte {
+      margin-left: 0;
+      text-align: left;
+  }
+  .collection-hero__title{
+    margin-top: 0;
+  }
+  .collection_custom_des p{
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .collection-hero--with-image .collection-hero__inner {
+      padding-bottom: calc({{ settings.media_shadow_vertical_offset | at_least: 0 }}px + 2rem);
+    }
+  }
+{%- endstyle -%}
+
+<div class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
+  <div class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+    <div class="collection-hero__text-wrapper {% if section.settings.content_alignment == "left" %}content-align-left{% endif %}">
+       {% if collection.metafields.custom.collection_reviews != blank   %}
+            <div class="side_collection_review_main">
+              <div class="collection-side-reviews-star">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" class="kl_reviews__full_star" style="width: 20px; height: 20px; display: inline-block;"><defs><linearGradient id="0inmv"><stop offset="0%" stop-opacity="1" class="kl_reviews__star--fill"></stop><stop id="fill-stop-1-0inmv" offset="100%" stop-opacity="1" class="kl_reviews__star--fill"></stop><stop id="fill-stop-0-0inmv" offset="100%" stop-opacity="1" class="kl_reviews__star--empty"></stop><stop offset="100%" stop-opacity="1" class="kl_reviews__star--empty"></stop></linearGradient></defs><path id="icon-star-0inmv" width="20" height="20" fill="url(#0inmv)" stroke-width="2" stroke="undefined" stroke-linejoin="round" d="M11.1488 2.23197C10.7159 1.22183 9.28382 1.22183 8.85091 2.23197L6.95034 6.66662H2.67243C1.5588 6.66662 1.00109 8.01305 1.78854 8.8005L4.91029 11.9222L3.59487 17.1839C3.32787 18.2519 4.47191 19.1186 5.42772 18.5724L9.99984 15.9597L14.572 18.5724C15.5278 19.1186 16.6718 18.2519 16.4048 17.1839L15.0894 11.9222L18.2111 8.8005C18.9986 8.01304 18.4409 6.66662 17.3272 6.66662H13.0493L11.1488 2.23197Z" class="kl_reviews__star"></path></svg>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" class="kl_reviews__full_star" style="width: 20px; height: 20px; display: inline-block;"><defs><linearGradient id="0inmv"><stop offset="0%" stop-opacity="1" class="kl_reviews__star--fill"></stop><stop id="fill-stop-1-0inmv" offset="100%" stop-opacity="1" class="kl_reviews__star--fill"></stop><stop id="fill-stop-0-0inmv" offset="100%" stop-opacity="1" class="kl_reviews__star--empty"></stop><stop offset="100%" stop-opacity="1" class="kl_reviews__star--empty"></stop></linearGradient></defs><path id="icon-star-0inmv" width="20" height="20" fill="url(#0inmv)" stroke-width="2" stroke="undefined" stroke-linejoin="round" d="M11.1488 2.23197C10.7159 1.22183 9.28382 1.22183 8.85091 2.23197L6.95034 6.66662H2.67243C1.5588 6.66662 1.00109 8.01305 1.78854 8.8005L4.91029 11.9222L3.59487 17.1839C3.32787 18.2519 4.47191 19.1186 5.42772 18.5724L9.99984 15.9597L14.572 18.5724C15.5278 19.1186 16.6718 18.2519 16.4048 17.1839L15.0894 11.9222L18.2111 8.8005C18.9986 8.01304 18.4409 6.66662 17.3272 6.66662H13.0493L11.1488 2.23197Z" class="kl_reviews__star"></path></svg>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" class="kl_reviews__full_star" style="width: 20px; height: 20px; display: inline-block;"><defs><linearGradient id="0inmv"><stop offset="0%" stop-opacity="1" class="kl_reviews__star--fill"></stop><stop id="fill-stop-1-0inmv" offset="100%" stop-opacity="1" class="kl_reviews__star--fill"></stop><stop id="fill-stop-0-0inmv" offset="100%" stop-opacity="1" class="kl_reviews__star--empty"></stop><stop offset="100%" stop-opacity="1" class="kl_reviews__star--empty"></stop></linearGradient></defs><path id="icon-star-0inmv" width="20" height="20" fill="url(#0inmv)" stroke-width="2" stroke="undefined" stroke-linejoin="round" d="M11.1488 2.23197C10.7159 1.22183 9.28382 1.22183 8.85091 2.23197L6.95034 6.66662H2.67243C1.5588 6.66662 1.00109 8.01305 1.78854 8.8005L4.91029 11.9222L3.59487 17.1839C3.32787 18.2519 4.47191 19.1186 5.42772 18.5724L9.99984 15.9597L14.572 18.5724C15.5278 19.1186 16.6718 18.2519 16.4048 17.1839L15.0894 11.9222L18.2111 8.8005C18.9986 8.01304 18.4409 6.66662 17.3272 6.66662H13.0493L11.1488 2.23197Z" class="kl_reviews__star"></path></svg>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" class="kl_reviews__full_star" style="width: 20px; height: 20px; display: inline-block;"><defs><linearGradient id="0inmv"><stop offset="0%" stop-opacity="1" class="kl_reviews__star--fill"></stop><stop id="fill-stop-1-0inmv" offset="100%" stop-opacity="1" class="kl_reviews__star--fill"></stop><stop id="fill-stop-0-0inmv" offset="100%" stop-opacity="1" class="kl_reviews__star--empty"></stop><stop offset="100%" stop-opacity="1" class="kl_reviews__star--empty"></stop></linearGradient></defs><path id="icon-star-0inmv" width="20" height="20" fill="url(#0inmv)" stroke-width="2" stroke="undefined" stroke-linejoin="round" d="M11.1488 2.23197C10.7159 1.22183 9.28382 1.22183 8.85091 2.23197L6.95034 6.66662H2.67243C1.5588 6.66662 1.00109 8.01305 1.78854 8.8005L4.91029 11.9222L3.59487 17.1839C3.32787 18.2519 4.47191 19.1186 5.42772 18.5724L9.99984 15.9597L14.572 18.5724C15.5278 19.1186 16.6718 18.2519 16.4048 17.1839L15.0894 11.9222L18.2111 8.8005C18.9986 8.01304 18.4409 6.66662 17.3272 6.66662H13.0493L11.1488 2.23197Z" class="kl_reviews__star"></path></svg>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" class="kl_reviews__full_star" style="width: 20px; height: 20px; display: inline-block;"><defs><linearGradient id="0inmv"><stop offset="0%" stop-opacity="1" class="kl_reviews__star--fill"></stop><stop id="fill-stop-1-0inmv" offset="100%" stop-opacity="1" class="kl_reviews__star--fill"></stop><stop id="fill-stop-0-0inmv" offset="100%" stop-opacity="1" class="kl_reviews__star--empty"></stop><stop offset="100%" stop-opacity="1" class="kl_reviews__star--empty"></stop></linearGradient></defs><path id="icon-star-0inmv" width="20" height="20" fill="url(#0inmv)" stroke-width="2" stroke="undefined" stroke-linejoin="round" d="M11.1488 2.23197C10.7159 1.22183 9.28382 1.22183 8.85091 2.23197L6.95034 6.66662H2.67243C1.5588 6.66662 1.00109 8.01305 1.78854 8.8005L4.91029 11.9222L3.59487 17.1839C3.32787 18.2519 4.47191 19.1186 5.42772 18.5724L9.99984 15.9597L14.572 18.5724C15.5278 19.1186 16.6718 18.2519 16.4048 17.1839L15.0894 11.9222L18.2111 8.8005C18.9986 8.01304 18.4409 6.66662 17.3272 6.66662H13.0493L11.1488 2.23197Z" class="kl_reviews__star"></path></svg>
+            </div>
+
+            <div class="collection_reviews">
+              {{ collection.metafields.custom.collection_reviews }}
+            </div>
+            </div>
+        {% endif %}
+      <h1 class="collection-hero__title">
+        <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
+        {{- collection.title | escape -}}
+      </h1>
+
+      {%- if section.settings.show_collection_description -%}
+        <div class="collection-hero__description rte collection_custom_des">{{ collection.description }}</div>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.show_collection_image and collection.image -%}
+      <div class="collection-hero__image-container media gradient">
+        <img
+          srcset="
+            {%- if collection.image.width >= 165 -%}{{ collection.image | image_url: width: 165 }} 165w,{%- endif -%}
+            {%- if collection.image.width >= 360 -%}{{ collection.image | image_url: width: 360 }} 360w,{%- endif -%}
+            {%- if collection.image.width >= 535 -%}{{ collection.image | image_url: width: 535 }} 535w,{%- endif -%}
+            {%- if collection.image.width >= 750 -%}{{ collection.image | image_url: width: 750 }} 750w,{%- endif -%}
+            {%- if collection.image.width >= 1070 -%}{{ collection.image | image_url: width: 1070 }} 1070w,{%- endif -%}
+            {%- if collection.image.width >= 1500 -%}{{ collection.image | image_url: width: 1500 }} 1500w,{%- endif -%}
+            {{ collection.image | image_url }} {{ collection.image.width }}w
+          "
+          src="{{ collection.image | image_url: width: 750 }}"
+          sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc(50vw - 130px), calc(50vw - 55px)"
+          alt="{{ collection.image.alt | escape }}"
+          width="{{ collection.image.width }}"
+          height="{{ collection.image.height }}"
+        >
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-collection-banner.name",
+  "class": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.main-collection-banner.settings.paragraph.content"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Content alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_description",
+      "default": true,
+      "label": "t:sections.main-collection-banner.settings.show_collection_description.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_image",
+      "default": false,
+      "label": "t:sections.main-collection-banner.settings.show_collection_image.label",
+      "info": "t:sections.main-collection-banner.settings.show_collection_image.info"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    }
+  ]
+}
+{% endschema %}

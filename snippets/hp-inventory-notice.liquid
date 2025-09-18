@@ -1,0 +1,24 @@
+{% comment %} {% liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign stockcount = current_variant.inventory_quantity
+  assign low_stock_threshold = settings.limited_stock_trigger
+%}
+
+{% capture stockNoticeText -%}
+  {%- if current_variant.available -%}
+     {%- if stockcount < low_stock_threshold -%}
+      {{ 'products.product.has_limited_stock' | t: inventory_quantity: stockcount }}
+    {%- endif -%}
+  {%- endif -%}
+{%- endcapture %}
+
+<p
+  id="pdpInventoryNotice"
+  class="mb-4 relative flex items-center gap-2"
+  {% if stockNoticeText == "" %}
+    style="display: none"
+  {% endif %}
+>
+  {% render 'icon-error', iconClasses : 'pdpInventoryNotice__icon flex-none' %}
+  <span class="flex-1">{{ stockNoticeText }}</span>
+</p> {% endcomment %}

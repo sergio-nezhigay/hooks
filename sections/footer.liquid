@@ -1,0 +1,666 @@
+<style>
+    .hp-footer-main {
+      background-color: #09213a;
+      padding: 100px;
+    }
+
+    .hp-footer-grid {
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+
+    }
+    .footer-box {
+      width: 25%;
+    }
+  .footer-logo svg{
+    width:{{ section.settings.logo-size }}%;
+    height:auto;
+  }
+  .footer-box h3, footer-box p{
+    color:white;
+  }
+  .footer-menu-box h3{
+    padding-left:40px;
+  }
+    .footer-description p {
+      color: white;
+      font-size: 18px;
+    }
+    .footer-menu {
+      list-style: none;
+    }
+
+    .footer-menu li a {
+      text-decoration: none;
+      color: white;
+      font-size: 24px;
+      text-align: justify;
+      font-weight: 400;
+    }
+    .footer-news p {
+      color: white;
+      font-size: 18px;
+    }
+    .footer-news .newsletter-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-news .newsletter-form input {
+      border-radius: 0 !important;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid white;
+      padding: 0 0 20px;
+      margin-bottom: 10px;
+      width: 100%;
+      height: 55px;
+      border-color: white;
+      font-size: 21px;
+      line-height: 28px;
+      color: white;
+    }
+    .footer-news .newsletter-form .btn-newsletter {
+      border-radius: 0 0 40px 0;
+      font-size: 22px;
+      font-weight: 500;
+      min-width: 50%;
+      max-width: 450px;
+      width: 50%;
+      height: 40px;
+      line-height: 24px;
+    }
+
+    .stars{
+      text-align:center;
+    }
+    .stars a{
+     color:white;
+    }
+  .footer-affiliate{
+    color:white;
+    font-size:14px;
+    margin:0;
+  }
+  .footer-text{
+    color:white;
+  }
+    @media screen and (max-width: 756px) {
+      .hp-footer-main {
+        padding: 30px;
+        padding-top:99px;
+      }
+      .hp-footer-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .footer-box {
+        width: 100%;
+      }
+       .footer-menu-box h3{
+    padding-left:0px;
+  }
+      .footer-menu {
+        padding: 0;
+      }
+    }
+</style>
+<div class="page-width hp-footer-main">
+  <div class="hp-footer-grid">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'feature' %}
+        <style>
+              .block-{{ block.id }} .footer-description p{
+                font-size:{{ block.settings.desktop_body_size }}px;
+              }
+              .block-{{ block.id }} .footer-affiliate{
+              font-size: {{ block.settings.desktop_bottom_size }}px;
+              }
+              @media screen and (max-width:756px){
+                 .block-{{ block.id }} .footer-description p{
+                font-size:{{ block.settings.mobile_body_size }}px;
+              }
+                .block-{{ block.id }} .footer-affiliate {
+              font-size:{{ block.settings.mobile_bottom_size }}px;
+              }
+              }
+            </style>
+          <div class="footer-box block-{{ block.id }}">
+            <div class="footer-logo">
+              <a href="/">
+            {% render 'icon-logo', fill: 'white' %}
+              </a>
+            </div>
+            <div class="footer-description foot-tt">
+              {{ block.settings.body }}
+            </div>
+            {% if block.settings.show_reviews %}
+              <div class="stars">
+                <div>
+                  {% render 'google-stars' %}
+                </div>
+                <a href="{{ block.settings.link }}">{{ block.settings.link_text }}</a>
+              </div>
+            {% endif %}
+            {% if block.settings.bottom_text != blank %}
+              <p class="footer-affiliate">{{ block.settings.bottom_text }}</p>
+            {% endif %}
+             <!-- {%- render 'social-icons', class: 'footer__list-social' -%} -->
+          </div>
+        {% when 'links' %}
+          <div class="footer-box footer-menu-box block-{{ block.id }}">
+            <style>
+              .block-{{ block.id }} h3{
+                font-size:{{ block.settings.desktop_menu_heading_size }}px;
+              }
+              .block-{{ block.id }} li a {
+              font-size: {{ block.settings.desktop_link_size }}px;
+              }
+              @media screen and (max-width:756px){
+                 .block-{{ block.id }} h3{
+                font-size:{{ block.settings.mobile_menu_heading_size }}px;
+              }
+                .block-{{ block.id }} li a {
+              font-size:{{ block.settings.mobile_link_size }}px;
+              }
+              }
+            </style>
+            {% if block.settings.heading != blank %}
+              <h3>
+                <b>{{ block.settings.heading }}</b>
+              </h3>
+            {% endif %}
+            <ul class="footer-menu foot-tt">
+              {% for link in linklists[block.settings.menu_link].links %}
+                <li class="text-base">
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% when 'contact' %}
+        <style>
+              .block-{{ block.id }} h3{
+                font-size:{{ block.settings.desktop_heading_size }}px;
+              }
+              .block-{{ block.id }} p{
+              font-size: {{ block.settings.desktop_body_size }}px;
+              }
+              @media screen and (max-width:756px){
+                 .block-{{ block.id }} h3{
+                font-size:{{ block.settings.mobile_heading_size }}px;
+              }
+                .block-{{ block.id }} p {
+              font-size:{{ block.settings.mobile_body_size }}px;
+              }
+              }
+            </style>
+          <div class="footer-box footer-text block-{{ block.id }}">
+            {% if block.settings.heading != blank %}
+              <h3>
+                <b>{{ block.settings.heading }}</b>
+              </h3>
+            {% endif %}
+            {{ block.settings.address }}
+            <p>
+              Phone: <a style="color: white;" href="tel:1-{{ block.settings.phone }}">{{ block.settings.phone }}</a>
+            </p>
+            <p>
+              Email: <a style="color: white;" href="mailto:{{ block.settings.email }}">{{ block.settings.email }}</a>
+            </p>
+
+<ul class="list-unstyled list-social footer__list-social" role="list"><li class="list-social__item">
+      <a href="https://www.facebook.com/Toughook-USA-105071668922454" class="link list-social__link">
+        <span class="svg-wrapper"><svg class="icon icon-facebook" viewBox="0 0 20 20"><path fill="currentColor" d="M18 10.049C18 5.603 14.419 2 10 2s-8 3.603-8 8.049C2 14.067 4.925 17.396 8.75 18v-5.624H6.719v-2.328h2.03V8.275c0-2.017 1.195-3.132 3.023-3.132.874 0 1.79.158 1.79.158v1.98h-1.009c-.994 0-1.303.621-1.303 1.258v1.51h2.219l-.355 2.326H11.25V18c3.825-.604 6.75-3.933 6.75-7.951"></path></svg>
+</span>
+        <span class="visually-hidden">Facebook</span>
+      </a>
+    </li><li class="list-social__item">
+      <a href="https://www.instagram.com/toughookusa/" class="link list-social__link">
+        <span class="svg-wrapper"><svg class="icon icon-instagram" viewBox="0 0 20 20"><path fill="currentColor" fill-rule="evenodd" d="M13.23 3.492c-.84-.037-1.096-.046-3.23-.046-2.144 0-2.39.01-3.238.055-.776.027-1.195.164-1.487.273a2.4 2.4 0 0 0-.912.593 2.5 2.5 0 0 0-.602.922c-.11.282-.238.702-.274 1.486-.046.84-.046 1.095-.046 3.23s.01 2.39.046 3.229c.004.51.097 1.016.274 1.495.145.365.319.639.602.913.282.282.538.456.92.602.474.176.974.268 1.479.273.848.046 1.103.046 3.238.046s2.39-.01 3.23-.046c.784-.036 1.203-.164 1.486-.273.374-.146.648-.329.921-.602.283-.283.447-.548.602-.922.177-.476.27-.979.274-1.486.037-.84.046-1.095.046-3.23s-.01-2.39-.055-3.229c-.027-.784-.164-1.204-.274-1.495a2.4 2.4 0 0 0-.593-.913 2.6 2.6 0 0 0-.92-.602c-.284-.11-.703-.237-1.488-.273ZM6.697 2.05c.857-.036 1.131-.045 3.302-.045a63 63 0 0 1 3.302.045c.664.014 1.321.14 1.943.374a4 4 0 0 1 1.414.922c.41.397.728.88.93 1.414.23.622.354 1.279.365 1.942C18 7.56 18 7.824 18 10.005c0 2.17-.01 2.444-.046 3.292-.036.858-.173 1.442-.374 1.943-.2.53-.474.976-.92 1.423a3.9 3.9 0 0 1-1.415.922c-.51.191-1.095.337-1.943.374-.857.036-1.122.045-3.302.045-2.171 0-2.445-.009-3.302-.055-.849-.027-1.432-.164-1.943-.364a4.15 4.15 0 0 1-1.414-.922 4.1 4.1 0 0 1-.93-1.423c-.183-.51-.329-1.085-.365-1.943C2.009 12.45 2 12.167 2 10.004c0-2.161 0-2.435.055-3.302.027-.848.164-1.432.365-1.942a4.4 4.4 0 0 1 .92-1.414 4.2 4.2 0 0 1 1.415-.93c.51-.183 1.094-.33 1.943-.366Zm.427 4.806a4.105 4.105 0 1 1 5.805 5.805 4.105 4.105 0 0 1-5.805-5.805m1.882 5.371a2.668 2.668 0 1 0 2.042-4.93 2.668 2.668 0 0 0-2.042 4.93m5.922-5.942a.958.958 0 1 1-1.355-1.355.958.958 0 0 1 1.355 1.355" clip-rule="evenodd"></path></svg>
+</span>
+        <span class="visually-hidden">Instagram</span>
+      </a>
+    </li><li class="list-social__item">
+      <a href="https://www.linkedin.com/company/toughook-usa/about/" class="link list-social__link">
+        <span class="svg-wrapper"><svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<mask id="mask0_49_124" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="4" y="4" width="20" height="20">
+<rect x="4" y="4" width="20" height="20" fill="url(#pattern0)"></rect>
+</mask>
+<g mask="url(#mask0_49_124)">
+<rect x="3" y="2.83447" width="24" height="24" fill="#fff"></rect>
+</g>
+<defs>
+<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_49_124" transform="scale(0.00195312)"></use>
+</pattern>
+<image id="image0_49_124" width="512" height="512" xlink:href="data:image/png;base64,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AADAAikAALBACgAALJACAAALpAAAwAIpAACwQAoAACyQAgAAC6QAAMACKQAAsEAKAAAskAIAAAukAADAAikAALBACgAALJACAAALpAAAwAIpAACwQAoAACyQAgAAC6QAAMACKQAAsEAKAAAskAIAAAukAADAAikAALBACgAALJACAAALpAAAwAIpAACwQAoAACyQAgAAC6QAAMACKQAAsEAKAAAskAIAAAukAADAAikAALBACgAALJACAAALpAAAwAIpAACwQAoAACyQAgAAC6QAAMACKQAAsEAKAAAskAIAAAukAADAAikAALBACgAALJACAAALpAAAwAIpAACwQAoAACyQAgAAC6QAAMACKQAAsEAKAAAskAIAAAukAADAAikAALBACgAALJACAAALpAAAwAIpAACwQAoAACyQAgAAC6QAAMACKQAAsEAKAAAskAIAAAukAADAAikAALBACgAALJACAAALpAAAwAIpAACwQAoAACyQAgAAC6QAAMACKQAAsEAKAAAskAIAAAukAADAAikAALBACgAALJACAAALpAAAwAIpAACwQAoAACyQAgAAC6QAAMACKQAAsEAKAAAskAIAAAukAADAAikAALBACgAALJACAAALpAAAwAIpAACwQAoAACyQAgAAC6QAAMACKQAAsEAKAAAskAIAAAukAADAAikAALBACgAALJACAAALpAAAwAIpAACwQAoAACyQAgAAC6QAAMACKQAAsEAKAAAskAIAAAukAADAAikAALBACgAALJACAAALpAAAwAIpAACwQAoAACyQAgAAC/T/ATy2LnwFUzNHAAAAAElFTkSuQmCC"></image>
+</defs>
+</svg>
+</span>
+        <span class="visually-hidden">Linkdin</span>
+      </a>
+    </li></ul>
+
+   
+          </div>
+        {% when 'newsletter' %}
+        <style>
+              .block-{{ block.id }} h3{
+                font-size:{{ block.settings.desktop_heading_size }}px;
+              }
+              .block-{{ block.id }} p{
+              font-size: {{ block.settings.desktop_body_size }}px;
+              }
+              @media screen and (max-width:756px){
+                 .block-{{ block.id }} h3{
+                font-size:{{ block.settings.mobile_heading_size }}px;
+              }
+                .block-{{ block.id }} p {
+              font-size:{{ block.settings.mobile_body_size }}px;
+              }
+              }
+            </style>
+          <div class="footer-box block-{{ block.id }}">
+            {% if block.settings.heading != blank %}
+              <h3>
+                <b>{{ block.settings.heading }}</b>
+              </h3>
+            {% endif %}
+            <div class="footer-menu footer-news">
+              {{ block.settings.content }}
+              <div class="newsletter-form">
+                {%- form 'customer', class: 'newsletter-form' -%}
+                  <input
+                    type="hidden"
+                    name="contact[tags]"
+                    value="newsletter"
+                  >
+                  <input
+                    id="footerbtn"
+                    class="newsletter-input"
+                    type="text"
+                    placeholder="Full Name:"
+                    name="contact[name]"
+                  >
+                  <input
+                    id="footerbtn"
+                    class="newsletter-input"
+                    type="text"
+                    placeholder="Email:"
+                    name="contact[email]"
+                  >
+                  <button
+                    id="inputbtn"
+                    type="submit"
+                    class="button primary-btn btn-newsletter btn-new-secondry"
+                  >
+                    Subscribe
+                  </button>
+                  {%- if form.errors -%}
+                    <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">
+                      {%- render 'icon-error' -%}
+                      {{- form.errors.translated_fields.email | capitalize }}
+                      {{ form.errors.messages.email -}}
+                    </small>
+                  {%- endif -%}
+                  {%- if form.posted_successfully? -%}
+                    <h3
+                      class="newsletter-form__message newsletter-form__message--success form__message"
+                      id="Newsletter-success--{{ section.id }}"
+                      tabindex="-1"
+                      autofocus
+                    >
+                      Form Submitted.
+                    </h3>
+                  {%- endif -%}
+                {%- endform -%}
+              </div>
+            </div>
+          </div>
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "range",
+      "id": "logo-size",
+      "label": "The size of the logo",
+      "unit": "%",
+      "min": 20,
+      "max": 100,
+      "step": 1,
+      "default": 70
+    },
+   /* {
+      "type": "richtext",
+      "id": "description",
+      "label": "A brief description of the company",
+      "default": "<p>Hello we are an amazing Shopify store</p>",
+      "info": "This is useful to do a very high level explanation of what your store is about."
+    },
+   {
+      "type": "header",
+      "content": "Copyright"
+    }, {
+      "type": "text",
+      "id": "copyright",
+      "label": "Copyright Info",
+      "default": "2020 Spectrum Plastics Ltd."
+    }, {
+      "type": "text",
+      "id": "company_info",
+      "label": "Company Info",
+      "default": "Registered in England and Wales #03494398. VAT # 704 1178 68. T: 01253 895900."
+    }, {
+      "type": "header",
+      "content": "Social Media"
+    }, {
+      "type": "text",
+      "id": "facebook_url",
+      "label": "Facebook URL",
+      "default": "https://www.facebook.com/Toughook-USA-105071668922454"
+    }, {
+      "type": "text",
+      "id": "instagram_url",
+      "label": "Instagram URL",
+      "default": "https://www.instagram.com/toughookusa/"
+    }, {
+      "type": "text",
+      "id": "linkedin_url",
+      "label": "LinkedIn URL",
+      "default": "https://www.linkedin.com/company/toughook-usa/about/"
+    }*/
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "Text"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_reviews",
+          "label": "Show Reviews Link"
+        },
+         {
+          "type": "text",
+          "id": "link_text",
+          "label": "Reviews Link Text"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Reviews Link"
+        },{
+          "type": "text",
+          "id": "bottom_text",
+          "label": "Bottom Text"
+        },
+        {
+          "type": "header",
+          "content": "Desktop Font Size"
+        },
+        {
+      "type": "range",
+      "id": "desktop_body_size",
+      "label": "Content Size",
+      "unit": "px",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "default": 18
+    },
+        {
+      "type": "range",
+      "id": "desktop_bottom_size",
+      "label": "Bottom text Size",
+      "unit": "px",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "default": 14
+    },
+         {
+          "type": "header",
+          "content": "Mobile Font Size"
+        },
+        {
+      "type": "range",
+      "id": "mobile_body_size",
+      "label": "Content Size",
+      "unit": "px",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "default": 18
+    },
+        {
+      "type": "range",
+      "id": "mobile_bottom_size",
+      "label": "Bottom Text Size",
+      "unit": "px",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "default": 14
+    },
+      ]
+    },
+    {
+      "type":"links",
+      "name":"Menu",
+      "settings": [
+        {
+          "type":"text",
+          "id":"heading",
+          "label": "Heading"
+        },
+        {
+          "type": "link_list",
+          "id": "menu_link",
+          "label": "Menu"
+        },
+        {
+          "type": "header",
+          "content": "Desktop Font Size"
+        },
+        {
+      "type": "range",
+      "id": "desktop_menu_heading_size",
+      "label": "Heading Size",
+      "unit": "px",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "default": 24
+    },
+        {
+      "type": "range",
+      "id": "desktop_link_size",
+      "label": "Link Size",
+      "unit": "px",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "default": 24
+    },
+         {
+          "type": "header",
+          "content": "Mobile Font Size"
+        },
+        {
+      "type": "range",
+      "id": "mobile_menu_heading_size",
+      "label": "Heading Size",
+      "unit": "px",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "default": 24
+    },
+        {
+      "type": "range",
+      "id": "mobile_link_size",
+      "label": "Link Size",
+      "unit": "px",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "default": 24
+    },
+      ]
+    },
+    {
+      "type": "contact",
+      "name":"Contac Us",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "address",
+          "label": "Address"
+        },
+        {
+          "type": "text",
+          "id": "phone",
+          "label": "Phone No."
+        },
+        {
+          "type": "text",
+          "id": "email",
+          "label": "Email"
+        },
+        {
+          "type": "header",
+          "content": "Desktop Font Size"
+        },
+        {
+      "type": "range",
+      "id": "desktop_heading_size",
+      "label": "Heading Size",
+      "unit": "px",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "default": 24
+    },
+        {
+      "type": "range",
+      "id": "desktop_body_size",
+      "label": "Content Size",
+      "unit": "px",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "default": 19
+    },
+         {
+          "type": "header",
+          "content": "Mobile Font Size"
+        },
+        {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "label": "Heading Size",
+      "unit": "px",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "default": 24
+    },
+        {
+      "type": "range",
+      "id": "mobile_body_size",
+      "label": "Content Size",
+      "unit": "px",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "default": 19
+    },
+      ]
+    },
+    {
+      "type": "newsletter",
+      "name":"Newsletter",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "header",
+          "content": "Desktop Font Size"
+        },
+        {
+      "type": "range",
+      "id": "desktop_heading_size",
+      "label": "Heading Size",
+      "unit": "px",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "default": 24
+    },
+        {
+      "type": "range",
+      "id": "desktop_body_size",
+      "label": "Content Size",
+      "unit": "px",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "default": 19
+    },
+         {
+          "type": "header",
+          "content": "Mobile Font Size"
+        },
+        {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "label": "Heading Size",
+      "unit": "px",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "default": 24
+    },
+        {
+      "type": "range",
+      "id": "mobile_body_size",
+      "label": "Content Size",
+      "unit": "px",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "default": 19
+    },
+      ]
+    }
+  ]
+}
+{% endschema %}

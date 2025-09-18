@@ -1,0 +1,237 @@
+<style>
+  .section-{{ section.id }} {
+    background: url('{{ section.settings.background | image_url }}');
+  }
+
+  .hp-text-images {
+    width: 100%;
+    padding: 135px 25px 25px;
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    aspect-ratio: 15 / 9;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .hp-text-images-content {
+    padding: 25px 25px 25px 80px;
+    max-width: 750px;
+  }
+
+  .hp-text-images-content h3 {
+    margin: 0 0 25px;
+    max-width: 500px;
+    font-size: 70px;
+    font-weight: 600;
+    color: #000;
+    line-height: 1em;
+  }
+
+  .hp-text-images-content h1 {
+    margin: 0 0 25px;
+    font-size: 26px;
+    line-height: 26px;
+    color: #000;
+  }
+
+  .hp-text-images-content p {
+    margin: 0 0 25px;
+    max-width: 700px;
+    color: #594545;
+    font-weight: 400;
+    font-size: 26px;
+  }
+
+  .hp-text-images-content .hp-text-images-buttons {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  @media screen and (max-width: 756px) {
+    .hp-text-images {
+      padding: 20px;
+    }
+
+    .hp-text-images-content {
+      padding: 15px;
+      max-width: 700px;
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .hp-text-images-content h3 {
+      margin: 0 0 15px;
+      max-width: 250px;
+      font-size: 21px;
+      color: #000;
+      line-height: 1em;
+    }
+
+    .hp-text-images-content h1 {
+      margin: 0 0 15px;
+      font-size: 16px;
+      line-height: 26px;
+      color: #000;
+    }
+
+    .hp-text-images-content p {
+      margin: 0 0 15px;
+      font-size: 14px;
+      max-width: 700px;
+      color: #594545;
+      font-weight: 400;
+    }
+
+    .hp-text-images-content .hp-text-images-buttons {
+      margin: 10px 0 0;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  /* custom for another section */
+
+  /*
+   .hp-text-images { 
+     width: 100%; 
+     padding: 25px; 
+     aspect-ratio: 25 / 9; 
+   } 
+   .hp-text-images-content { 
+     margin-top: -50px; 
+   } 
+   .hp-text-images-content h1 { 
+     font-size: 41px; 
+     color: white; 
+   } 
+   .hp-text-images-content p { 
+     font-size: 26px; 
+     color: #000; 
+     color: white; 
+   } 
+   @media screen and (max-width: 756px) { 
+     .hp-text-images { 
+       padding: 25px; 
+       aspect-ratio: 16 / 14; 
+     } 
+     .hp-text-images-content h1 { 
+       font-size: 21px; 
+       line-height: 24px; 
+       color: white; 
+     } 
+     .hp-text-images-content p { 
+       font-size: 16px; 
+       color: white; 
+       margin-bottom: 10px; 
+       line-height: 20px; 
+     } 
+   } 
+  */
+</style>
+
+
+<div class="section-{{ section.id }} hp-text-images page-width">
+  <div class="hp-text-images-content">
+    {% for block in section.blocks %}
+      {%- case block.type -%}
+        {%- when 'subheading' -%}
+          <h1>{{ block.settings.subheading }}</h1>
+        {%- when 'heading' -%}
+          <h3>{{ block.settings.heading }}</h3>
+        {%- when 'description' -%}
+          {{ block.settings.description }}
+        {%- when 'buttons' -%}
+          <div class="hp-text-images-buttons">
+            {% if block.settings.button1 %}
+              <a class="button primary-btn" href="{{ block.settings.button_1_url}}">{{ block.settings.button1 }}</a>
+            {% endif %}
+            {% if block.settings.button2 %}
+              <a class="button secondry-btn" href="{{ block.settings.button_2_url }}">{{ block.settings.button2 }}</a>
+            {% endif %}
+          </div>
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "HP Text Images",
+    "class": "section",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "background",
+        "label": "Background"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "subheading",
+        "name": "Sub Heading",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "subheading",
+            "label": "Sub Heading"
+          }
+        ]
+      }, {
+        "type": "heading",
+        "name": "Heading",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+          }
+        ]
+      }, {
+        "type": "description",
+        "name": "Description",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description"
+          }
+        ]
+      }, {
+        "type": "buttons",
+        "name": "Buttons",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "button1",
+            "label": "Button-1"
+          }, {
+            "type": "url",
+            "id": "button_1_url",
+            "label": "Button 1 Url"
+          }, {
+            "type": "text",
+            "id": "button2",
+            "label": "Button-2"
+          }, {
+            "type": "url",
+            "id": "button_2_url",
+            "label": "Button 2 Url"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "HP Text Images"
+      }
+    ]
+  }
+{% endschema %}

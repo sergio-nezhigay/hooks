@@ -1,0 +1,452 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "featured_collection": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Featured products",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "hp_text_image_YFVJPm": {
+      "type": "hp-text-image",
+      "blocks": {
+        "subheading_4BwQMX": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "HANGING HOOKS THAT ARE"
+          }
+        },
+        "heading_xqPawP": {
+          "type": "heading",
+          "settings": {
+            "heading": "STRONG, SAFE, AND STYLISH"
+          }
+        },
+        "description_GLwq6d": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Outfit your school, office, or home with unbreakable, non-protruding hooks — and customizable multihook hanging racks — available in a variety of colors and sizes.</p>"
+          }
+        },
+        "buttons_ghXGbH": {
+          "type": "buttons",
+          "settings": {
+            "button1": "Request a Sample",
+            "button_1_url": "shopify://products/sample-product",
+            "button2": "Shop Now",
+            "button_2_url": "shopify://collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_4BwQMX",
+        "heading_xqPawP",
+        "description_GLwq6d",
+        "buttons_ghXGbH"
+      ],
+      "custom_css": [
+        ".hp-text-images-content p {color: #000000;}",
+        ".hp-text-images {aspect-ratio: 18 / 9;}",
+        "@media screen and (min-width: 1000px) {.hp-text-images {max-height: 100vh; background-position: right bottom; }}"
+      ],
+      "settings": {
+        "background": "shopify://shop_images/image_3.png"
+      }
+    },
+    "hp_feature_heading_mjbxRB": {
+      "type": "hp-feature-heading",
+      "custom_css": [
+        "@media screen and (max-width: 430px) {.hp-feature-heading {padding-top: 30px; display: flex; justify-content: center; align-items: center; } p {margin: 0px; }}"
+      ],
+      "settings": {
+        "heading": "YOU ALREADY KNOW THE OLD- STYLE, WALL-MOUNTED, CLASSIC HOOK",
+        "text": ""
+      }
+    },
+    "hp_info_columns_gbWkb7": {
+      "type": "hp-info-columns",
+      "blocks": {
+        "icon_text_BC6Pcj": {
+          "type": "icon-text",
+          "settings": {
+            "icon": "shopify://shop_images/Pain-Icons.png",
+            "text": "Easily breakable requiring ongoing maintenance"
+          }
+        },
+        "icon_text_HyieJG": {
+          "type": "icon-text",
+          "settings": {
+            "icon": "shopify://shop_images/Pain-Icons2.png",
+            "text": "Aesthetically non-pleasing metal finish"
+          }
+        },
+        "icon_text_haDPDX": {
+          "type": "icon-text",
+          "settings": {
+            "icon": "shopify://shop_images/Pain-Icons3.png",
+            "text": "Hazardous and dangerous around active young kids"
+          }
+        },
+        "icon_text_YJMxE9": {
+          "type": "icon-text",
+          "settings": {
+            "icon": "shopify://shop_images/Pain-Icons4.png",
+            "text": "Indoor-use only and can’t withstand the elements"
+          }
+        }
+      },
+      "block_order": [
+        "icon_text_BC6Pcj",
+        "icon_text_HyieJG",
+        "icon_text_haDPDX",
+        "icon_text_YJMxE9"
+      ],
+      "custom_css": [
+        "@media screen and (max-width: 430px) {.hp-info-columns {padding-top: 0px !important; }}",
+        ".hp-info-columns {max-width: none;}",
+        ".hp-info-content p {margin: 30px; margin-top: 0px; text-align: center; font-size: 3rem; line-height: 3.5rem; font-family: system-ui; font-weight: 200; color: black;}",
+        "@media screen and (max-width: 431px) {.hp-info-content p {font-size: 2rem; }}"
+      ],
+      "settings": {}
+    },
+    "hp_feature_heading_gFWjG8": {
+      "type": "hp-feature-heading",
+      "custom_css": [
+        "p {margin: 0px;}",
+        ".hp-feature-heading h2 {font-size: 35px; font-weight: 700;}",
+        "@media screen and (max-width: 756px) {.hp-feature-heading h2 {font-size: 24px; }}"
+      ],
+      "settings": {
+        "heading": "MEET TOUGHOOK —THE UNBREAKABLE AND BRIGHTER HOOK",
+        "text": ""
+      }
+    },
+    "hp_story_yMjY6p": {
+      "type": "hp-story",
+      "blocks": {
+        "columns_UWPEdm": {
+          "type": "columns",
+          "settings": {
+            "col_img": "shopify://shop_images/TH-Benefits-1_1080x1080_41921892-89d3-4495-9479-c7f7256a99ad.png",
+            "mob_img1": "shopify://shop_images/TH-Benefits-1_1080x1080_41921892-89d3-4495-9479-c7f7256a99ad.png",
+            "col_heading": "<p><a href=\"/collections/color-packs\" title=\"Colored Packs\">SUPERIOR DESIGN</a></p>",
+            "col_description": "<p>The hook’s rounded edge and flat curves make it<br/>the ideal shape for hanging while maintaining <br/>highest safety precautions.</p>"
+          }
+        },
+        "columns_a68d3J": {
+          "type": "columns",
+          "settings": {
+            "col_img": "shopify://shop_images/TH-Benefits-2_1080x1080_dab2a76e-02be-4c9a-b7a4-7fe7f7dc4ef8.png",
+            "mob_img1": "shopify://shop_images/Original_Sky-Blue_1000x_9c22c571-5fd5-4a62-b217-ecffc93734e2.png",
+            "col_heading": "<p><a href=\"/pages/lifetime-warranty\" target=\"_blank\" title=\"Lifetime Warranty\">LIFELONG DURABILITY</a></p>",
+            "col_description": "<p>The unique nylon construction safely holds up to 88(!) lbs, <br/>and these unbreakable hooks come with <br/>a lifetime guarantee.</p>"
+          }
+        },
+        "columns_6h67cx": {
+          "type": "columns",
+          "settings": {
+            "col_img": "shopify://shop_images/TH-Benefits-3_1080x1080_bafa114d-29fb-4058-a911-545ee9ee0feb.png",
+            "mob_img1": "shopify://shop_images/Original_Orange_1000x_1.png",
+            "col_heading": "<p><a href=\"/collections/individual-coat-hooks\" title=\"Individual Coat Hanging Hooks\">2-IN-1 PRACTICALITY</a></p>",
+            "col_description": "<p>The double hook design allows for double the hanging <br/>in a single spot, saving you space <br/>and sparing the mess.</p>"
+          }
+        },
+        "columns_nxRPcr": {
+          "type": "columns",
+          "settings": {
+            "col_img": "shopify://shop_images/delux.webp",
+            "mob_img1": "shopify://shop_images/delux.jpg",
+            "col_heading": "<p><a href=\"/collections/coat-rails\" title=\"PerfectFit Coat Hanging Racks for Schools\">DELUXE HANGING RACKS</a></p>",
+            "col_description": "<p>Our best selling racks make for easy installation <br/>of multiple hooks, bringing extra <br/>(and eye-catching) hang space.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "columns_UWPEdm",
+        "columns_a68d3J",
+        "columns_6h67cx",
+        "columns_nxRPcr"
+      ],
+      "custom_css": [
+        ".learn-more-sub-head {text-align: center;}",
+        "a {text-decoration: none;}"
+      ],
+      "settings": {
+        "heading": "<h1>THE TOUGHOOK STORY</h1>",
+        "heading_color": "",
+        "heading_background": "#ffe082",
+        "heading_size": 25,
+        "sub_heading": "<p>Since 2012, Toughook has revolutionized hanging hooks worldwide. With just one mission — to offer a safer, stronger, and aesthetically pleasing alternative to the traditional thin, rounded metal hooks — Toughook was born.<br/><br/>To date, stronger (each hook holds up to 88 lbs!) and brighter (a selection of 20 colors) Toughooks can be found in thousands of schools, homes, and offices worldwide.</p>",
+        "sub_heading_color": "#ffffff",
+        "sub_heading_background": "#ffffff",
+        "button": "LEARN MORE",
+        "button_url": "https://toughook.com/pages/about-us",
+        "button_color": "",
+        "section_padding_top": 50,
+        "section_padding_bottom": 50
+      }
+    },
+    "hp_quote_slider_FGDYbb": {
+      "type": "hp-quote-slider",
+      "settings": {
+        "heading": "<p>WE HAVE YET TO HAVE A HOOK BREAK ON<br/>US WHICH SPEAKS TO THEIR DURABILITY.</p>",
+        "heading_color": "#09213c",
+        "heading_size": 25,
+        "sub_heading": "<p>“We purchased more than <strong> 9,000 hooks from Toughooks USA for District 21 in Wheeling, Illinois.</strong><br/>Our old hook hanging systems were removed and upgraded and relocated with the tough hooks.<br/>The hooks serve important functions for all students, where they hang their coats, lunches and back<br/>packs in our schools. Our maintenance team installed them over the summer months and we have<br/>yet to have a hook break on us which speaks to their durability.</p><p>The customer service we received was top notch. Our representative called us back quickly with any<br/>questions we had and helped us expedite the shipping process.</p><p>If your school or facility needs to update your current hooks used by students, I would go with a<br/>proven product like Toughooks.”</p>",
+        "sub_heading_color": "#09213c",
+        "from": "<p>Bill Weiss - District 21, Wheeling, IL</p>",
+        "from-_color": "#09213c",
+        "section_padding_top": 20,
+        "section_padding_bottom": 20
+      }
+    },
+    "hp_action_buttons_kFFQcg": {
+      "type": "hp-action-buttons",
+      "custom_css": [],
+      "settings": {
+        "heading": "",
+        "show_button_1": true,
+        "button1": "Shop Now",
+        "button_1_url": "shopify://collections/all",
+        "show_button_2": true,
+        "button2": "Request a Sample",
+        "button_2_url": "shopify://products/sample-product"
+      }
+    },
+    "hp_collection_colume_PqRTNX": {
+      "type": "hp-collection-colume",
+      "blocks": {
+        "collection_cols_EPXgmM": {
+          "type": "collection-cols",
+          "settings": {
+            "col_img": "shopify://shop_images/unnamed.jpg",
+            "col_border_color": "",
+            "block_image_scale": 1,
+            "collection_link_text": "SHOP RACKS >",
+            "collection_link": "shopify://collections/coat-rails"
+          }
+        },
+        "collection_cols_xFkhcc": {
+          "type": "collection-cols",
+          "settings": {
+            "col_img": "shopify://shop_images/s2_da159890-eb3b-4864-b535-083f6ebcc991.png",
+            "col_border_color": "",
+            "block_image_scale": 1,
+            "collection_link_text": "SHOP HOOKS >",
+            "collection_link": "shopify://collections"
+          }
+        },
+        "collection_cols_H36AMw": {
+          "type": "collection-cols",
+          "settings": {
+            "col_img": "shopify://shop_images/CustomizeSection.jpg",
+            "col_border_color": "",
+            "block_image_scale": 1,
+            "collection_link_text": "CUSTOMIZE >",
+            "collection_link": "shopify://pages/architect"
+          }
+        }
+      },
+      "block_order": [
+        "collection_cols_EPXgmM",
+        "collection_cols_xFkhcc",
+        "collection_cols_H36AMw"
+      ],
+      "custom_css": [
+        ".shop-collection-column {width: 30%;}",
+        "@media screen and (max-width: 756px) {.shop-collection-column {width: 100%; }}"
+      ],
+      "settings": {
+        "heading": "<h1>MAKE ‘EM THE BEST-DRESSED WALLS</h1>",
+        "heading_size": 25,
+        "sub_heading": "<p>WHICH IS RIGHT FOR YOU?</p>",
+        "section_padding_top": 12,
+        "section_padding_bottom": 12
+      }
+    },
+    "hp_process_timeline_GgqTci": {
+      "type": "hp-process-timeline",
+      "custom_css": [
+        ".p-timeline-marker {z-index: 01;}"
+      ],
+      "settings": {
+        "heading": "<p>GO FROM LOOKING TO HOOKING</p>",
+        "heading_color": "#121212",
+        "heading_size": 40,
+        "sub_heading": "<p>THE PROCESS</p>",
+        "sub_heading_color": "#ffffff",
+        "description": "<p>The simple and zero-commitment process of making Toughooks yours.</p>",
+        "desc_color": "",
+        "fotter_title": "",
+        "button": "",
+        "button_url": "",
+        "button_color": "",
+        "section_padding_top": 50,
+        "section_padding_bottom": 50
+      }
+    },
+    "hp_action_buttons_G4jRtW": {
+      "type": "hp-action-buttons",
+      "settings": {
+        "heading": "Get Hooked!",
+        "show_button_1": true,
+        "button1": "Request a Sample",
+        "button_1_url": "shopify://products/sample-product",
+        "show_button_2": true,
+        "button2": "",
+        "button_2_url": ""
+      }
+    },
+    "hp_integration_zJFmtU": {
+      "type": "hp-integration",
+      "blocks": {
+        "rotating_9FBAGM": {
+          "type": "rotating",
+          "settings": {
+            "front-image": "shopify://shop_images/outdoor.png",
+            "front-text": "OUTDOORS",
+            "back-image": "shopify://shop_images/p_cfcb551c-48c4-4f07-8294-2709c5e4a77d.png",
+            "back-text": "<p>“We use Toughooks in our<br/>elementary school and they<br/>stand the test of time. Going on<br/>three years installed and have<br/>not had one issue. Planning to<br/>install more soon.”</p><p><br/>-Judy E. </p>"
+          }
+        },
+        "rotating_Pfiztp": {
+          "type": "rotating",
+          "settings": {
+            "front-image": "shopify://shop_images/home.png",
+            "front-text": "HOMES",
+            "back-image": "shopify://shop_images/b.png",
+            "back-text": "<p>“Strong, clean, stylish! Everything<br/>we needed and a few things we<br/>wanted:) thanks!”</p><p><br/>- Adam B.</p>"
+          }
+        },
+        "rotating_FBQdML": {
+          "type": "rotating",
+          "settings": {
+            "front-image": "shopify://shop_images/office.png",
+            "front-text": "OFFICES",
+            "back-image": "shopify://shop_images/y.png",
+            "back-text": "<p>“We couldn’t be happier with the<br/>product. Such a smart, durable,<br/>and well made hook.”</p><p><br/>- Yossi L.</p>"
+          }
+        },
+        "rotating_DAzFz4": {
+          "type": "rotating",
+          "settings": {
+            "front-image": "shopify://shop_images/lab.png",
+            "front-text": "LABS",
+            "back-image": "shopify://shop_images/g.png",
+            "back-text": "<p>“The university where I work<br/>purchased two of the 9-hook<br/>coat racks with XL hooks for one<br/>of our biology labs. They look<br/>fantastic, and so far no issues<br/>with handling college students’<br/>heavy backpacks - these are a<br/>great solution for a space where<br/>we did not have room to install<br/>cubbies or lockers!”</p><p></p>"
+          }
+        }
+      },
+      "block_order": [
+        "rotating_9FBAGM",
+        "rotating_Pfiztp",
+        "rotating_FBQdML",
+        "rotating_DAzFz4"
+      ],
+      "settings": {
+        "heading": "TOUGH HOOKS — SIMPLE INTEGRATION",
+        "subheading": "ARCHITECTS & DESIGNERS",
+        "description": "<p>Adding Toughooks to your project is simple and straightforward. Either choose from the variety of in-stock colors, sizes, and rack set-up or contact us to customize to your heart’s content.</p>",
+        "button1": "Designers/Architect Special Order",
+        "button_1_url": "shopify://pages/architect",
+        "button2": "Request a Sample",
+        "button_2_url": "shopify://products/sample-product",
+        "side-heading": "WHERE ELSE WE HANG OUT"
+      }
+    },
+    "hp_rotating_columns_bFT7ht": {
+      "type": "hp-rotating-columns",
+      "disabled": true,
+      "settings": {
+        "heading": ""
+      }
+    },
+    "hp_text_image_U4GKr4": {
+      "type": "hp-text-image",
+      "blocks": {
+        "heading_CAPVBE": {
+          "type": "heading",
+          "settings": {
+            "heading": "A SAFER SCHOOL IS  RIGHT AROUND THE CORNER"
+          }
+        },
+        "description_zqf7yn": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Plus all school orders are 100% tax exempt. <br/> Keep your school safe ━ and your purchase <br/>within the budget.</p>"
+          }
+        },
+        "buttons_GedeWd": {
+          "type": "buttons",
+          "settings": {
+            "button1": "SHOP NOW",
+            "button_1_url": "shopify://collections/all",
+            "button2": "Learn More",
+            "button_2_url": "shopify://pages/tax-exempt-form"
+          }
+        }
+      },
+      "block_order": [
+        "heading_CAPVBE",
+        "description_zqf7yn",
+        "buttons_GedeWd"
+      ],
+      "custom_css": [
+        ".hp-text-images {padding: 25px; aspect-ratio: 25 / 9; position: relative; /* background-color: #76aecf; */}",
+        ".hp-text-images-content h1 {font-size: 41px;}",
+        ".hp-text-images-content p {font-size: 28px; color: #000; line-height: 35px; font-weight: 300;}",
+        "@media screen and (max-width: 756px) {.hp-text-images {aspect-ratio: 16 / 14; justify-content: center; } .hp-text-images-content {width: 100%; } .hp-text-images-content h1 {font-size: 18px; line-height: 24px; } .hp-text-images-content p {font-size: 16px; line-height: 20px; }}"
+      ],
+      "settings": {
+        "background": "shopify://shop_images/TH-PreFooter-01_1.png"
+      }
+    }
+  },
+  "order": [
+    "featured_collection",
+    "hp_text_image_YFVJPm",
+    "hp_feature_heading_mjbxRB",
+    "hp_info_columns_gbWkb7",
+    "hp_feature_heading_gFWjG8",
+    "hp_story_yMjY6p",
+    "hp_quote_slider_FGDYbb",
+    "hp_action_buttons_kFFQcg",
+    "hp_collection_colume_PqRTNX",
+    "hp_process_timeline_GgqTci",
+    "hp_action_buttons_G4jRtW",
+    "hp_integration_zJFmtU",
+    "hp_rotating_columns_bFT7ht",
+    "hp_text_image_U4GKr4"
+  ]
+}

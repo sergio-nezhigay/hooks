@@ -1,0 +1,77 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "hp_architect_hero_section_dryBmF": {
+      "type": "hp-architect-hero-section",
+      "settings": {}
+    },
+    "hp_feature_heading_yBhGHH": {
+      "type": "hp-feature-heading",
+      "settings": {
+        "heading": "CUSTOMIZATION DOESN’T HAVETO BE A HEADACHE.",
+        "text": ""
+      }
+    },
+    "hp_action_buttons_nbkrte": {
+      "type": "hp-action-buttons",
+      "settings": {
+        "heading": "",
+        "button1": "Custom Order (coming soon)",
+        "button_1_url": "",
+        "button2": "Contact Us",
+        "button_2_url": "shopify://pages/contact"
+      }
+    },
+    "hp_architect_mid_section_FhCM83": {
+      "type": "hp-architect-mid-section",
+      "settings": {
+        "heading": "HWE’RE HERE TO KEEP IT EASY",
+        "sub_head": "HOW IT WORKS",
+        "heading_color": "",
+        "heading_background": "#ffe082",
+        "sub_heading_1": "SUBMITE YOUR SPECS",
+        "heading_1": "Already know exactly what you are looking for?",
+        "description_1": "<p>Submit your specs, requested style, color, and setup, through the form below. Our expert reps will get in touch with you to discuss and finalize</p>",
+        "sub_heading_2": "DISCUSS THE DETAIL",
+        "heading_2": "Have a vision in mind but not sure how it will be executed",
+        "description_2": "<p>Schedule a call with our expert staff and we’ll guide you through every step of the way, bringing your dream to fruition.</p>",
+        "section_padding_top": 50,
+        "section_padding_bottom": 50
+      }
+    },
+    "hp_action_buttons_GnH9DT": {
+      "type": "hp-action-buttons",
+      "settings": {
+        "heading": "",
+        "button1": "Custom Order (coming soon)",
+        "button_1_url": "",
+        "button2": "Contact Us",
+        "button_2_url": "shopify://pages/contact"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hp_architect_hero_section_dryBmF",
+    "hp_feature_heading_yBhGHH",
+    "hp_action_buttons_nbkrte",
+    "hp_architect_mid_section_FhCM83",
+    "hp_action_buttons_GnH9DT"
+  ]
+}

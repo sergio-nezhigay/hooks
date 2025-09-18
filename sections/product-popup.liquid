@@ -1,0 +1,16 @@
+
+ {% assign products = page.metafields.custom.popup_products %}
+
+   
+ {% render 'product-popup' products:products %}
+ 
+{% schema %}
+{
+    "presets": [
+        {
+            "category": "Form",
+            "name":"Product Form"
+        }
+    ]
+}
+{% endschema %}

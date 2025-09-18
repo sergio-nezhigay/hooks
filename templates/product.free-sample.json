@@ -1,0 +1,244 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "text_B9NrW3": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<strong>Use code FREESAMPLES to get a 100% discount at checkout</strong>",
+            "text_style": "body"
+          }
+        },
+        "sample_form_PJpWQw": {
+          "type": "sample_form",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "disabled": true,
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "disabled": true,
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "text_B9NrW3",
+        "sample_form_PJpWQw",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "share"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 990px) {.product__info-wrapper {width: 60% !important; max-width: 60%; } .product__media-wrapper {width: 40% !important; }}",
+        ".t-left {text-align: left;}",
+        "p.product__text.inline-richtext > strong {color: red; font-family: Zain, sans-serif; font-size: 23px;}"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "small",
+        "constrain_to_viewport": false,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "hp_info_columns_CYRzQP": {
+      "type": "hp-info-columns",
+      "blocks": {
+        "icon_text_reAVz3": {
+          "type": "icon-text",
+          "settings": {
+            "icon": "shopify://shop_images/colors_76e9de33-c038-4b2f-a982-58c09b596928.png",
+            "text": "Each size is available many colours – mix and match however you want with no minimum order"
+          }
+        },
+        "icon_text_76NDyP": {
+          "type": "icon-text",
+          "settings": {
+            "icon": "shopify://shop_images/gurantee.png",
+            "text": "Every Toughook is tough against breakages in normal indoor usage"
+          }
+        },
+        "icon_text_nUniVQ": {
+          "type": "icon-text",
+          "settings": {
+            "icon": "shopify://shop_images/british.png",
+            "text": "The original unbreakable hook – designed and manufactured in Great Britain"
+          }
+        }
+      },
+      "block_order": [
+        "icon_text_reAVz3",
+        "icon_text_76NDyP",
+        "icon_text_nUniVQ"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "featured_collection_VyDGjD": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Related Products",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "shop-hooks",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h1",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "hp_text_3_cols_PjEXjK": {
+      "type": "hp-text-3-cols",
+      "blocks": {
+        "feature_xWPLLR": {
+          "type": "feature",
+          "settings": {
+            "title": "The Toughook Guarantee",
+            "subtitle": "UNBREAKABLE TOUGHOOKS",
+            "body": "Toughooks are the perfect coat & backpack hook for changing rooms, cloakrooms, corridors & classrooms. We guarantee Toughooks against breakages for the lifetime of the hook.",
+            "link": "",
+            "color": "yellow",
+            "align": "left"
+          }
+        },
+        "feature_fUMJ7A": {
+          "type": "feature",
+          "settings": {
+            "title": "Delivery",
+            "subtitle": "US DELIVERY OPTIONS",
+            "body": "Domestic delivery is free for orders over $50. Choose Expedited or Priority shipping for faster dispatch on your order.",
+            "link": "",
+            "color": "red",
+            "align": "left"
+          }
+        },
+        "feature_twx4am": {
+          "type": "feature",
+          "settings": {
+            "title": "Pricing",
+            "subtitle": "BUY DIRECT & SAVE",
+            "body": "Toughook.com is the official home of the Toughook in the USA. We won't be beaten on price for unbreakable plastic backpack hooks.",
+            "link": "",
+            "color": "green",
+            "align": "left"
+          }
+        }
+      },
+      "block_order": [
+        "feature_xWPLLR",
+        "feature_fUMJ7A",
+        "feature_twx4am"
+      ],
+      "settings": {
+        "max": "100%",
+        "margin": "4rem"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hp_info_columns_CYRzQP",
+    "featured_collection_VyDGjD",
+    "related-products",
+    "hp_text_3_cols_PjEXjK"
+  ]
+}

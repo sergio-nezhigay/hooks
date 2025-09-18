@@ -1,0 +1,66 @@
+<style>
+  .hp-buy-with{
+    background-color: #f3f3f3;
+    padding:20px;
+  }
+  .hp-buy-with a{
+ text-decoration: none;
+  }
+  .hp-buy-with a:active{
+   color:black;
+  }
+  .hp-buy-with h2{
+     padding: 10px;
+    margin: 0;
+     font-weight: 600;
+  }
+  .hp-buy-with-product{
+   display: flex;
+   justify-content: space-between;
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+   transform-style: preserve-3d;
+  }
+  .hp-buy-with-product:hover{
+    box-shadow: 5px 6px 5px rgba(0, 0, 0, .3);
+    transform: scale(1.0) translateY(-5px);
+  }
+  .hp-buy-with-product a{
+  text-decoration: none;
+    color: black;
+  }
+  .hp-buy-with-product h3{
+text-decoration: none;
+    color: black;
+       
+  }
+  .hp-buy-with-img img{
+    width:150px;
+  }
+</style>
+
+{% if product.metafields.custom.buy_with != blank %}
+  {% assign buy_with_products = product.metafields.custom.buy_with.value %}
+  <div class="hp-buy-with">
+    <h2>BUY IT WITH</h2>
+    {% for buy_product in buy_with_products %}
+     <a href="{{ buy_product.url }}" target="_blank">
+      <div class="hp-buy-with-product">
+        <div class="hp-buy-with-data">
+          <h3>{{ buy_product.title }}</h3>
+          {%- render 'price', product: buy_product, price_class: 'price--large' -%}
+        </div>
+        <div class="hp-buy-with-img">
+          <img
+            src="{{ buy_product.featured_image | image_url: width: 200 }}"
+            width="200px"
+            height="auto"
+          >
+        </div>
+      </div>
+     </a>
+    {% endfor %}
+  </div>
+{% endif %}

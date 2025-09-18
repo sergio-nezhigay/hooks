@@ -1,0 +1,471 @@
+<style>
+   #infoDetails {
+      width: 100%;
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    }
+  button.remove-hook-button {
+    background: transparent;
+    border: 0;
+    font-size: 30px;
+    color: red;
+    padding: 0;
+  }
+  #infoDetails h2 {
+      color: #333;
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+  #infoDetails p {
+      color: #777;
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .hook-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      width: 100%;
+    }
+  div#hookFieldsWrapper .hook-field-row {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .full-width-field {
+      width: 100%;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+  #infoDetails select,
+    input,
+    textarea {
+      padding: 10px;
+      font-size: 1.5rem;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      width: 100%;
+    }
+
+    textarea {
+      resize: vertical;
+      height: 100px;
+    }
+
+    #addHookButton {
+      background-color: #09213a;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      max-width: 200px;
+      font-size: 1.5rem;
+      margin: 0 auto;
+    }
+
+    #addHookButton:hover {
+      background-color: #09213a;
+    }
+
+    .cta-button {
+      background-color: #ed8177;;
+      color: white;
+      padding: 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+
+    .cta-button:hover {
+      background-color: #146e99;
+    }
+
+    #successMessage {
+      text-align: center;
+      color: green;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .hook-field-row,
+      .field-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .hook-field-row {
+        grid-template-columns: 1fr;
+      }
+      .hook-form {
+      gap: 10px;
+  }
+      .field-row {
+      gap: 10px;
+  }
+    #infoDetails select, input, textarea {
+      font-size: 1rem;
+    }
+      .additional-fields {
+        gap: 10px;
+      }
+
+      .additional-fields input,
+      .additional-fields textarea {
+        font-size: 0.9rem;
+      }
+
+      #addHookButton {
+        font-size: 1.5rem;
+      }
+
+      .cta-button {
+        font-size: 1.5rem;
+      }
+    }
+    @media screen and (min-width: 750px) {
+      .product__info-container {
+          max-width: 100%;
+      }
+  }
+</style>
+{% assign cart_has_sample = false %}
+{% for item in cart.items %}
+  {%- for property in item.properties -%}
+    {% if property.first == '_is_sample_product' %}
+      {% assign cart_has_sample = true %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+{% if cart_has_sample == false %}
+  {% assign collection_handle = 'individual-coat-hooks' %}
+  {% assign collection = collections[collection_handle] %}
+
+  <div id="infoDetails">
+    <form id="hookForm" class="hook-form">
+      <script type="application/json" data-product-config>
+         {
+         {% for product in collection.products %}
+           "{{ product.id  }}": {
+           "name":"{{ product.title }}",
+           "variants":[
+           {% for variant in product.variants %}
+            {"id":"{{ variant.id }}","name":"{{ variant.title }}"}
+             {% if forloop.last == false %},{% endif %}
+           {% endfor %}
+           ]}
+           {% if forloop.last == false %},{% endif %}
+        {% endfor %}
+         }
+      </script>
+      <input type="hidden" name="form_type" value="contact">
+      <input type="hidden" name="utf8" value="✓">
+      <!-- Additional Fields -->
+      <div id="hookFieldsWrapper">
+        <h2>Select Hook Options</h2>
+        <p>A max of 20 product samples can be ordered.</p>
+
+        {% comment %}
+          {% for block in section.blocks %}
+        {% endcomment %}
+        <div class="hook-field-row">
+          {% comment %}
+            <select name="hook_type[]" class="hook-type-select" required>
+              <option value="">Hook Type</option>
+
+              {% if collection %}
+                {% for product in collection.products %}
+                  <option value="{{ product.id }}">{{ product.title }}</option>
+                {% endfor %}
+              {% else %}
+                <option disabled>No hooks found in the collection.</option>
+              {% endif %}
+            </select>
+          {% endcomment %}
+
+          <!-- code to remove Robe Hook -->
+          <select name="hook_type[]" class="hook-type-select" required>
+            <option value="">Hook Type</option>
+
+            {% if collection %}
+              {% for product in collection.products %}
+                {% unless product.title == 'Toughook Robe Hook' %}
+                  <option value="{{ product.id }}">{{ product.title }}</option>
+                {% endunless %}
+              {% endfor %}
+            {% else %}
+              <option disabled>No hooks found in the collection.</option>
+            {% endif %}
+          </select>
+
+          <select name="hook_color[]" class="hook-color-select" required>
+            <option value="">Hook Color</option>
+          </select>
+
+          <input type="number" name="hook_quantity[]" min="1" max="20" value="1" required>
+        </div>
+        {% comment %}
+          {% endfor %}
+        {% endcomment %}
+      </div>
+
+      <button type="button" id="addHookButton">Add Another Hook</button>
+
+      <button type="submit" class="cta-button" id="submitButton" disabled>REQUEST A SAMPLE</button>
+
+      <div id="errorMessage" style="display:none; color: red; font-weight: bold;">
+        The total quantity exceeds the maximum limit of 20.<br>
+        If you need to order more sample, please be in touch with us.
+      </div>
+      <p class="t-left">
+        NOTE: <br> Sample Request Policy :
+
+        Our sample order form is intended for commercial orders placed on behalf of a facility, organization, or business within the United States. 
+        Residential customers, as well as those in Canada or Mexico, 
+        should email us at Info@toughookusa.com for approval or to discuss possible exceptions before placing an order.<br>
+        Thank you for your understanding and support!
+      </p>
+    </form>
+
+    <div id="successMessage" style="display:none; color: green; font-weight: bold;">
+      Your form has been submitted. We will contact you soon!
+    </div>
+  </div>
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+
+    const form = document.getElementById("hookForm");
+    const data = JSON.parse(form.querySelector('[data-product-config]').textContent)
+    const maxTotalQuantity = 20;
+    const hookFieldsWrapper = document.getElementById("hookFieldsWrapper");
+    const addHookButton = document.getElementById("addHookButton");
+    const submitButton = document.getElementById("submitButton");
+    const errorMessage = document.getElementById("errorMessage");
+
+    // Function to calculate the total quantity of all hooks
+    function calculateTotalQuantity() {
+      const quantityInputs = document.querySelectorAll('input[name="hook_quantity[]"]');
+      let total = 0;
+      quantityInputs.forEach(input => {
+        total += parseInt(input.value) || 0;
+      });
+      return total;
+    }
+
+    // Function to update the add button state (hide/show)
+    function updateAddButtonState() {
+      const totalQuantity = calculateTotalQuantity();
+      addHookButton.style.display = totalQuantity >= maxTotalQuantity ? "none" : "block";
+      updateSubmitButtonState(totalQuantity);
+    }
+
+    // Function to update the submit button state (enable/disable)
+    function updateSubmitButtonState(totalQuantity) {
+      if (totalQuantity > maxTotalQuantity) {
+        submitButton.disabled = true;
+        errorMessage.style.display = "block";
+      } else {
+        submitButton.disabled = false;
+        errorMessage.style.display = "none";
+      }
+    }
+
+    // Event listener to handle quantity changes
+    hookFieldsWrapper.addEventListener("input", function(event) {
+      if (event.target.matches('input[name="hook_quantity[]"]')) {
+        updateAddButtonState();
+      }
+    });
+
+    // Event listener to handle hook type selection
+    hookFieldsWrapper.addEventListener("change", function(event) {
+      if (event.target.matches('.hook-type-select')) {
+        const hookTypeSelect = event.target;
+        const colorSelect = hookTypeSelect.closest('.hook-field-row').querySelector('.hook-color-select');
+
+        // Get the color options from the selected hook type's data attribute
+        const selectedId = hookTypeSelect.value
+        populateHookColors(colorSelect, selectedId)
+      }
+    });
+
+    // Function to populate the color dropdown
+    function populateHookColors(selectElement, selectedId) {
+      selectElement.innerHTML = '<option value="">Select Hook Color</option>'; // Reset color options
+
+      data[selectedId]?.variants?.forEach(function(variant) {
+        const option = document.createElement('option');
+        option.value = variant.id;
+        option.textContent = variant.name;
+        selectElement.appendChild(option);
+      });
+
+      // If no colors, show a 'no colors' option
+      if (data[selectedId]?.variants?.length === 0) {
+        const noColorsOption = document.createElement('option');
+        noColorsOption.disabled = true;
+        noColorsOption.textContent = "No colors available";
+        selectElement.appendChild(noColorsOption);
+      }
+    }
+
+    // Handle adding new hook row dynamically
+    addHookButton.addEventListener("click", function() {
+      const newHookRow = document.createElement("div");
+      newHookRow.classList.add("hook-field-row");
+
+      // Create hook type dropdown
+      const hookTypeSelect = document.createElement("select");
+      hookTypeSelect.name = "hook_type[]";
+      hookTypeSelect.classList.add("hook-type-select");
+      hookTypeSelect.required = true;
+
+      const hookColorSelect = document.createElement("select");
+      hookColorSelect.name = "hook_color[]";
+      hookColorSelect.classList.add("hook-color-select");
+      hookColorSelect.required = true;
+
+      hookTypeSelect.innerHTML = `
+      <option value="">Select Hook Type</option>
+      {% assign collection_handle = 'individual-coat-hooks' %}
+      {% assign collection = collections[collection_handle] %}
+      {% if collection %}
+        {% for product in collection.products %}
+          <option value="{{ product.id }}" >{{ product.title }}</option>
+        {% endfor %}
+      {% else %}
+        <option disabled>No hooks found in the collection.</option>
+      {% endif %}
+    `;
+
+      const quantityInput = document.createElement("input");
+      quantityInput.type = "number";
+      quantityInput.name = "hook_quantity[]";
+      quantityInput.min = 1;
+      quantityInput.max = maxTotalQuantity;
+      quantityInput.value = 1;
+      quantityInput.required = true;
+
+      const removeButton = document.createElement("button");
+      removeButton.type = "button";
+      removeButton.classList.add("remove-hook-button");
+      removeButton.innerHTML = "&#128465;";
+      removeButton.title = "Remove this row";
+      removeButton.addEventListener("click", function() {
+        newHookRow.remove();
+        updateAddButtonState();
+      });
+
+      newHookRow.appendChild(hookTypeSelect);
+      newHookRow.appendChild(hookColorSelect);
+      newHookRow.appendChild(quantityInput);
+      newHookRow.appendChild(removeButton);
+      hookFieldsWrapper.appendChild(newHookRow);
+
+      updateAddButtonState();
+    });
+
+    updateAddButtonState(); // Initial check for the add button state
+  });
+  document.getElementById("submitButton").addEventListener("click", async function(e) {
+        e.preventDefault()
+        const form = document.getElementById("hookForm");
+        const data = JSON.parse(form.querySelector('[data-product-config]').textContent)
+        const hookFields = document.querySelectorAll(".hook-field-row");
+        let hasErrors = []
+        form.querySelectorAll('input,select').forEach(function(input) {
+          hasErrors.push(input.reportValidity())
+        })
+        console.log(hasErrors)
+        if (hasErrors.indexOf(false) > -1) {
+          return
+        }
+
+        const formData = new FormData(form)
+        var object = {};
+        formData.forEach((value, key) => {
+          // Reflect.has in favor of: object.hasOwnProperty(key)
+          if (!Reflect.has(object, key)) {
+            object[key] = value;
+            return;
+          }
+          if (!Array.isArray(object[key])) {
+            object[key] = [object[key]];
+          }
+          object[key].push(value);
+        });
+        console.log(object)
+        let items = [{
+          id:'46941697343728',
+          quantity:1,
+          properties:{
+            '_is_sample_product': true,
+          }
+        }]
+        if (typeof(object['hook_color[]']) == 'string') {
+          let product = data[object['hook_type[]']]
+           let variant = product.variants.find(variant=>variant.id == object['hook_color[]'])
+          if(items[0].properties[product.name + ' ' + variant.name]){
+            items[0].properties[product.name + ' ' + variant.name] = items[0].properties[product.name + ' ' + variant.name] + parseInt(object['hook_quantity[]'])
+            items[0].properties['_variant-'+variant.id] = items[0].properties['_'+variant.id] + parseInt(object['hook_quantity[]'])
+          }else{
+            items[0].properties[product.name + ' ' + variant.name] = parseInt(object['hook_quantity[]'])
+            items[0].properties['_variant-'+variant.id] = parseInt(object['hook_quantity[]'])
+          }
+        } else {
+          
+          object['hook_color[]'].map((id, index) => {
+            let product = data[object['hook_type[]'][index]]
+            let variant = product.variants.find(variant=>variant.id == object['hook_color[]'][index])
+            console.log(product,variant)
+            if(items[0].properties[product.name + ' ' + variant.name]){
+              items[0].properties[product.name + ' ' + variant.name] = items[0].properties[product.name + ' ' + variant.name] + parseInt(object['hook_quantity[]'][index])
+              items[0].properties['_variant-'+variant.id] = items[0].properties['_'+variant.id] + parseInt(object['hook_quantity[]'][index])
+            }else{
+              items[0].properties[product.name + ' ' + variant.name] = parseInt(object['hook_quantity[]'][index])
+              items[0].properties['_variant-'+variant.id] = parseInt(object['hook_quantity[]'][index])
+            }})
+        }
+        await fetch('/cart/add.js', {
+            method: 'post',
+            headers: {
+              "Content-type": "application/json"
+            },
+            body: JSON.stringify({
+                items
+            })
+        });
+        window.location.href = '/cart';
+     });
+  </script>
+{% else %}
+  <div id="infoDetails">You have already a sample to your cart. Please remove it to add a new one.</div>
+{% endif %}

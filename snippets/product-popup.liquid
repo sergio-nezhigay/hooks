@@ -1,0 +1,297 @@
+{{ 'product-popup.css' | asset_url | stylesheet_tag }}
+
+{% if products %}
+  {% capture content %}
+     <div class="custom_form_content">
+       <div class="poppup_step active">
+         <h1>
+        1) HOW MANY HOOKS DO YOU WANT?
+         </h1>
+         <input id="popup_quantity" type="number" value="1" min="1" max="60" >
+      </div>
+       <div class="poppup_step">
+         <h1>
+        2) TYPE OF HOOK
+         </h1>
+
+         {% comment %}
+           {% for product in page.metafields.custom.popup_products.value %}
+             {% if forloop.first %}
+             {% assign first_product = product %}
+             {% endif %}
+             {% endfor %}
+         
+        <div id="popup-products" class="custom-select products">
+        <div class="selected-item">
+            {{ first_product.featured_media | image_url: width: 50 | image_tag: class: 'custom-class', loading: 'lazy' }}
+            <span>Select an option</span>
+        </div>
+        <div class="dropdown-menu">
+         {% for product in page.metafields.custom.popup_products.value %}
+             {% if product.available %}
+              <div data-value="{{ product.id }}" data-product-id="{{ product.id }}">
+               {{ product.featured_media | image_url: width: 50 | image_tag: class: 'product-img', loading: 'lazy' }}
+                <span>{{ product.title }}</span>
+            </div>
+             {% endif %}
+          {%- endfor %}
+        </div>
+        </div>
+         {% endcomment %}
+           <div class="image_options-popup product_option">
+               {% for product in page.metafields.custom.popup_products.value %}
+                  {% if product.available %}
+             <input type="radio" id="option_product_{{ product.id }}" name="option_product" value="{{ product.id }}" data-name="{{ product.title }}">
+             <label for="option_product_{{ product.id }}" class="image-radio">
+                  {% if product.featured_media %}
+                {{ product.featured_media | image_url: width: 200 | image_tag: class: 'product-img', loading: 'lazy' }}
+               {% endif %}
+               <span class="" data-full="{{ product.title }}">{{ product.title }}</span>
+            </label>
+            {% endif %}
+           {%- endfor %}
+          </div>
+
+         
+      </div>
+        <div class="poppup_step">
+           <h1>
+        3)  CHOOSE A COLOR
+           </h1>
+      <div id="popup_content_message" class="popup_content_message fail"></div>
+      {% comment %} // for the muticolor selection 
+      {% for product in page.metafields.custom.popup_products.value %}
+        <div class="popup_product_option" product-option="{{ product.id }}" style="display:none;">
+        <div class="color_option_select">
+        <div class="custom-select product-options">
+        <div class="selected-item">
+            {{ product.featured_media | image_url: width: 50 | image_tag: class: 'custom-class', loading: 'lazy' }}
+            <span>Select an option</span>
+        </div>
+        <div class="dropdown-menu">
+           {%- for variant in product.variants %}
+             {% if variant.available %}
+              <div data-value="{{ variant.option1 }}" data-option-variant-id="{{ variant.id }}">
+               {{ variant.featured_media | image_url: width: 50 | image_tag: class: 'custom-class', loading: 'lazy' }}
+                <span>{{ variant.option1 }}</span>
+            </div>
+             {% endif %}
+              <!-- <input type="radio" id="color_{{ variant.option1 }}" name="color" value="">
+              <label class="prodduct_option_img" for="color_{{ variant.option1 }}"><img src="{{ variant.featured_media | image_url }}" widht="50px" height="50px"/></label><br> -->
+          {%- endfor %}
+        </div>
+        </div>
+            <input type="number" class="color-select-quantity-input" product-option="{{ product.id }}" min="1" value="1" />
+            <button class="add-to-products">Add Color</button>
+            </div>
+          </div>
+      {% endfor %}
+      {% endcomment %}
+        <div class="image_options-popup">
+       {% for product in page.metafields.custom.popup_products.value %}
+          <div class="popup_product_option" product-option="{{ product.id }}" style="display:none;">
+            <div class="color_option_label">
+              Colors
+            </div>
+            <div class="color_option_label">
+              Quantity
+            </div>
+            {% assign light_colors = "antique-white, powder-blue, sky-blue, light-grey, yellow, peppermint-green, white" | split: ", " %}
+{% assign dark_colors = "black, navy-blue, dark-grey, mild-grey, mid-grey, deep-purple, hot-pink, candy-red, terracotta, orange, graphite, emerald-green, fern-green, garden-green" | split: ", " %}
+           {%- for variant in product.variants %}
+            {% if variant.available %}
+            {% assign color_name = variant.title | handleize %}
+               {% if light_colors contains color_name %}
+                   {% assign color_theme = 'dark' %}
+                {% elsif dark_colors contains color_name %}
+                {% assign color_theme = 'light' %}
+                  {% else %}
+                 {% assign color_theme = 'dark' %}
+                  {% endif %}
+           <input type="radio" id="option_variant_{{ variant.id }}" name="option_variant" value="{{ variant.id }}" data-name="{{ variant.title }}">
+             <label for="option_variant_{{ variant.id }}" class="image-radio" style="background-color: var(--{{ color_name | handle }});" data-color="{{ color_theme }}">
+               {% comment %}
+               {% if variant.featured_media %}
+                {{ variant.featured_media | image_url: width: 200 | image_tag: class: 'product-img', loading: 'lazy' }}
+               {% endif %}
+               {% endcomment %}
+               <span class="" data-full="{{ variant.title }}">{{ variant.title }}</span>
+            </label>
+              <div class="color_option_number_input">
+            <button class="opt_decrement">-</button>
+            <input type="number" value="0" min="0" id="qty_option_variant_{{ variant.id }}" variant-id="{{ variant.id }}" data-name="{{ variant.title }}" >
+            <button class="opt_increment">+</button>
+            </div>
+           {% endif %}
+          {%- endfor %}
+          </div>
+      {% endfor %}
+        </div>
+      <div class="second_product_id" style="display:none;" data_product_id="{{ page.metafields.custom.popup_second_product.value.selected_or_first_available_variant.id }}"></div>
+      <ul id="selected-variants"></ul>
+         
+      </div>
+        <div class="poppup_step">
+           <h1>
+        4) WHAT SPACING DO YOU NEED BETWEEN HOOKS?
+           </h1>
+          <select id="hook_spacing" >
+            <option value="5 inch" space="5">5 inch</option>
+            <option value="6 inch" space="6">6 inch</option>
+            <option value="8 inch" space="8">8 inch</option>
+            <option value="10 inch" space="10">10 inch</option>
+          </select>
+          <div class="hook_sapcing_img">
+            <img class="hook_spacing-magnify" id="hook_space_img" src="#" width="auto" height="auto">
+          </div>
+      </div>
+        <div class="poppup_step">
+           <h1>
+        5)  CHOOSE A MATERIAL
+           </h1>
+        {% comment %}
+        <div class="custom-select material">
+        <div class="selected-item">
+          <img src="{{ 'whitefinish.png' | asset_url }}" width="50px" height="auto"/>
+            <span>Select a material</span>
+        </div>
+          
+        <div class="dropdown-menu">
+             <div data-value="White Finish">
+             <img src="{{ 'whitefinish.png' | asset_url }}" width="50px" height="auto"/>
+                <span>White Finish</span>
+            </div>
+            <div data-value="Oak Finish" >
+             <img src="{{ 'oakfinish.png' | asset_url }}" width="50px" height="auto"/>
+                <span>Oak Finish</span>
+            </div>
+        </div>
+        </div>
+        {% endcomment %}
+          <div class="image_options-popup material-option">
+             <input type="radio" id="option_white_finish" name="option_material" value="White Finish">
+             <label for="option_white_finish" class="image-radio">
+             <img src="{{ 'whitefinish.png' | asset_url }}" width="50px" height="auto"/>
+               <span>White Finish</span>
+            </label>
+             <input type="radio" id="option_oak_finish" name="option_material" value="Oak Finish">
+             <label for="option_oak_finish" class="image-radio">
+              <img src="{{ 'oakfinish.png' | asset_url }}" width="50px" height="auto"/>
+               <span>Oak Finish</span>
+              </label>
+          </div>
+          
+      </div>
+       
+   
+       
+        <!-- <div class="poppup_step">
+           <h1>
+        6) WHAT IS YOUR WALL TYPE?
+           </h1>
+          <textarea id="wall-type" maxlength="255"></textarea>
+       
+      </div> -->
+        <div class="poppup_step">
+           <h1>
+        6) PLEASE SPECIFY WHERE THESE RACKS WILL BE USED?
+           </h1>
+            <textarea id="hook-used" maxlength="255"></textarea>
+      </div>
+        <!-- Buttons at the bottom -->
+    <div class="custom_form_buttons">
+    <button class="prev_step">Back</button>
+    <button class="next_step">Next</button>
+    <button id="popup-add-to-cart" class="popup-add-to-cart" style="display:none" disabled>Add To Cart</button>
+  </div>
+     </div>
+    {% endcapture %}
+{% else %}
+  {% capture content %}
+       <div class="custom_form_content">
+        There is no products
+      </div>
+   {% endcapture %}
+{% endif %}
+
+<!-- main popup -->
+
+<div class="custom_form_container" id="custom_form_container">
+  <div class="custom_popup_form_container">
+    <div id="custom_popup_form">
+      <div class="custom_popup_close" id="custom_popup_close">
+        <h3>CLICK NEXT</h3>
+
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          width="12"
+          height="12"
+          viewBox="0 0 12 12"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M7.41401 6.00012L11.707 1.70721C12.098 1.31622 12.098 0.684236 11.707 0.293244C11.316 -0.097748 10.684 -0.097748 10.293 0.293244L6.00001 4.58615L1.70701 0.293244C1.31601 -0.097748 0.684006 -0.097748 0.293006 0.293244C-0.0979941 0.684236 -0.0979941 1.31622 0.293006 1.70721L4.58601 6.00012L0.293006 10.293C-0.0979941 10.684 -0.0979941 11.316 0.293006 11.707C0.488006 11.902 0.744006 12 1.00001 12C1.25601 12 1.51201 11.902 1.70701 11.707L6.00001 7.4141L10.293 11.707C10.488 11.902 10.744 12 11 12C11.256 12 11.512 11.902 11.707 11.707C12.098 11.316 12.098 10.684 11.707 10.293L7.41401 6.00012Z"></path>
+        </svg>
+      </div>
+      {{ content }}
+      <div id="popup_thank_you" style="display:none;">
+        <div>Thank you for ordering....</div>
+        <div class="hp-action-buttons">
+          <a class="button primary-btn" href="/cart">Go To Cart</a>
+          <a class="button secondry-btn" href="#" data-add-new-rail>Select Another Custom Rail</a>
+        </div>
+        <a href="/collections">Continue shopping</a>
+      </div>
+      <div style="display:none;">
+        <div
+          id="shopfiy_form_data"
+          data-form-root="true"
+          data-forms-id="forms-root-210627"
+          data-forms-text-color="#202020"
+          data-forms-button-background-color="#202020"
+          data-forms-button-label-color="#FFFFFF"
+          data-forms-links-color="#1878B9"
+          data-forms-errors-color="#E02229"
+          data-forms-text-alignment="center"
+          data-forms-alignment="center"
+          data-forms-padding-top="0"
+          data-forms-padding-right="0"
+          data-forms-padding-bottom="0"
+          data-forms-padding-left="0"
+          style="--inline-container-min-height: 125px;display:none;"
+        ></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  {% if customer %}
+   var popup_user = "{{ customer.first_name }}";
+   var popup_user_email = "{{ customer.email }}";
+  {% else %}
+   var popup_user = "Cotique Media";
+   var popup_user_email = "test@mail.com";
+  {% endif %}
+</script>
+<script>
+// Base path for images in the assets folder
+const basePath = '{{ "1hook_5space.png" | file_url }}';
+// Hook and space options
+const hookNumbers = Array.from({ length: 60 }, (_, i) => i + 1);
+const spaces = [5, 6, 8, 10];
+// Object to store images by hook and space
+const sizeImage = {};
+// Loop through each combination of hookNumber and space
+hookNumbers.forEach(hook => {
+  sizeImage[hook] = {}; // Create an object for each hook number
+  spaces.forEach(space => {
+    // Construct the filename based on the naming convention
+    const filename = `${hook}hook_${space}space.png`;
+    // Set the src path in the object for the specific hook and space
+    sizeImage[hook][space] =  basePath.replace('1hook_5space.png', filename);
+  });
+});
+// Usage example:
+// console.log(sizeImage);
+</script>
+<script src="{{ 'product-popup-js.js' | asset_url }}" defer></script>

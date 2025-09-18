@@ -1,0 +1,139 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_397tHd": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_xj7UCB": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Lifetime Warranty Coverage</strong>",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_xj7UCB"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_Hz4pn7": {
+      "type": "rich-text",
+      "blocks": {
+        "text_4LxMhg": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our lifetime warranty covers: </p><ul><li><strong>Breakage or structural failure</strong> due to manufacturing defects. </li><li><strong>Defects in materials or workmanship</strong> under proper usage conditions.</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "text_4LxMhg"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 32
+      }
+    },
+    "rich_text_G8zAxy": {
+      "type": "rich-text",
+      "blocks": {
+        "text_bRr6Fg": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Usage Conditions<br/><br/></strong>To ensure optimal performance and longevity, <strong>Toughook coat hooks are designed for indoor use</strong> in <strong>climate-controlled environments</strong>. <br/><br/>The warranty <strong>does not cover</strong>: </p><ul><li><strong>Outdoor use</strong> or exposure to <strong>extreme temperatures, humidity, or direct sunlight</strong>. </li><li><strong>Damage from misuse, excessive force, improper installation, or modifications</strong>. </li><li><strong>Vandalism or tampering</strong> by individuals using tools or other objects. </li><li><strong>Wear and tear</strong> caused by abnormal conditions.</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "text_bRr6Fg"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 32
+      }
+    },
+    "rich_text_NFigaC": {
+      "type": "rich-text",
+      "blocks": {
+        "text_iE4UyN": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Toughooks are not covered under our lifetime warranty for outdoor use.  <br/></strong></p><p>While Toughooks are not covered under our lifetime warranty for outdoor use, many customers have successfully used them outdoors with no functional issues.</p><p>In the past 15 years, millions of Toughooks have been in circulation worldwide, including many used outdoors, and we have not received reports of structural failure. However, some customers have noticed color fading due to prolonged sun exposure and natural weathering.</p><p>Because outdoor conditions can speed up material wear, we are unable to extend our lifetime warranty to Toughooks used outdoors. Nevertheless, we are confident that Toughook remains unmatched in durability and performance in outdoor settings.</p><p></p><p></p><p></p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_iE4UyN"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 32
+      }
+    },
+    "rich_text_h48kyX": {
+      "type": "rich-text",
+      "blocks": {
+        "text_Rtxhy7": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Warranty Claims</strong></p><p>If your Toughook fails under normal indoor conditions, we will replace the defective product at no charge. Contact us with proof of purchase and details of the issue, and we will handle the rest.</p><p>We are committed to providing high-quality, durable coat hooks you can count on for years to come. If you have any questions about our warranty, don’t hesitate to reach out. We’re here to help!</p><p></p><p></p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_Rtxhy7"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 32
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_397tHd",
+    "rich_text_Hz4pn7",
+    "rich_text_G8zAxy",
+    "rich_text_NFigaC",
+    "rich_text_h48kyX"
+  ]
+}

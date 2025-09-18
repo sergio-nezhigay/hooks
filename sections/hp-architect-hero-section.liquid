@@ -1,0 +1,214 @@
+<style>
+  .section-{{ section.id }} {
+  ;
+  background: url('{{ section.settings.background | image_url }}');
+}
+.hp-text-images {
+  width: 100%;
+  padding: 135px 25px 25px;
+  /* background: url('https://toughook.com/cdn/shop/files/Architect-Hero.jpg?v=1728589702'); */
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  width: 100%;
+  aspect-ratio: 15 / 9;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.Seciton_custom_dyn_class{
+  aspect-ratio: 15 / 7;
+
+}
+
+.hp-text-images-content {
+  padding: 25px 25px 25px 80px;
+  max-width: 750px;
+  background: linear-gradient(293deg, #fff0, #ffffffb0 90%, #dfdddd);
+}
+.hp-text-images-content h3 {
+  margin: 0 0 25px;
+  font-size: 26px;
+  line-height: 26px;
+  color: #000;
+}
+.hp-text-images-content h1 {
+  margin: 0 0 25px;
+  max-width: 600px;
+  font-size: 50px;
+  font-weight: 600;
+  color: #000;
+  line-height: 76px;
+}
+.hp-text-images-content h1 span {
+  border-bottom: 8px solid #f6a293;
+}
+.hp-text-images-content p {
+  margin: 0 0 25px;
+  max-width: 700px;
+  color: #594545;
+  font-weight: 400;
+  font-size: 26px;
+}
+.hp-text-images-content .hp-text-images-buttons {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+@media screen and (max-width: 756px) {
+  .hp-text-images {
+    padding: 20px;
+  }
+  .hp-text-images-content {
+    padding: 15px;
+    max-width: 700px;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+  .hp-text-images-content h3 {
+    margin: 0 0 15px;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000;
+  }
+  .hp-text-images-content h1 {
+    margin: 0 0 15px;
+    max-width: 250px;
+    font-size: 21px;
+    color: #000;
+    line-height: 30px;
+  }
+  .hp-text-images-content h1 span {
+    border-bottom: 3px solid #f6a293;
+  }
+  .hp-text-images-content p {
+    margin: 0 0 15px;
+    font-size: 14px;
+    max-width: 700px;
+    color: #594545;
+    font-weight: 400;
+  }
+  .hp-text-images-content .hp-text-images-buttons {
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+/* custom for another section  */
+
+
+/*
+
+   .hp-text-images {
+   width: 100%;
+   padding: 25px;
+   aspect-ratio: 25 / 9;
+   }
+   .hp-text-images-content {
+   margin-top: -50px;
+   }
+   .hp-text-images-content h1 {
+   font-size: 41px;
+   color: white;
+   }
+   .hp-text-images-content p {
+   font-size: 26px;
+   color: #000;
+   color: white;
+   }
+   @media screen and (max-width: 756px) {
+   .hp-text-images {
+   padding: 25px;
+   aspect-ratio: 16 / 14;
+   }
+   .hp-text-images-content h1 {
+   font-size: 21px;
+   line-height: 24px;
+   color: white;
+   }
+   .hp-text-images-content p {
+   font-size: 16px;
+   color: white;
+   margin-bottom: 10px;
+   line-height: 20px;
+   }
+   }
+*/
+</style>
+
+<div class="section-{{ section.id }} hp-text-images page-width hp-architect-hero {{ section.settings.Seciton_custom_dyn_class }}">
+  <div class="hp-text-images-content">
+    {% for block in section.blocks %}
+      {%- case block.type -%}
+        {%- when 'subheading' -%}
+          <h3>{{ block.settings.subheading }}</h3>
+        {%- when 'heading' -%}
+          <h1>{{ block.settings.heading }}</h1>
+        {%- when 'description' -%}
+          {{ block.settings.description }}
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "HP Architect Hero",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "background",
+        "label": "Background"
+      }
+      ,
+      {
+            "type": "text",
+            "id": "Seciton_custom_dyn_class",
+            "label": "Custom Class"
+          }
+    ],
+    "blocks": [
+      {
+        "type": "subheading",
+        "name": "Sub Heading",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "subheading",
+            "label": "Sub Heading"
+          }
+        ]
+      }, {
+        "type": "heading",
+        "name": "Heading",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "heading",
+            "label": "Heading"
+          }
+        ]
+      }, {
+        "type": "description",
+        "name": "Description",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "HP Architect Hero"
+      }
+    ]
+  }
+{% endschema %}

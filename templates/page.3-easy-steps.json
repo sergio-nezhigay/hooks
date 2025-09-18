@@ -1,0 +1,73 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "image_banner_hFtKYC": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_mzhMk8": {
+          "type": "heading",
+          "settings": {
+            "heading": "Order Toughook Racks",
+            "heading_size": "h1"
+          }
+        },
+        "text_DLNcLh": {
+          "type": "text",
+          "settings": {
+            "text": "Fully-assembled, wall-mounted coat racks in <strong>3 easy steps!</strong>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_mzhMk8",
+        "text_DLNcLh"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/TH-PreFooter-01_1.png",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-61415efb-f290-4437-917f-ad8d9048c518",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "custom_liquid_gHJUif": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "{% comment %}\n  Custom Rack Form - Enforces minimum 20 quantity\n{% endcomment %}\n\n<form method=\"post\" action=\"/cart/add\" id=\"custom-rack-form\" style=\"max-width: 600px; margin: auto;\">\n  <input type=\"hidden\" name=\"id\" value=\"{{ product.variants.first.id }}\">\n\n  <h2 style=\"margin-bottom: 1.5rem;\">Build Your Custom Coat Rack</h2>\n\n  <div style=\"margin-bottom: 1rem;\">\n    <label for=\"hooks\" style=\"font-weight: bold;\">Number of Hooks</label>\n    <input type=\"number\" id=\"hooks\" name=\"properties[Number of Hooks]\" min=\"1\" required style=\"width: 100%; padding: 0.5rem;\">\n  </div>\n\n  <div style=\"margin-bottom: 1rem;\">\n    <label for=\"spacing\" style=\"font-weight: bold;\">Hook Spacing</label>\n    <select id=\"spacing\" name=\"properties[Hook Spacing]\" required style=\"width: 100%; padding: 0.5rem;\">\n      <option value=\"\">Select spacing</option>\n      <option value=\"6\">6 inches</option>\n      <option value=\"10\">10 inches</option>\n      <option value=\"12\">12 inches</option>\n    </select>\n  </div>\n\n  <div style=\"margin-bottom: 1rem;\">\n    <label for=\"hook-type\" style=\"font-weight: bold;\">Hook Type</label>\n    <select id=\"hook-type\" name=\"properties[Hook Type]\" required style=\"width: 100%; padding: 0.5rem;\">\n      <option value=\"\">Select type</option>\n      <option value=\"Standard\">Standard</option>\n      <option value=\"Heavy Duty\">Heavy Duty</option>\n    </select>\n  </div>\n\n  <div style=\"margin-bottom: 1rem;\">\n    <label for=\"hook-color\" style=\"font-weight: bold;\">Hook Color</label>\n    <select id=\"hook-color\" name=\"properties[Hook Color]\" required style=\"width: 100%; padding: 0.5rem;\">\n      <option value=\"\">Select color</option>\n      <option value=\"Red\">Red</option>\n      <option value=\"Blue\">Blue</option>\n      <option value=\"Black\">Black</option>\n    </select>\n  </div>\n\n  <div style=\"margin-bottom: 1rem;\">\n    <label for=\"back-color\" style=\"font-weight: bold;\">Rack Backing Color</label>\n    <select id=\"back-color\" name=\"properties[Rack Backing Color]\" required style=\"width: 100%; padding: 0.5rem;\">\n      <option value=\"\">Select color</option>\n      <option value=\"White\">White</option>\n      <option value=\"Oak\">Oak</option>\n    </select>\n  </div>\n\n  <div style=\"margin-bottom: 1rem;\">\n    <label for=\"rack-qty\" style=\"font-weight: bold;\">Quantity (Same Rack)</label>\n    <input type=\"number\" id=\"rack-qty\" name=\"quantity\" min=\"20\" value=\"20\" required style=\"width: 100%; padding: 0.5rem;\">\n    <p id=\"qty-warning\" style=\"color: red; display: none; margin-top: 0.5rem;\">Minimum order is 20 racks.</p>\n  </div>\n\n  <div style=\"margin-bottom: 1rem; font-size: 0.9rem; color: #444;\">\n    <p><strong>Note:</strong> Custom coat racks require a minimum order of <strong>20 racks</strong>. For smaller orders, please view <a href=\"/collections/perfectfit-coat-racks\" style=\"color: #007ace;\">PerfectFit Coat Racks</a>.</p>\n  </div>\n\n  <button type=\"submit\" style=\"background-color: #000; color: #fff; padding: 0.75rem 1.5rem; border: none; cursor: pointer; font-weight: bold;\">Add to Cart</button>\n</form>\n\n<script>\n  document.getElementById('custom-rack-form').addEventListener('submit', function(e) {\n    const qty = parseInt(document.getElementById('rack-qty').value);\n    const warning = document.getElementById('qty-warning');\n\n    if (qty < 20) {\n      e.preventDefault();\n      warning.style.display = 'block';\n    } else {\n      warning.style.display = 'none';\n    }\n  });\n</script>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_hFtKYC",
+    "custom_liquid_gHJUif"
+  ]
+}

@@ -1,0 +1,55 @@
+<style>
+  .about-design-text-2 {
+    margin-top: 120px;
+    padding: 60px 200px 120px;
+        padding-bottom: 20px;
+    border-top: 3px solid #e37c72;
+    border-top-right-radius: 300px;
+    margin-right: 240px;
+    margin-bottom: 60px;
+  }
+  @media screen and (max-width: 756px) {
+    .about-design-text-2 {
+      margin-top: 20px;
+      padding: 10px 50px 30px;
+      padding-bottom: 0;
+      border-top: 3px solid #e37c72;
+      border-top-right-radius: 100px;
+      margin-right: 40px;
+      margin-bottom: 10px;
+    }
+  }
+</style>
+<div class="page-width">
+  <div class=" about-design-text-2">
+    <div class="about-design-text-container-2">
+      <h2>{{ section.settings.heading }}</h2>
+      <p>
+        {{ section.settings.text }}
+      </p>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "HP About Design Head 2",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "The hook that’s made to last"
+      }, {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>The metal hooks that have become standard everywhere are more than an eyesore… the slender and rounded design of the hooks you grew up with are dangerous and break easy.</p>"
+      }
+    ],
+    "presets": [
+      {
+        "name": "HP About Page Design Head 2"
+      }
+    ]
+  }
+{% endschema %}

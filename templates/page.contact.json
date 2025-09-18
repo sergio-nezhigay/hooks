@@ -1,0 +1,211 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "hp_feature_heading_LCrcBe": {
+      "type": "hp-feature-heading",
+      "custom_css": [
+        "p {margin: 0;}",
+        "h2 {font-size: 60px; line-height: 60px; color: #09213a;}",
+        "@media screen and (max-width: 750px) {h2 {font-size: 30px; line-height: 30px; }}",
+        "@media screen and (min-width: 756px) {.hp-feature-heading {margin-top: 30px; }}"
+      ],
+      "settings": {
+        "heading": "Contact Us",
+        "text": ""
+      }
+    },
+    "qt_contact_form_VKxFrL": {
+      "type": "qt-contact-form",
+      "blocks": {
+        "question_mECcMM": {
+          "type": "question",
+          "settings": {
+            "question": "Can I request a sample of one of your hooks to test?",
+            "answer": "<p>Absolutely! We’d be happy to provide a sample of one of our hooks for you to test. Simply click the link below to submit your request.</p><p><a href=\"https://toughook.com/pages/tax-exampt-request\" target=\"_blank\" title=\"https://toughook.com/pages/tax-exampt-request\">Request A Sample</a></p>"
+          }
+        },
+        "question_Gdx9Mb": {
+          "type": "question",
+          "settings": {
+            "question": "What is the shipping fee?",
+            "answer": "<p>We offer free shipping on orders over $50. For orders below $50, the shipping fee varies based on the shipping courier you choose.</p>"
+          }
+        },
+        "question_hFHhHL": {
+          "type": "question",
+          "settings": {
+            "question": "What material are the hooks made from?",
+            "answer": "<p>Our hooks are made from high-quality Nylon PA6 for durability and strength.</p>"
+          }
+        },
+        "question_T6PTkq": {
+          "type": "question",
+          "settings": {
+            "question": "How much weight can each hook hold?",
+            "answer": "<p>Each hook is designed to support a maximum weight of 88 lbs, but this capacity depends entirely on secure mounting. To achieve this weight limit safely, it’s essential to use suitable, weight-rated hardware and ensure it’s correctly installed. If the hook is not mounted securely or the hardware used cannot bear the weight, the hook may not hold as intended.</p>"
+          }
+        },
+        "question_japrEe": {
+          "type": "question",
+          "settings": {
+            "question": "Are there any discounts or promotions available?",
+            "answer": "<p>Yes, we offer discounts for bulk orders! If you're purchasing a larger quantity of hooks, you may be eligible for special pricing. Please contact our customer service team or check our website for details on bulk order pricing and any current promotions. We strive to provide great value to our customers, so be sure to inquire about any available deals!</p>"
+          }
+        },
+        "question_dTpFaf": {
+          "type": "question",
+          "settings": {
+            "question": "When is tax exemption applicable?",
+            "answer": "<p>Tax exemption is applicable for any customer with a valid tax-exempt certificate (schools for example, are tax exempt). If you possess a tax-exempt certificate and would like to qualify for tax exemption on your order, please email it to us at info@toughookusa.com for verification. Once verified, we will remove any tax charges from your order. </p>"
+          }
+        },
+        "question_34eqe4": {
+          "type": "question",
+          "settings": {
+            "question": "Can the hooks be installed directly onto the wall?",
+            "answer": "<p>Yes, the hooks can typically be installed directly onto the wall, depending on the wall material and the hardware used. It’s important to use appropriate hardware suitable for your specific wall type to ensure a secure installation. </p>"
+          }
+        },
+        "question_T6TH7e": {
+          "type": "question",
+          "settings": {
+            "question": "Do you accept purchase orders from schools?",
+            "answer": "<p>Yes, we do accept purchase orders from schools. While we typically require payment in advance, we understand that some situations may necessitate flexibility. If advance payment poses a challenge, please don’t hesitate to reach out; we’re committed to finding solutions and will do our best to accommodate your needs.</p>"
+          }
+        },
+        "question_CnAXgy": {
+          "type": "question",
+          "settings": {
+            "question": "What is the estimated delivery time for my order?",
+            "answer": "<p><strong>USA Shipping</strong></p><p>USA Shipping is <strong>FREE</strong> on all orders over $50, Excluding PerfectFit Rails.</p><p>For Hooks Only orders under $50, standard shipping (7-9 business days) is just $5.99.</p><p>You can upgrade to expedited shipping (3-5 business days) for $15.</p><p>Additionally, you can upgrade to our fastest available shipping option – Priority Shipping (2-3 business days) for $19.</p><p><strong>Canada, Mexico, DC & Puerto Rico and any other more remote locations </strong> may incur extra shipping costs. We will contact you after we have received shipping quotes to remote areas and a surcharge may apply. If you live in a remote zone it would be ideal if you could have your parcel sent to a mainland pick up address, one that you know couriers will send to as normal :-)</p><p><strong>UK & EU Shipping </strong></p><p>Please visit www.toughook.co.uk for more details.</p><p><strong>Rest of World</strong></p><p>Please visit www.toughook.co.uk for more details. </p>"
+          }
+        },
+        "question_eqY3C6": {
+          "type": "question",
+          "settings": {
+            "question": "What are the sizes of the hooks?",
+            "answer": "<p><strong>Toughook Mini:</strong><br/>95mm overall height</p><p>55mm rear edge</p><p><strong>Toughook One: </strong></p><p>55mm overall height</p><p><strong>Toughook Original:</strong><br/>120mm overall height</p><p>80mm flat back edge</p><p><strong>Toughook XL:</strong></p><p>137mm overall height</p><p>80mm rear edge</p><p><strong>Robe Hook:</strong></p><p>Dimensions - </p><p>Diameter of disc - 48mm</p><p>Diameter of cylinder - 16mm</p><p>Overall depth - 46mm</p>"
+          }
+        },
+        "question_6fAAXd": {
+          "type": "question",
+          "settings": {
+            "question": "What items are returnable?",
+            "answer": "<ul><li>Toughook individual hooks and color packs.</li><li>Within 30 days from the date of purchase</li><li>In unused and resellable condition</li><li>In the original packaging</li></ul>"
+          }
+        },
+        "question_PGmBUG": {
+          "type": "question",
+          "settings": {
+            "question": "What items are non-refundable?",
+            "answer": "<p>The following items cannot be returned:</p><ul><li>PerfectFit Rails</li><li>Any Bespoke Coat Rails</li><li>Robe Hooks</li></ul>"
+          }
+        },
+        "question_jdjYxM": {
+          "type": "question",
+          "settings": {
+            "question": "Can I make a revision to my order?",
+            "answer": "<p>If you made an error when placing your order, please contact Info@toughookusa.com as soon as possible and we will do our best to assist you. Note: once an order has been fully processed and shipped out we cannot make a revision.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_mECcMM",
+        "question_Gdx9Mb",
+        "question_hFHhHL",
+        "question_T6PTkq",
+        "question_japrEe",
+        "question_dTpFaf",
+        "question_34eqe4",
+        "question_T6TH7e",
+        "question_CnAXgy",
+        "question_eqY3C6",
+        "question_6fAAXd",
+        "question_PGmBUG",
+        "question_jdjYxM"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Get In Touch With Us",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "desktop_style": "row",
+        "mobile_style": "column-reverse",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "contact_form_HMfRHM": {
+      "type": "contact-form",
+      "custom_css": [
+        "h2.title.title-wrapper--no-top-margin.inline-richtext.h1.scroll-trigger.animate--slide-in {text-align: center; font-size: 35px;}",
+        "@media screen and (max-width: 431px) {h2.title.title-wrapper--no-top-margin.inline-richtext.h1.scroll-trigger.animate--slide-in {font-size: 22px; }}"
+      ],
+      "settings": {
+        "heading": "GET IN TOUCH WITH US",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_nQiU8k": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Ut3tmH": {
+          "type": "heading",
+          "settings": {
+            "heading": "Got Questions? We’ve Got Answers",
+            "heading_size": "h1"
+          }
+        },
+        "button_JXwekd": {
+          "type": "button",
+          "settings": {
+            "button_label": "Visit Our FAQ",
+            "button_link": "shopify://pages/faqs",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_Ut3tmH",
+        "button_JXwekd"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 28,
+        "padding_bottom": 32
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hp_feature_heading_LCrcBe",
+    "qt_contact_form_VKxFrL",
+    "contact_form_HMfRHM",
+    "rich_text_nQiU8k"
+  ]
+}
