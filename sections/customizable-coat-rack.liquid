@@ -1,0 +1,597 @@
+{{ 'customizable-coat-rack.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'customizable-coat-rack.js' | asset_url }}" defer></script>
+
+<style>
+:root {
+  --primary-color: #191e4c;
+  --accent-color: #007aff;
+  --border-radius: 8px;
+  --transition-speed: 0.3s;
+}
+
+.customizable-coat-rack {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.coat-rack-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .coat-rack-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Enhanced Image Display */
+.product-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  background: #f8f9fa;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.layered-image-stack {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.base-rail-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity var(--transition-speed) ease;
+}
+
+.hook-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: all var(--transition-speed) ease;
+  opacity: 1;
+}
+
+/* Color transformation using CSS filters */
+.hook-layer[data-color="black"] { filter: hue-rotate(0deg) saturate(0%) brightness(0%); }
+.hook-layer[data-color="graphite"] { filter: hue-rotate(0deg) saturate(0%) brightness(0.3); }
+.hook-layer[data-color="dark-grey"] { filter: hue-rotate(0deg) saturate(0%) brightness(0.4); }
+.hook-layer[data-color="mid-grey"] { filter: hue-rotate(0deg) saturate(0%) brightness(0.6); }
+.hook-layer[data-color="light-grey"] { filter: hue-rotate(0deg) saturate(0%) brightness(0.8); }
+.hook-layer[data-color="white"] { filter: hue-rotate(0deg) saturate(0%) brightness(1); }
+.hook-layer[data-color="antique-white"] { filter: hue-rotate(30deg) saturate(0.3) brightness(0.95); }
+.hook-layer[data-color="terracotta"] { filter: hue-rotate(10deg) saturate(1.2) brightness(0.7); }
+.hook-layer[data-color="candy-red"] { filter: hue-rotate(0deg) saturate(1.5) brightness(0.8); }
+.hook-layer[data-color="hot-pink"] { filter: hue-rotate(330deg) saturate(1.3) brightness(1); }
+.hook-layer[data-color="deep-purple"] { filter: hue-rotate(270deg) saturate(1.2) brightness(0.6); }
+.hook-layer[data-color="orange"] { filter: hue-rotate(30deg) saturate(1.5) brightness(1); }
+.hook-layer[data-color="yellow"] { filter: hue-rotate(60deg) saturate(1.8) brightness(1.2); }
+.hook-layer[data-color="emerald-green"] { filter: hue-rotate(120deg) saturate(1.5) brightness(0.4); }
+.hook-layer[data-color="peppermint-green"] { filter: hue-rotate(140deg) saturate(0.8) brightness(1.2); }
+.hook-layer[data-color="garden-green"] { filter: hue-rotate(120deg) saturate(1.3) brightness(0.6); }
+.hook-layer[data-color="fern-green"] { filter: hue-rotate(100deg) saturate(1.1) brightness(0.7); }
+.hook-layer[data-color="navy-blue"] { filter: hue-rotate(240deg) saturate(1.5) brightness(0.3); }
+.hook-layer[data-color="sky-blue"] { filter: hue-rotate(200deg) saturate(0.8) brightness(1.1); }
+.hook-layer[data-color="powder-blue"] { filter: hue-rotate(200deg) saturate(0.5) brightness(1.2); }
+
+/* Loading state */
+.image-loading {
+  opacity: 0.7;
+}
+
+.image-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid var(--accent-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Product Information */
+.product-info {
+  padding: 1rem 0;
+}
+
+.product-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 2rem;
+}
+
+.price-compare {
+  text-decoration: line-through;
+  color: #999;
+  margin-left: 0.5rem;
+}
+
+/* Variant Selection */
+.variant-section {
+  margin-bottom: 2rem;
+}
+
+.variant-label {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* Size Selection */
+.size-options {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.size-option {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #ccc;
+  border-radius: var(--border-radius);
+  background: white;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.size-option:hover {
+  border-color: var(--accent-color);
+  background: #f0f8ff;
+}
+
+.size-option.selected {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.size-option.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #f5f5f5;
+}
+
+/* Base Color Selection */
+.base-color-swatches {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.base-color-swatch {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  position: relative;
+}
+
+.base-color-swatch:hover {
+  transform: scale(1.1);
+  border-color: var(--accent-color);
+}
+
+.base-color-swatch.selected {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.3);
+}
+
+.base-color-swatch::after {
+  content: attr(data-label);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #666;
+}
+
+/* Hook Color Selection */
+.hook-color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+  gap: 0.5rem;
+  max-width: 600px;
+  margin-bottom: 1rem;
+}
+
+.hook-color-swatch {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  position: relative;
+}
+
+.hook-color-swatch:hover {
+  transform: scale(1.15);
+  border-color: var(--accent-color);
+  z-index: 10;
+}
+
+.hook-color-swatch.selected {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.3);
+}
+
+.hook-color-swatch.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Tooltip */
+.color-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-speed) ease;
+  z-index: 20;
+  margin-bottom: 0.5rem;
+}
+
+.hook-color-swatch:hover .color-tooltip {
+  opacity: 1;
+}
+
+/* Selection Summary */
+.selection-summary {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 2rem;
+  border-left: 4px solid var(--accent-color);
+}
+
+.summary-title {
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.summary-details {
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Add to Cart */
+.add-to-cart-section {
+  margin-top: 2rem;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.quantity-input {
+  width: 80px;
+  padding: 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: var(--border-radius);
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.add-to-cart-btn {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.add-to-cart-btn:hover {
+  background: #0f1538;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(25, 30, 76, 0.3);
+}
+
+.add-to-cart-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .product-title {
+    font-size: 2rem;
+  }
+
+  .hook-color-grid {
+    grid-template-columns: repeat(auto-fit, minmax(35px, 1fr));
+  }
+
+  .hook-color-swatch {
+    width: 35px;
+    height: 35px;
+  }
+
+  .base-color-swatch {
+    width: 45px;
+    height: 45px;
+  }
+
+  .size-option {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Error and Loading States */
+.error-message {
+  background: #fee;
+  color: #c33;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  margin: 1rem 0;
+  border-left: 4px solid #c33;
+}
+
+.out-of-stock {
+  opacity: 0.6;
+}
+
+.out-of-stock-message {
+  background: #fff3cd;
+  color: #856404;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  margin: 1rem 0;
+  border-left: 4px solid #ffc107;
+}
+</style>
+
+<div class="customizable-coat-rack" data-product-id="{{ product.id }}">
+  <div class="coat-rack-grid">
+    <!-- Product Images -->
+    <div class="product-image-container">
+      <div class="layered-image-stack" id="imageStack">
+        <!-- Base rail images will be loaded here -->
+        <img class="base-rail-image" id="baseRailImage" src="" alt="Coat rack base" style="display: none;">
+
+        <!-- Hook layers will be dynamically added here -->
+        <div id="hookLayers"></div>
+      </div>
+    </div>
+
+    <!-- Product Information and Controls -->
+    <div class="product-info">
+      <h1 class="product-title">{{ product.title }}</h1>
+
+      <div class="product-price">
+        <span id="currentPrice">{{ product.selected_or_first_available_variant.price | money }}</span>
+        {% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}
+          <span class="price-compare">{{ product.selected_or_first_available_variant.compare_at_price | money }}</span>
+        {% endif %}
+      </div>
+
+      <form action="/cart/add" method="post" enctype="multipart/form-data" id="customCoatRackForm">
+        <!-- Size Selection -->
+        <div class="variant-section">
+          <label class="variant-label">Number of Hooks:</label>
+          <div class="size-options" id="sizeOptions">
+            {% for variant in product.variants %}
+              {% if variant.available %}
+                <button type="button" class="size-option" data-variant-id="{{ variant.id }}" data-size="{{ variant.option1 }}" data-price="{{ variant.price }}">
+                  {{ variant.option1 }}
+                </button>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Base Color Selection -->
+        <div class="variant-section">
+          <label class="variant-label">Rail Base Color:</label>
+          <div class="base-color-swatches" id="baseColorSwatches">
+            <div class="base-color-swatch selected" data-color="oak" data-label="Oak" style="background: linear-gradient(45deg, #D2B48C, #DEB887);"></div>
+            <div class="base-color-swatch" data-color="white" data-label="White" style="background: #FFFFFF;"></div>
+            <div class="base-color-swatch" data-color="black" data-label="Black" style="background: #2C2C2C;"></div>
+          </div>
+        </div>
+
+        <!-- Hook Color Selection -->
+        <div class="variant-section">
+          <label class="variant-label">Hook Colors:</label>
+          <div class="hook-color-grid" id="hookColorGrid">
+            <!-- Colors will be populated by JavaScript -->
+          </div>
+
+          <div style="margin-top: 1rem;">
+            <label>
+              <input type="checkbox" id="mixAndMatch" style="margin-right: 0.5rem;">
+              <strong>Mix and Match Individual Hook Colors</strong>
+            </label>
+            <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
+              Enable this option to choose different colors for each hook position.
+            </p>
+          </div>
+        </div>
+
+        <!-- Individual Hook Selection (hidden by default) -->
+        <div class="variant-section" id="individualHooksSection" style="display: none;">
+          <label class="variant-label">Individual Hook Colors:</label>
+          <div id="individualHookControls">
+            <!-- Individual hook selectors will be added here -->
+          </div>
+        </div>
+
+        <!-- Selection Summary -->
+        <div class="selection-summary" id="selectionSummary">
+          <div class="summary-title">Current Selection:</div>
+          <div class="summary-details" id="summaryDetails">
+            Please select size and colors above
+          </div>
+        </div>
+
+        <!-- Add to Cart -->
+        <div class="add-to-cart-section">
+          <div class="quantity-selector">
+            <label for="quantity" style="font-weight: 600;">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1" class="quantity-input">
+          </div>
+
+          <input type="hidden" name="id" id="variantId" value="">
+
+          <!-- Hook color properties -->
+          <div id="hookColorProperties"></div>
+
+          <button type="submit" class="add-to-cart-btn" id="addToCartBtn" disabled>
+            Add to Cart - <span id="totalPrice">$0.00</span>
+          </button>
+        </div>
+      </form>
+
+      <!-- Product Description -->
+      <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #eee;">
+        {{ product.description }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Product configuration
+window.CoatRackConfig = {
+  productId: {{ product.id }},
+  variants: {
+    {% for variant in product.variants -%}
+      "{{ variant.id }}": {
+        id: {{ variant.id }},
+        title: "{{ variant.title }}",
+        price: {{ variant.price }},
+        compareAtPrice: {{ variant.compare_at_price | default: 0 }},
+        available: {{ variant.available }},
+        sku: "{{ variant.sku }}"
+      }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  },
+  colors: {
+    "black": { name: "Black", hex: "#000000" },
+    "graphite": { name: "Graphite", hex: "#4B4B4B" },
+    "dark-grey": { name: "Dark Grey", hex: "#A9A9A9" },
+    "mid-grey": { name: "Mid Grey", hex: "#C0C0C0" },
+    "light-grey": { name: "Light Grey", hex: "#D3D3D3" },
+    "white": { name: "White", hex: "#FFFFFF" },
+    "antique-white": { name: "Antique White", hex: "#FAEBD7" },
+    "terracotta": { name: "Terracotta", hex: "#E2725B" },
+    "candy-red": { name: "Candy Red", hex: "#FF0800" },
+    "hot-pink": { name: "Hot Pink", hex: "#FF69B4" },
+    "deep-purple": { name: "Deep Purple", hex: "#673AB7" },
+    "orange": { name: "Orange", hex: "#FFA500" },
+    "yellow": { name: "Yellow", hex: "#FFFF00" },
+    "emerald-green": { name: "Emerald Green", hex: "#0F4813" },
+    "peppermint-green": { name: "Peppermint Green", hex: "#A7D3A0" },
+    "garden-green": { name: "Garden Green", hex: "#14771F" },
+    "fern-green": { name: "Fern Green", hex: "#16B210" },
+    "navy-blue": { name: "Navy Blue", hex: "#000080" },
+    "sky-blue": { name: "Sky Blue", hex: "#87CEEB" },
+    "powder-blue": { name: "Powder Blue", hex: "#B0E0E6" }
+  },
+  imageBasePath: "{{ 'files/' | file_url }}"
+};
+</script>
+
+{% schema %}
+{
+  "name": "Customizable Coat Rack",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Product Display"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "default": false,
+      "label": "Show vendor"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_image_zoom",
+      "default": true,
+      "label": "Enable image zoom on hover"
+    },
+    {
+      "type": "select",
+      "id": "image_aspect_ratio",
+      "options": [
+        { "value": "square", "label": "Square (1:1)" },
+        { "value": "landscape", "label": "Landscape (4:3)" },
+        { "value": "portrait", "label": "Portrait (3:4)" }
+      ],
+      "default": "square",
+      "label": "Image aspect ratio"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Customizable Coat Rack"
+    }
+  ]
+}
+{% endschema %}

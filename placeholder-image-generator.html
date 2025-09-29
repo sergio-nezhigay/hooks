@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coat Rack Placeholder Image Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .generator-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+        .generator-section h2 {
+            color: #444;
+            border-bottom: 2px solid #007aff;
+            padding-bottom: 5px;
+        }
+        .controls {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        select, button {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        button {
+            background: #007aff;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        canvas {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .canvas-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .download-btn {
+            background: #28a745;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            margin-top: 10px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .download-btn:hover {
+            background: #218838;
+        }
+        .instructions {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #007aff;
+        }
+        .color-palette {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .color-swatch {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #ddd;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .color-swatch:hover {
+            transform: scale(1.1);
+        }
+        .color-swatch.selected {
+            border-color: #007aff;
+            border-width: 3px;
+        }
+        .progress {
+            background: #e9ecef;
+            border-radius: 10px;
+            height: 20px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        .progress-bar {
+            background: #007aff;
+            height: 100%;
+            transition: width 0.3s;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🖼️ Coat Rack Placeholder Image Generator</h1>
+
+        <div class="instructions">
+            <h3>Instructions:</h3>
+            <ol>
+                <li>Generate base rail images for each size/color combination</li>
+                <li>Generate hook overlay images (use RED for the hook color - the system will transform these)</li>
+                <li>Download all images and upload to Shopify Files</li>
+                <li>Images will be named automatically according to the required convention</li>
+            </ol>
+        </div>
+
+        <!-- Base Rail Generator -->
+        <div class="generator-section">
+            <h2>1. Base Rail Images</h2>
+            <div class="controls">
+                <select id="railSize">
+                    <option value="3">3 Hooks</option>
+                    <option value="6">6 Hooks</option>
+                    <option value="9">9 Hooks</option>
+                </select>
+                <select id="railColor">
+                    <option value="oak">Oak</option>
+                    <option value="white">White</option>
+                    <option value="black">Black</option>
+                </select>
+                <button onclick="generateBaseRail()">Generate Base Rail</button>
+                <button onclick="generateAllBaseRails()">Generate All Base Rails (9 images)</button>
+            </div>
+            <div class="progress" id="baseRailProgress" style="display: none;">
+                <div class="progress-bar" id="baseRailBar"></div>
+            </div>
+            <div class="canvas-container" id="baseRailContainer"></div>
+        </div>
+
+        <!-- Hook Overlay Generator -->
+        <div class="generator-section">
+            <h2>2. Hook Overlay Images</h2>
+            <p><strong>Important:</strong> Always use RED color for hooks - the system will transform these to other colors automatically.</p>
+            <div class="controls">
+                <select id="hookSize">
+                    <option value="3">3 Hooks</option>
+                    <option value="6">6 Hooks</option>
+                    <option value="9">9 Hooks</option>
+                </select>
+                <button onclick="generateHookOverlays()">Generate Hook Overlays for Size</button>
+                <button onclick="generateAllHookOverlays()">Generate All Hook Overlays</button>
+            </div>
+            <div class="progress" id="hookProgress" style="display: none;">
+                <div class="progress-bar" id="hookBar"></div>
+            </div>
+            <div class="canvas-container" id="hookContainer"></div>
+        </div>
+
+        <!-- Download All -->
+        <div class="generator-section">
+            <h2>3. Download All Images</h2>
+            <button onclick="downloadAllImages()" style="background: #28a745; font-size: 16px; padding: 15px 30px;">
+                📦 Download All Images as ZIP
+            </button>
+            <p><em>This will generate and package all required images for immediate use.</em></p>
+        </div>
+    </div>
+
+    <script>
+        const colors = {
+            oak: '#D2B48C',
+            white: '#FFFFFF',
+            black: '#2C2C2C'
+        };
+
+        const hookColor = '#FF0000'; // Always red for hooks
+        const canvasSize = 300;
+        const downloadableImages = [];
+
+        function createCanvas(width = canvasSize, height = canvasSize) {
+            const canvas = document.createElement('canvas');
+            canvas.width = width;
+            canvas.height = height;
+            canvas.style.width = '150px';
+            canvas.style.height = '150px';
+            return canvas;
+        }
+
+        function generateBaseRail() {
+            const size = document.getElementById('railSize').value;
+            const color = document.getElementById('railColor').value;
+
+            const canvas = createCanvas();
+            const ctx = canvas.getContext('2d');
+
+            // Clear canvas
+            ctx.fillStyle = 'transparent';
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw base rail
+            ctx.fillStyle = colors[color];
+            ctx.fillRect(50, 120, parseInt(size) * 60 + 40, 60); // Horizontal rail
+
+            // Add mounting holes
+            ctx.fillStyle = '#666';
+            ctx.beginPath();
+            ctx.arc(70, 150, 3, 0, 2 * Math.PI);
+            ctx.arc(parseInt(size) * 60 + 70, 150, 3, 0, 2 * Math.PI);
+            ctx.fill();
+
+            // Add border/depth
+            ctx.strokeStyle = '#999';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(50, 120, parseInt(size) * 60 + 40, 60);
+
+            const filename = `${size}-original-${color}.png`;
+            addDownloadButton(canvas, filename);
+
+            document.getElementById('baseRailContainer').appendChild(canvas);
+
+            // Store for bulk download
+            canvas.toBlob(blob => {
+                downloadableImages.push({ blob, filename });
+            });
+        }
+
+        function generateAllBaseRails() {
+            document.getElementById('baseRailContainer').innerHTML = '';
+            const sizes = ['3', '6', '9'];
+            const railColors = ['oak', 'white', 'black'];
+            let current = 0;
+            const total = sizes.length * railColors.length;
+
+            document.getElementById('baseRailProgress').style.display = 'block';
+
+            sizes.forEach(size => {
+                railColors.forEach(color => {
+                    setTimeout(() => {
+                        document.getElementById('railSize').value = size;
+                        document.getElementById('railColor').value = color;
+                        generateBaseRail();
+                        current++;
+
+                        const progress = (current / total) * 100;
+                        document.getElementById('baseRailBar').style.width = progress + '%';
+
+                        if (current === total) {
+                            setTimeout(() => {
+                                document.getElementById('baseRailProgress').style.display = 'none';
+                            }, 500);
+                        }
+                    }, current * 100);
+                });
+            });
+        }
+
+        function generateHookOverlay(size, position) {
+            const canvas = createCanvas();
+            const ctx = canvas.getContext('2d');
+
+            // Clear canvas (transparent background)
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Calculate hook position
+            const railWidth = parseInt(size) * 60 + 40;
+            const hookSpacing = railWidth / (parseInt(size) + 1);
+            const hookX = 50 + hookSpacing * position;
+            const hookY = 100;
+
+            // Draw hook in red (will be transformed by CSS)
+            ctx.fillStyle = hookColor;
+
+            // Hook shape
+            ctx.beginPath();
+            ctx.arc(hookX, hookY, 8, 0, Math.PI); // Top arc
+            ctx.arc(hookX, hookY + 20, 6, Math.PI, 0); // Bottom arc
+            ctx.fill();
+
+            // Hook mounting point
+            ctx.fillRect(hookX - 3, hookY + 15, 6, 10);
+
+            const positionLetter = String.fromCharCode(96 + position); // a, b, c...
+            const filename = `${size}${positionLetter}-original-red.png`;
+            addDownloadButton(canvas, filename);
+
+            document.getElementById('hookContainer').appendChild(canvas);
+
+            // Store for bulk download
+            canvas.toBlob(blob => {
+                downloadableImages.push({ blob, filename });
+            });
+        }
+
+        function generateHookOverlays() {
+            const size = document.getElementById('hookSize').value;
+            const hookCount = parseInt(size);
+
+            for (let i = 1; i <= hookCount; i++) {
+                setTimeout(() => generateHookOverlay(size, i), i * 50);
+            }
+        }
+
+        function generateAllHookOverlays() {
+            document.getElementById('hookContainer').innerHTML = '';
+            const sizes = ['3', '6', '9'];
+            let current = 0;
+            let total = 0;
+
+            // Calculate total
+            sizes.forEach(size => {
+                total += parseInt(size);
+            });
+
+            document.getElementById('hookProgress').style.display = 'block';
+
+            sizes.forEach(size => {
+                const hookCount = parseInt(size);
+                for (let i = 1; i <= hookCount; i++) {
+                    setTimeout(() => {
+                        generateHookOverlay(size, i);
+                        current++;
+
+                        const progress = (current / total) * 100;
+                        document.getElementById('hookBar').style.width = progress + '%';
+
+                        if (current === total) {
+                            setTimeout(() => {
+                                document.getElementById('hookProgress').style.display = 'none';
+                            }, 500);
+                        }
+                    }, current * 100);
+                }
+            });
+        }
+
+        function addDownloadButton(canvas, filename) {
+            const container = document.createElement('div');
+            container.style.textAlign = 'center';
+            container.appendChild(canvas);
+
+            const btn = document.createElement('button');
+            btn.className = 'download-btn';
+            btn.textContent = `💾 ${filename}`;
+            btn.onclick = () => downloadCanvas(canvas, filename);
+            container.appendChild(btn);
+
+            return container;
+        }
+
+        function downloadCanvas(canvas, filename) {
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+
+        async function downloadAllImages() {
+            // Clear previous images
+            downloadableImages.length = 0;
+
+            // Generate all images
+            document.getElementById('baseRailContainer').innerHTML = '';
+            document.getElementById('hookContainer').innerHTML = '';
+
+            await generateAllBaseRails();
+
+            setTimeout(async () => {
+                await generateAllHookOverlays();
+
+                setTimeout(() => {
+                    // Create ZIP file (simplified - in real implementation you'd use JSZip)
+                    if (downloadableImages.length > 0) {
+                        alert(`Generated ${downloadableImages.length} images! Use the individual download buttons to save each image. In a real implementation, this would create a ZIP file.`);
+                    }
+                }, 2000);
+            }, 1000);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            // Generate a sample base rail on load
+            generateBaseRail();
+        });
+    </script>
+</body>
+</html>
