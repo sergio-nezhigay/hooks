@@ -1,0 +1,263 @@
+{% comment %}
+  Section: Custom Product with Dynamic Canvas Image
+  File: sections/product-custom-canvas.liquid
+{% endcomment %}
+
+{{ 'product-custom-canvas.css' | asset_url | stylesheet_tag }}
+
+<div class="product-custom-canvas" data-section-id="{{ section.id }}">
+  <div class="page-width">
+    <div class="product-custom-grid">
+      
+      {%- assign current_variant = product.selected_or_first_available_variant -%}
+      
+      <!-- Canvas Product Image -->
+      <div class="product-custom__media">
+        <div class="product-custom__image-wrapper">
+          <canvas 
+            id="product-canvas-{{ section.id }}"
+            width="800" 
+            height="600"
+            class="product-custom__canvas"
+            data-canvas-image
+          ></canvas>
+          
+          {% if section.settings.show_zoom_hint %}
+          <div class="canvas-hint">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M9 2C5.13 2 2 5.13 2 9C2 12.87 5.13 16 9 16C10.38 16 11.68 15.56 12.78 14.78L16.29 18.29C16.68 18.68 17.31 18.68 17.7 18.29C18.09 17.9 18.09 17.27 17.7 16.88L14.19 13.37C14.97 12.27 15.41 10.97 15.41 9.59C15.41 5.72 12.28 2.59 8.41 2.59M9 4C11.76 4 14 6.24 14 9C14 11.76 11.76 14 9 14C6.24 14 4 11.76 4 9C4 6.24 6.24 4 9 4Z" fill="currentColor"/>
+            </svg>
+            Real-time preview
+          </div>
+          {% endif %}
+        </div>
+
+        {% if section.settings.show_trust_badges %}
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z" fill="#10b981"/>
+            </svg>
+            <span>Free Shipping</span>
+          </div>
+          <div class="trust-badge">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z" fill="#3b82f6"/>
+            </svg>
+            <span>2 Year Warranty</span>
+          </div>
+          <div class="trust-badge">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M19 3H5C3.89 3 3 3.89 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19Z" fill="#f59e0b"/>
+            </svg>
+            <span>Handcrafted</span>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+
+      <!-- Product Form -->
+      <div class="product-custom__info">
+        <div class="product-custom__header">
+          <h1 class="product-custom__title">{{ product.title }}</h1>
+          
+          {% if product.metafields.custom.subtitle %}
+          <p class="product-custom__subtitle">
+            {{ product.metafields.custom.subtitle }}
+          </p>
+          {% endif %}
+
+          <div class="product-custom__price">
+            <span class="price" data-product-price>
+              {{ current_variant.price | money }}
+            </span>
+            {% if current_variant.compare_at_price > current_variant.price %}
+              <span class="price-compare">
+                {{ current_variant.compare_at_price | money }}
+              </span>
+            {% endif %}
+          </div>
+        </div>
+
+        {% if product.description != blank %}
+        <div class="product-custom__description rte">
+          {{ product.description }}
+        </div>
+        {% endif %}
+
+        {% form 'product', product, id: 'product-form', class: 'product-custom__form' %}
+          
+          <input type="hidden" name="id" value="{{ current_variant.id }}" data-variant-id>
+
+          <!-- Variant Options -->
+          {% unless product.has_only_default_variant %}
+            <div class="product-custom__variants">
+              
+              {% for option in product.options_with_values %}
+                <div class="variant-input-wrapper">
+                  <label class="variant-label">
+                    {{ option.name }}
+                  </label>
+                  
+                  {% assign option_index = forloop.index0 %}
+                  
+                  {% if section.settings.variant_picker_style == 'dropdown' %}
+                    <select 
+                      class="variant-select"
+                      name="options[{{ option.name | escape }}]"
+                      data-option-select
+                      data-option-index="{{ option_index }}"
+                    >
+                      {% for value in option.values %}
+                        <option 
+                          value="{{ value | escape }}"
+                          {% if option.selected_value == value %}selected{% endif %}
+                        >
+                          {{ value }}
+                        </option>
+                      {% endfor %}
+                    </select>
+                  {% else %}
+                    <div class="variant-buttons" data-option-buttons>
+                      {% for value in option.values %}
+                        <button
+                          type="button"
+                          class="variant-button {% if option.selected_value == value %}active{% endif %}"
+                          data-option-value="{{ value | escape }}"
+                          data-option-index="{{ option_index }}"
+                        >
+                          {% if option.name == 'Hook Color' or option.name == 'Base Color' %}
+                            <span class="color-swatch" style="background-color: {{ value | handle | replace: '-', '' }};"></span>
+                          {% endif %}
+                          {{ value }}
+                        </button>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                </div>
+              {% endfor %}
+
+            </div>
+          {% endunless %}
+
+          <!-- Quantity -->
+          <div class="product-custom__quantity">
+            <label for="Quantity-{{ section.id }}">Quantity</label>
+            <div class="quantity-selector">
+              <button type="button" class="quantity-button" data-quantity-minus>
+                <svg width="12" height="2" viewBox="0 0 12 2" fill="none">
+                  <path d="M0 1H12" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </button>
+              <input 
+                type="number" 
+                id="Quantity-{{ section.id }}"
+                name="quantity" 
+                value="1" 
+                min="1"
+                class="quantity-input"
+                data-quantity-input
+              >
+              <button type="button" class="quantity-button" data-quantity-plus>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M6 0V12M0 6H12" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Add to Cart -->
+          <button 
+            type="submit" 
+            class="product-custom__submit"
+            {% if current_variant.available == false %}disabled{% endif %}
+            data-add-to-cart
+          >
+            <span data-add-to-cart-text>
+              {% if current_variant.available %}
+                Add to Cart
+              {% else %}
+                Sold Out
+              {% endif %}
+            </span>
+          </button>
+
+          {% if section.settings.show_dynamic_checkout %}
+            {{ form | payment_button }}
+          {% endif %}
+
+        {% endform %}
+
+        <!-- Current Configuration Display -->
+        <div class="product-custom__config">
+          <h3>Your Configuration</h3>
+          <div class="config-details" data-config-display>
+            <!-- Populated by JavaScript -->
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  // Product data for canvas rendering - must load before main script
+  window.productCustomCanvasData = window.productCustomCanvasData || {};
+  window.productCustomCanvasData['{{ section.id }}'] = {
+    variants: {{ product.variants | json }},
+    options: {{ product.options_with_values | json }},
+    currentVariant: {{ current_variant | json }},
+    sectionId: '{{ section.id }}'
+  };
+</script>
+
+<script src="{{ 'product-custom-canvas.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Custom Product Canvas",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_zoom_hint",
+      "label": "Show zoom hint",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_trust_badges",
+      "label": "Show trust badges",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dynamic_checkout",
+      "label": "Show dynamic checkout button",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "variant_picker_style",
+      "label": "Variant picker style",
+      "options": [
+        {
+          "value": "buttons",
+          "label": "Buttons"
+        },
+        {
+          "value": "dropdown",
+          "label": "Dropdown"
+        }
+      ],
+      "default": "buttons"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Product Canvas"
+    }
+  ]
+}
+{% endschema %}
