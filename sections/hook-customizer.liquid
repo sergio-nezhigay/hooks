@@ -167,10 +167,10 @@
 
   .hook-preview-canvas__hooks {
     position: absolute;
-    top: -87px;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 2rem;
+    left: 2rem;
+    right: 2rem;
+    bottom: 2rem;
     pointer-events: none;
   }
 
@@ -179,6 +179,7 @@
     width: 12%;
     height: auto;
     transition: filter 0.3s ease;
+    transform: translate(-50%, -50%);
   }
 
   /* Options */
@@ -382,6 +383,7 @@
 
     // Render Hooks
     function renderHooks() {
+      console.log('Rendering hooks - Count:', state.hookCount, 'Color:', state.hookColorName);
       elements.hooksContainer.innerHTML = '';
       const positions = state.hookCount === 3 ? config.hook3Positions : config.hook6Positions;
       const filter = hexToFilter(state.hookColor);
@@ -446,9 +448,22 @@
 
         state.hookCount = parseInt(this.dataset.hookCount);
         updateRailImage();
-        renderHooks();
+        // Small delay to allow rail image to load and set dimensions
+        setTimeout(() => {
+          renderHooks();
+        }, 50);
         updateVariantSelection();
       });
+    });
+
+    // Window resize handler to maintain alignment
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        console.log('Window resized - recalculating hook positions');
+        renderHooks();
+      }, 150);
     });
 
     // Color Swatch Click Handler
