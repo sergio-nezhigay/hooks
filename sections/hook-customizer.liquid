@@ -180,10 +180,10 @@
   }
 
   /* Preview Canvas */
-  .hook-customizer__preview {
+  {% comment %}.hook-customizer__preview {
     position: sticky;
     top: 2rem;
-  }
+  }{% endcomment %}
 
   .hook-preview-canvas {
     position: relative;
@@ -347,13 +347,13 @@
         style1: {
           3: '{{ section.settings.rail_style1_3_image | img_url: "master" }}',
           6: '{{ section.settings.rail_style1_6_image | img_url: "master" }}',
-          9: '{{ section.settings.rail_style1_9_image | img_url: "master" }}'
+          9: '{{ section.settings.rail_style1_9_image | img_url: "master" }}',
         },
         style2: {
           3: '{{ section.settings.rail_style2_3_image | img_url: "master" }}',
           6: '{{ section.settings.rail_style2_6_image | img_url: "master" }}',
-          9: '{{ section.settings.rail_style2_9_image | img_url: "master" }}'
-        }
+          9: '{{ section.settings.rail_style2_9_image | img_url: "master" }}',
+        },
       },
       hookTemplate: '{{ section.settings.hook_template | img_url: "master" }}',
       hookRed: '{{ section.settings.hook_red | img_url: "master" }}',
