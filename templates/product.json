@@ -68,9 +68,12 @@
         "hook_template": "shopify://shop_images/single-hook-red.png",
         "hook_red": "shopify://shop_images/single-hook-red.png",
         "hook_white": "shopify://shop_images/Generated_Image_September_30__2025_-_4_18PM-removebg-preview.png",
-        "rail_3_image": "shopify://shop_images/base-rail-3-1.png",
-        "rail_6_image": "shopify://shop_images/base-rail-6-1.png",
-        "rail_9_image": "shopify://shop_images/very_long_rail.png"
+        "rail_style1_3_image": "shopify://shop_images/white-3-cropped.png",
+        "rail_style1_6_image": "shopify://shop_images/white-6-cropped.png",
+        "rail_style1_9_image": "shopify://shop_images/white-9-cropped.png",
+        "rail_style2_3_image": "shopify://shop_images/base-rail-3-1.png",
+        "rail_style2_6_image": "shopify://shop_images/base-rail-6-1.png",
+        "rail_style2_9_image": "shopify://shop_images/very_long_rail.png"
       }
     },
     "main": {

@@ -11,7 +11,7 @@
         <img
           class="hook-preview-canvas__rail"
           id="railImage-{{ section.id }}"
-          src="{{ section.settings.rail_3_image | img_url: 'master' }}"
+          src="{{ section.settings.rail_style1_3_image | img_url: 'master' }}"
           alt="Coat rack rail"
           loading="eager"
         >
@@ -21,13 +21,38 @@
 
     {%- comment -%} Customization Options {%- endcomment -%}
     <div class="hook-customizer__options">
+      {%- comment -%} Rail Style Selector {%- endcomment -%}
+      <div class="hook-option">
+        <label class="hook-option__label">Rail Style</label>
+        <div class="hook-option__buttons" role="radiogroup">
+          <button
+            type="button"
+            class="hook-option__button rail-style-button active"
+            data-rail-style="style1"
+            role="radio"
+            aria-checked="true"
+          >
+            Style 1
+          </button>
+          <button
+            type="button"
+            class="hook-option__button rail-style-button"
+            data-rail-style="style2"
+            role="radio"
+            aria-checked="false"
+          >
+            Style 2
+          </button>
+        </div>
+      </div>
+
       {%- comment -%} Hook Count Selector {%- endcomment -%}
       <div class="hook-option">
         <label class="hook-option__label">Number of Hooks</label>
         <div class="hook-option__buttons" role="radiogroup">
           <button
             type="button"
-            class="hook-option__button active"
+            class="hook-option__button hook-count-button active"
             data-hook-count="3"
             role="radio"
             aria-checked="true"
@@ -36,7 +61,7 @@
           </button>
           <button
             type="button"
-            class="hook-option__button"
+            class="hook-option__button hook-count-button"
             data-hook-count="6"
             role="radio"
             aria-checked="false"
@@ -45,7 +70,7 @@
           </button>
           <button
             type="button"
-            class="hook-option__button"
+            class="hook-option__button hook-count-button"
             data-hook-count="9"
             role="radio"
             aria-checked="false"
@@ -318,9 +343,18 @@
 
     // Configuration
     const config = {
-      rail3Image: '{{ section.settings.rail_3_image | img_url: "master" }}',
-      rail6Image: '{{ section.settings.rail_6_image | img_url: "master" }}',
-      rail9Image: '{{ section.settings.rail_9_image | img_url: "master" }}',
+      rails: {
+        style1: {
+          3: '{{ section.settings.rail_style1_3_image | img_url: "master" }}',
+          6: '{{ section.settings.rail_style1_6_image | img_url: "master" }}',
+          9: '{{ section.settings.rail_style1_9_image | img_url: "master" }}'
+        },
+        style2: {
+          3: '{{ section.settings.rail_style2_3_image | img_url: "master" }}',
+          6: '{{ section.settings.rail_style2_6_image | img_url: "master" }}',
+          9: '{{ section.settings.rail_style2_9_image | img_url: "master" }}'
+        }
+      },
       hookTemplate: '{{ section.settings.hook_template | img_url: "master" }}',
       hookRed: '{{ section.settings.hook_red | img_url: "master" }}',
       hookWhite: '{{ section.settings.hook_white | img_url: "master" }}',
@@ -357,6 +391,7 @@
 
     // State
     let state = {
+      railStyle: 'style1',
       hookCount: 3,
       hookColor: '{{ section.blocks.first.settings.color_hex }}',
       hookColorName: '{{ section.blocks.first.settings.color_name }}',
@@ -366,7 +401,8 @@
     const elements = {
       railImage: document.getElementById(`railImage-${sectionId}`),
       hooksContainer: document.getElementById(`hooksContainer-${sectionId}`),
-      hookCountButtons: document.querySelectorAll(`[data-section-id="${sectionId}"] .hook-option__button`),
+      railStyleButtons: document.querySelectorAll(`[data-section-id="${sectionId}"] .rail-style-button`),
+      hookCountButtons: document.querySelectorAll(`[data-section-id="${sectionId}"] .hook-count-button`),
       colorSwatches: document.querySelectorAll(`[data-section-id="${sectionId}"] .hook-color-swatch`),
       selectedColorName: document.getElementById(`selectedColorName-${sectionId}`),
       variantSelector: document.getElementById(`variantSelector-${sectionId}`),
@@ -464,13 +500,8 @@
 
     // Update Rail Image
     function updateRailImage() {
-      if (state.hookCount === 3) {
-        elements.railImage.src = config.rail3Image;
-      } else if (state.hookCount === 6) {
-        elements.railImage.src = config.rail6Image;
-      } else {
-        elements.railImage.src = config.rail9Image;
-      }
+      elements.railImage.src = config.rails[state.railStyle][state.hookCount];
+      console.log('Updated rail image:', state.railStyle, state.hookCount, elements.railImage.src);
     }
 
     // Find Matching Variant
@@ -503,6 +534,26 @@
         }
       }
     }
+
+    // Rail Style Click Handler
+    elements.railStyleButtons.forEach((button) => {
+      button.addEventListener('click', function () {
+        elements.railStyleButtons.forEach((btn) => {
+          btn.classList.remove('active');
+          btn.setAttribute('aria-checked', 'false');
+        });
+        this.classList.add('active');
+        this.setAttribute('aria-checked', 'true');
+
+        state.railStyle = this.dataset.railStyle;
+        updateRailImage();
+        // Small delay to allow rail image to load and set dimensions
+        setTimeout(() => {
+          renderHooks();
+        }, 50);
+        updateVariantSelection();
+      });
+    });
 
     // Hook Count Click Handler
     elements.hookCountButtons.forEach((button) => {
@@ -616,22 +667,48 @@
       "info": "Upload the white hook image. This will be used directly for white color selection instead of color filters."
     },
     {
-      "type": "image_picker",
-      "id": "rail_3_image",
-      "label": "Rail Image - 3 Hooks",
-      "info": "Upload the base rail image for 3-hook configuration"
+      "type": "header",
+      "content": "Rail Style 1"
     },
     {
       "type": "image_picker",
-      "id": "rail_6_image",
-      "label": "Rail Image - 6 Hooks",
-      "info": "Upload the base rail image for 6-hook configuration"
+      "id": "rail_style1_3_image",
+      "label": "Style 1 - 3 Hooks",
+      "info": "Upload rail image for Style 1 with 3 hooks"
     },
     {
       "type": "image_picker",
-      "id": "rail_9_image",
-      "label": "Rail Image - 9 Hooks",
-      "info": "Upload the base rail image for 9-hook configuration"
+      "id": "rail_style1_6_image",
+      "label": "Style 1 - 6 Hooks",
+      "info": "Upload rail image for Style 1 with 6 hooks"
+    },
+    {
+      "type": "image_picker",
+      "id": "rail_style1_9_image",
+      "label": "Style 1 - 9 Hooks",
+      "info": "Upload rail image for Style 1 with 9 hooks"
+    },
+    {
+      "type": "header",
+      "content": "Rail Style 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "rail_style2_3_image",
+      "label": "Style 2 - 3 Hooks",
+      "info": "Upload rail image for Style 2 with 3 hooks"
+    },
+    {
+      "type": "image_picker",
+      "id": "rail_style2_6_image",
+      "label": "Style 2 - 6 Hooks",
+      "info": "Upload rail image for Style 2 with 6 hooks"
+    },
+    {
+      "type": "image_picker",
+      "id": "rail_style2_9_image",
+      "label": "Style 2 - 9 Hooks",
+      "info": "Upload rail image for Style 2 with 9 hooks"
     },
     {
       "type": "header",
