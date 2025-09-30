@@ -319,6 +319,7 @@
       rail6Image: '{{ section.settings.rail_6_image | img_url: "master" }}',
       rail9Image: '{{ section.settings.rail_9_image | img_url: "master" }}',
       hookTemplate: '{{ section.settings.hook_template | img_url: "master" }}',
+      hookWhite: '{{ section.settings.hook_white | img_url: "master" }}',
       hookSizes: {
         3: '14%',
         6: '7%',
@@ -420,11 +421,15 @@
       }
       console.log('Selected positions array length:', positions ? positions.length : 'undefined');
       const hookSize = config.hookSizes[state.hookCount];
-      const filter = hexToFilter(state.hookColor);
+
+      // Check if white color is selected
+      const isWhite = state.hookColorName.toLowerCase() === 'white';
+      const hookImage = isWhite ? config.hookWhite : config.hookTemplate;
+      const filter = isWhite ? 'none' : hexToFilter(state.hookColor);
 
       positions.forEach((pos, index) => {
         const hook = document.createElement('img');
-        hook.src = config.hookTemplate;
+        hook.src = hookImage;
         hook.className = 'hook-preview-canvas__hook';
         hook.style.left = `${pos.left}%`;
         hook.style.top = `${pos.top}%`;
@@ -575,6 +580,12 @@
       "id": "hook_template",
       "label": "Hook Template (Red PNG)",
       "info": "Upload a red hook template image with transparent background. This will be recolored based on customer selection."
+    },
+    {
+      "type": "image_picker",
+      "id": "hook_white",
+      "label": "White Hook Image",
+      "info": "Upload the white hook image. This will be used directly for white color selection instead of color filters."
     },
     {
       "type": "image_picker",
