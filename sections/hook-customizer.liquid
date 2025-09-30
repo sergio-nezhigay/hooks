@@ -251,7 +251,7 @@
   .hook-color-swatch {
     width: 48px;
     height: 48px;
-    border: 3px solid transparent;
+    border: 2px solid #ddd;
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -260,16 +260,19 @@
     align-items: center;
     justify-content: center;
     padding: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   .hook-color-swatch:hover {
     transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-color: #999;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 
   .hook-color-swatch.active {
     border-color: #333;
-    box-shadow: 0 0 0 2px white, 0 0 0 4px #333;
+    border-width: 3px;
+    box-shadow: 0 0 0 2px white, 0 0 0 5px #333;
   }
 
   .swatch-check {
