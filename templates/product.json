@@ -9,6 +9,67 @@
  */
 {
   "sections": {
+    "hook_customizer_h7BPeA": {
+      "type": "hook-customizer",
+      "blocks": {
+        "color_gLYRLG": {
+          "type": "color",
+          "settings": {
+            "color_name": "Candy Red",
+            "color_hex": "#ff0000"
+          }
+        },
+        "color_VRDFaa": {
+          "type": "color",
+          "settings": {
+            "color_name": "Navy Blue",
+            "color_hex": "#000080"
+          }
+        },
+        "color_XzwPmE": {
+          "type": "color",
+          "settings": {
+            "color_name": "Forest Green",
+            "color_hex": "#228b22"
+          }
+        },
+        "color_ExeYJB": {
+          "type": "color",
+          "settings": {
+            "color_name": "Charcoal",
+            "color_hex": "#36454f"
+          }
+        },
+        "color_AdWPWi": {
+          "type": "color",
+          "settings": {
+            "color_name": "White",
+            "color_hex": "#ffffff"
+          }
+        },
+        "color_kfJEWt": {
+          "type": "color",
+          "settings": {
+            "color_name": "Sunny Yellow",
+            "color_hex": "#ffd700"
+          }
+        }
+      },
+      "block_order": [
+        "color_gLYRLG",
+        "color_VRDFaa",
+        "color_XzwPmE",
+        "color_ExeYJB",
+        "color_AdWPWi",
+        "color_kfJEWt"
+      ],
+      "name": "Hook Customizer",
+      "settings": {
+        "hook_template": "shopify://shop_images/single-hook-red.png",
+        "rail_3_image": "shopify://shop_images/base-rail-3-1.png",
+        "rail_6_image": "shopify://shop_images/base-rail-6-1.png"
+      }
+    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -255,6 +316,7 @@
     }
   },
   "order": [
+    "hook_customizer_h7BPeA",
     "main",
     "hp_info_columns_CYRzQP",
     "related-products",

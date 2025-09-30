@@ -59,6 +59,7 @@
     },
     "product_custom_canvas_L3XDAn": {
       "type": "product-custom-canvas",
+      "disabled": true,
       "name": "Custom Product Canvas",
       "settings": {
         "show_zoom_hint": true,
@@ -66,11 +67,85 @@
         "show_dynamic_checkout": true,
         "variant_picker_style": "buttons"
       }
+    },
+    "customizable_coat_rack_mfbRrx": {
+      "type": "customizable-coat-rack",
+      "disabled": true,
+      "name": "Customizable Coat Rack",
+      "settings": {
+        "show_vendor": false,
+        "enable_image_zoom": true,
+        "image_aspect_ratio": "square"
+      }
+    },
+    "hook_customizer_btUDz9": {
+      "type": "hook-customizer",
+      "blocks": {
+        "color_YHTPAA": {
+          "type": "color",
+          "settings": {
+            "color_name": "Candy Red",
+            "color_hex": "#ff0000"
+          }
+        },
+        "color_AzKVYP": {
+          "type": "color",
+          "settings": {
+            "color_name": "Navy Blue",
+            "color_hex": "#000080"
+          }
+        },
+        "color_qMNEfX": {
+          "type": "color",
+          "settings": {
+            "color_name": "Forest Green",
+            "color_hex": "#228b22"
+          }
+        },
+        "color_DGVgKJ": {
+          "type": "color",
+          "settings": {
+            "color_name": "Charcoal",
+            "color_hex": "#36454f"
+          }
+        },
+        "color_ki9XhM": {
+          "type": "color",
+          "settings": {
+            "color_name": "White",
+            "color_hex": "#ffffff"
+          }
+        },
+        "color_Dz8LbL": {
+          "type": "color",
+          "settings": {
+            "color_name": "Sunny Yellow",
+            "color_hex": "#ffd700"
+          }
+        }
+      },
+      "block_order": [
+        "color_YHTPAA",
+        "color_AzKVYP",
+        "color_qMNEfX",
+        "color_DGVgKJ",
+        "color_ki9XhM",
+        "color_Dz8LbL"
+      ],
+      "disabled": true,
+      "name": "Hook Customizer",
+      "settings": {
+        "hook_template": "shopify://shop_images/single-hook-red.png",
+        "rail_3_image": "shopify://shop_images/base-rail-3.png",
+        "rail_6_image": "shopify://shop_images/base-rail-6.png"
+      }
     }
   },
   "order": [
     "announcement-bar",
     "header",
-    "product_custom_canvas_L3XDAn"
+    "product_custom_canvas_L3XDAn",
+    "customizable_coat_rack_mfbRrx",
+    "hook_customizer_btUDz9"
   ]
 }
