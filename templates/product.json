@@ -72,6 +72,7 @@
         "discount_table_XnbMRi",
         "share"
       ],
+      "disabled": true,
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
@@ -94,21 +95,18 @@
         "icon_text_reAVz3": {
           "type": "icon-text",
           "settings": {
-            "icon": "shopify://shop_images/colors_76e9de33-c038-4b2f-a982-58c09b596928.png",
             "text": "Each size is available many colors – mix and match however you want with no minimum order"
           }
         },
         "icon_text_76NDyP": {
           "type": "icon-text",
           "settings": {
-            "icon": "shopify://shop_images/gurantee.png",
             "text": "Every Toughook is tough against breakages in normal indoor usage"
           }
         },
         "icon_text_nUniVQ": {
           "type": "icon-text",
           "settings": {
-            "icon": "shopify://shop_images/british.png",
             "text": "The original unbreakable hook – designed and manufactured in Great Britain"
           }
         }

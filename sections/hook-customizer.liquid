@@ -1,0 +1,607 @@
+{% comment %}
+  Hook Customizer Section
+  Allows customers to select hook count and color with live preview
+{% endcomment %}
+
+<div class="hook-customizer" data-section-id="{{ section.id }}" data-section-type="hook-customizer">
+  <div class="hook-customizer__wrapper">
+    
+    {%- comment -%} Preview Canvas {%- endcomment -%}
+    <div class="hook-customizer__preview">
+      <div class="hook-preview-canvas" id="hookPreviewCanvas-{{ section.id }}">
+        <img 
+          class="hook-preview-canvas__rail" 
+          id="railImage-{{ section.id }}"
+          src="{{ section.settings.rail_3_image | img_url: 'master' }}" 
+          alt="Coat rack rail"
+          loading="eager"
+        >
+        <div class="hook-preview-canvas__hooks" id="hooksContainer-{{ section.id }}"></div>
+      </div>
+    </div>
+
+    {%- comment -%} Customization Options {%- endcomment -%}
+    <div class="hook-customizer__options">
+      
+      {%- comment -%} Hook Count Selector {%- endcomment -%}
+      <div class="hook-option">
+        <label class="hook-option__label">Number of Hooks</label>
+        <div class="hook-option__buttons" role="radiogroup">
+          <button 
+            type="button" 
+            class="hook-option__button active" 
+            data-hook-count="3"
+            role="radio"
+            aria-checked="true"
+          >
+            3 Hooks
+          </button>
+          <button 
+            type="button" 
+            class="hook-option__button" 
+            data-hook-count="6"
+            role="radio"
+            aria-checked="false"
+          >
+            6 Hooks
+          </button>
+        </div>
+      </div>
+
+      {%- comment -%} Color Selector {%- endcomment -%}
+      <div class="hook-option">
+        <label class="hook-option__label">
+          Hook Color: <span class="hook-option__selected-name" id="selectedColorName-{{ section.id }}">{{ section.blocks.first.settings.color_name }}</span>
+        </label>
+        <div class="hook-option__swatches">
+          {% for block in section.blocks %}
+            {% if block.type == 'color' %}
+              <button 
+                type="button" 
+                class="hook-color-swatch {% if forloop.first %}active{% endif %}" 
+                data-color-hex="{{ block.settings.color_hex }}"
+                data-color-name="{{ block.settings.color_name }}"
+                style="background-color: {{ block.settings.color_hex }};"
+                aria-label="{{ block.settings.color_name }}"
+                title="{{ block.settings.color_name }}"
+              >
+                {% if forloop.first %}
+                  <svg class="swatch-check" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M13 4L6 11L3 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                {% endif %}
+              </button>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      {%- comment -%} Hidden Variant Selector {%- endcomment -%}
+      {% if product %}
+        <select id="variantSelector-{{ section.id }}" name="id" class="hook-customizer__variant-select" style="display: none;">
+          {% for variant in product.variants %}
+            <option 
+              value="{{ variant.id }}"
+              data-hook-count="{{ variant.option1 }}"
+              data-hook-color="{{ variant.option2 }}"
+              {% unless variant.available %}disabled{% endunless %}
+            >
+              {{ variant.title }} - {{ variant.price | money }}
+            </option>
+          {% endfor %}
+        </select>
+
+        {%- comment -%} Add to Cart Button {%- endcomment -%}
+        <div class="hook-customizer__actions">
+          <button 
+            type="button" 
+            class="hook-customizer__add-to-cart"
+            id="addToCart-{{ section.id }}"
+          >
+            Add to Cart - <span id="variantPrice-{{ section.id }}">{{ product.selected_or_first_available_variant.price | money }}</span>
+          </button>
+        </div>
+      {% endif %}
+    </div>
+
+  </div>
+</div>
+
+{%- comment -%} Hidden Hook Template {%- endcomment -%}
+<img 
+  id="hookTemplate-{{ section.id }}" 
+  src="{{ section.settings.hook_template | img_url: 'master' }}" 
+  alt="Hook template"
+  style="display: none;"
+  crossorigin="anonymous"
+>
+
+<style>
+  .hook-customizer {
+    margin: 2rem 0;
+  }
+
+  .hook-customizer__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  @media (max-width: 768px) {
+    .hook-customizer__wrapper {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  /* Preview Canvas */
+  .hook-customizer__preview {
+    position: sticky;
+    top: 2rem;
+  }
+
+  .hook-preview-canvas {
+    position: relative;
+    width: 100%;
+    background: #f8f8f8;
+    padding: 2rem;
+    border-radius: 8px;
+  }
+
+  .hook-preview-canvas__rail {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .hook-preview-canvas__hooks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .hook-preview-canvas__hook {
+    position: absolute;
+    width: 12%;
+    height: auto;
+    transition: filter 0.3s ease;
+  }
+
+  /* Options */
+  .hook-customizer__options {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .hook-option {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hook-option__label {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #333;
+  }
+
+  .hook-option__selected-name {
+    font-weight: 400;
+    color: #666;
+  }
+
+  /* Hook Count Buttons */
+  .hook-option__buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .hook-option__button {
+    flex: 1;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #ddd;
+    background: white;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .hook-option__button:hover {
+    border-color: #999;
+  }
+
+  .hook-option__button.active {
+    border-color: #333;
+    background: #333;
+    color: white;
+  }
+
+  /* Color Swatches */
+  .hook-option__swatches {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .hook-color-swatch {
+    width: 48px;
+    height: 48px;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .hook-color-swatch:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  .hook-color-swatch.active {
+    border-color: #333;
+    box-shadow: 0 0 0 2px white, 0 0 0 4px #333;
+  }
+
+  .swatch-check {
+    display: none;
+  }
+
+  .hook-color-swatch.active .swatch-check {
+    display: block;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+  }
+
+  /* Add to Cart */
+  .hook-customizer__actions {
+    margin-top: 1rem;
+  }
+
+  .hook-customizer__add-to-cart {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .hook-customizer__add-to-cart:hover {
+    background: #000;
+  }
+
+  .hook-customizer__add-to-cart:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+</style>
+
+<script>
+(function() {
+  const sectionId = '{{ section.id }}';
+  
+  // Configuration
+  const config = {
+    rail3Image: '{{ section.settings.rail_3_image | img_url: "master" }}',
+    rail6Image: '{{ section.settings.rail_6_image | img_url: "master" }}',
+    hookTemplate: '{{ section.settings.hook_template | img_url: "master" }}',
+    hook3Positions: [
+      { left: 20, top: 52 },
+      { left: 44.5, top: 52 },
+      { left: 69, top: 52 }
+    ],
+    hook6Positions: [
+      { left: 10, top: 52 },
+      { left: 26, top: 52 },
+      { left: 42, top: 52 },
+      { left: 58, top: 52 },
+      { left: 74, top: 52 },
+      { left: 90, top: 52 }
+    ]
+  };
+
+  // State
+  let state = {
+    hookCount: 3,
+    hookColor: '{{ section.blocks.first.settings.color_hex }}',
+    hookColorName: '{{ section.blocks.first.settings.color_name }}'
+  };
+
+  // DOM Elements
+  const elements = {
+    railImage: document.getElementById(`railImage-${sectionId}`),
+    hooksContainer: document.getElementById(`hooksContainer-${sectionId}`),
+    hookCountButtons: document.querySelectorAll(`[data-section-id="${sectionId}"] .hook-option__button`),
+    colorSwatches: document.querySelectorAll(`[data-section-id="${sectionId}"] .hook-color-swatch`),
+    selectedColorName: document.getElementById(`selectedColorName-${sectionId}`),
+    variantSelector: document.getElementById(`variantSelector-${sectionId}`),
+    addToCartButton: document.getElementById(`addToCart-${sectionId}`),
+    variantPrice: document.getElementById(`variantPrice-${sectionId}`)
+  };
+
+  // Color Filter Calculator
+  function hexToFilter(hex) {
+    // Convert hex to RGB
+    const r = parseInt(hex.slice(1, 3), 16) / 255;
+    const g = parseInt(hex.slice(3, 5), 16) / 255;
+    const b = parseInt(hex.slice(5, 7), 16) / 255;
+
+    // Calculate brightness and saturation
+    const max = Math.max(r, g, b);
+    const min = Math.min(r, g, b);
+    const l = (max + min) / 2;
+    
+    let s = 0;
+    if (max !== min) {
+      s = l > 0.5 ? (max - min) / (2 - max - min) : (max - min) / (max + min);
+    }
+
+    // Calculate hue
+    let h = 0;
+    if (max !== min) {
+      if (max === r) {
+        h = ((g - b) / (max - min) + (g < b ? 6 : 0)) / 6;
+      } else if (max === g) {
+        h = ((b - r) / (max - min) + 2) / 6;
+      } else {
+        h = ((r - g) / (max - min) + 4) / 6;
+      }
+    }
+
+    // Red hook is at hue ~0deg, adjust rotation
+    const hueRotate = (h * 360) - 0; // Adjust from red base
+    const saturate = s * 200; // Boost saturation
+    const brightness = l * 200; // Adjust brightness
+
+    return `hue-rotate(${hueRotate}deg) saturate(${saturate}%) brightness(${brightness}%)`;
+  }
+
+  // Render Hooks
+  function renderHooks() {
+    elements.hooksContainer.innerHTML = '';
+    const positions = state.hookCount === 3 ? config.hook3Positions : config.hook6Positions;
+    const filter = hexToFilter(state.hookColor);
+
+    positions.forEach((pos, index) => {
+      const hook = document.createElement('img');
+      hook.src = config.hookTemplate;
+      hook.className = 'hook-preview-canvas__hook';
+      hook.style.left = `${pos.left}%`;
+      hook.style.top = `${pos.top}%`;
+      hook.style.filter = filter;
+      hook.alt = `Hook ${index + 1}`;
+      elements.hooksContainer.appendChild(hook);
+    });
+  }
+
+  // Update Rail Image
+  function updateRailImage() {
+    elements.railImage.src = state.hookCount === 3 ? config.rail3Image : config.rail6Image;
+  }
+
+  // Find Matching Variant
+  function findVariant() {
+    if (!elements.variantSelector) return null;
+
+    const options = elements.variantSelector.querySelectorAll('option');
+    for (let option of options) {
+      const variantHookCount = option.dataset.hookCount;
+      const variantColor = option.dataset.hookColor;
+      
+      if (variantHookCount == state.hookCount && 
+          variantColor.toLowerCase() === state.hookColorName.toLowerCase()) {
+        return option;
+      }
+    }
+    return null;
+  }
+
+  // Update Variant Selection
+  function updateVariantSelection() {
+    const variant = findVariant();
+    if (variant && elements.variantSelector) {
+      elements.variantSelector.value = variant.value;
+      
+      if (elements.addToCartButton) {
+        elements.addToCartButton.disabled = variant.disabled;
+        elements.addToCartButton.textContent = variant.disabled ? 
+          'Out of Stock' : 
+          `Add to Cart - ${variant.textContent.split(' - ')[1]}`;
+      }
+    }
+  }
+
+  // Hook Count Click Handler
+  elements.hookCountButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      elements.hookCountButtons.forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-checked', 'false');
+      });
+      this.classList.add('active');
+      this.setAttribute('aria-checked', 'true');
+      
+      state.hookCount = parseInt(this.dataset.hookCount);
+      updateRailImage();
+      renderHooks();
+      updateVariantSelection();
+    });
+  });
+
+  // Color Swatch Click Handler
+  elements.colorSwatches.forEach(swatch => {
+    swatch.addEventListener('click', function() {
+      elements.colorSwatches.forEach(sw => {
+        sw.classList.remove('active');
+        sw.innerHTML = '';
+      });
+      this.classList.add('active');
+      this.innerHTML = `<svg class="swatch-check" width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M13 4L6 11L3 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>`;
+      
+      state.hookColor = this.dataset.colorHex;
+      state.hookColorName = this.dataset.colorName;
+      elements.selectedColorName.textContent = state.hookColorName;
+      renderHooks();
+      updateVariantSelection();
+    });
+  });
+
+  // Add to Cart Handler
+  if (elements.addToCartButton) {
+    elements.addToCartButton.addEventListener('click', function() {
+      const variantId = elements.variantSelector.value;
+      
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          id: variantId,
+          quantity: 1
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
+        // Trigger cart update event
+        document.dispatchEvent(new CustomEvent('cart:updated'));
+        
+        // Optional: Show success message or redirect to cart
+        window.location.href = '/cart';
+      })
+      .catch(error => {
+        console.error('Error adding to cart:', error);
+        alert('Error adding to cart. Please try again.');
+      });
+    });
+  }
+
+  // Initial Render
+  renderHooks();
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Hook Customizer",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Asset Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "hook_template",
+      "label": "Hook Template (Red PNG)",
+      "info": "Upload a red hook template image with transparent background. This will be recolored based on customer selection."
+    },
+    {
+      "type": "image_picker",
+      "id": "rail_3_image",
+      "label": "Rail Image - 3 Hooks",
+      "info": "Upload the base rail image for 3-hook configuration"
+    },
+    {
+      "type": "image_picker",
+      "id": "rail_6_image",
+      "label": "Rail Image - 6 Hooks",
+      "info": "Upload the base rail image for 6-hook configuration"
+    },
+    {
+      "type": "header",
+      "content": "Hook Positioning"
+    },
+    {
+      "type": "paragraph",
+      "content": "Hook positions are set in the JavaScript code. Modify the hook3Positions and hook6Positions arrays to adjust placement."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "color",
+      "name": "Color Option",
+      "settings": [
+        {
+          "type": "text",
+          "id": "color_name",
+          "label": "Color Name",
+          "default": "Red",
+          "info": "Display name for this color (e.g., 'Candy Red', 'Navy Blue')"
+        },
+        {
+          "type": "color",
+          "id": "color_hex",
+          "label": "Color Hex Value",
+          "default": "#FF0000",
+          "info": "Select the color swatch"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hook Customizer",
+      "blocks": [
+        {
+          "type": "color",
+          "settings": {
+            "color_name": "Candy Red",
+            "color_hex": "#FF0000"
+          }
+        },
+        {
+          "type": "color",
+          "settings": {
+            "color_name": "Navy Blue",
+            "color_hex": "#000080"
+          }
+        },
+        {
+          "type": "color",
+          "settings": {
+            "color_name": "Forest Green",
+            "color_hex": "#228B22"
+          }
+        },
+        {
+          "type": "color",
+          "settings": {
+            "color_name": "Charcoal",
+            "color_hex": "#36454F"
+          }
+        },
+        {
+          "type": "color",
+          "settings": {
+            "color_name": "White",
+            "color_hex": "#FFFFFF"
+          }
+        },
+        {
+          "type": "color",
+          "settings": {
+            "color_name": "Sunny Yellow",
+            "color_hex": "#FFD700"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

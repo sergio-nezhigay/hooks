@@ -42,7 +42,7 @@
       ],
       "settings": {
         "logo_position": "middle-left",
-        "menu": "newmenu",
+        "menu": "",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
@@ -56,10 +56,21 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
+    },
+    "product_custom_canvas_L3XDAn": {
+      "type": "product-custom-canvas",
+      "name": "Custom Product Canvas",
+      "settings": {
+        "show_zoom_hint": true,
+        "show_trust_badges": true,
+        "show_dynamic_checkout": true,
+        "variant_picker_style": "buttons"
+      }
     }
   },
   "order": [
     "announcement-bar",
-    "header"
+    "header",
+    "product_custom_canvas_L3XDAn"
   ]
 }

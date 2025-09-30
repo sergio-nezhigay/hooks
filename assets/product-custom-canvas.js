@@ -224,8 +224,45 @@ class ProductCustomCanvas {
       
       // Update config display
       this.updateConfigDisplay();
+      
+      // Hide any error message
+      this.hideVariantError();
     } else {
       console.warn('No matching variant found for:', this.currentOptions);
+      
+      // Still update the canvas so user can see their selection
+      this.updateCanvas();
+      this.updateConfigDisplay();
+      
+      // Show user-friendly message
+      this.showVariantError();
+    }
+  }
+  
+  showVariantError() {
+    const addToCartBtn = this.section.querySelector('[data-add-to-cart]');
+    const btnText = addToCartBtn.querySelector('[data-add-to-cart-text]');
+    
+    addToCartBtn.disabled = true;
+    btnText.textContent = 'Combination Not Available';
+    
+    // Optionally add a message near the buttons
+    let errorMsg = this.section.querySelector('.variant-error-message');
+    if (!errorMsg) {
+      errorMsg = document.createElement('div');
+      errorMsg.className = 'variant-error-message';
+      errorMsg.style.cssText = 'color: #dc2626; padding: 12px; background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; margin: 16px 0; font-size: 14px;';
+      const form = this.section.querySelector('.product-custom__form');
+      form.insertBefore(errorMsg, form.firstChild);
+    }
+    errorMsg.textContent = '⚠️ This combination is not available. Please select a different option.';
+    errorMsg.style.display = 'block';
+  }
+  
+  hideVariantError() {
+    const errorMsg = this.section.querySelector('.variant-error-message');
+    if (errorMsg) {
+      errorMsg.style.display = 'none';
     }
   }
 
