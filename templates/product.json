@@ -67,7 +67,8 @@
       "settings": {
         "hook_template": "shopify://shop_images/single-hook-red.png",
         "rail_3_image": "shopify://shop_images/base-rail-3-1.png",
-        "rail_6_image": "shopify://shop_images/base-rail-6-1.png"
+        "rail_6_image": "shopify://shop_images/base-rail-6-1.png",
+        "rail_9_image": "shopify://shop_images/Generated_Image_September_30__2025_-_3_59PM-removebg-preview.png"
       }
     },
     "main": {

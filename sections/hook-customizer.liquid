@@ -43,6 +43,15 @@
           >
             6 Hooks
           </button>
+          <button
+            type="button"
+            class="hook-option__button"
+            data-hook-count="9"
+            role="radio"
+            aria-checked="false"
+          >
+            9 Hooks
+          </button>
         </div>
       </div>
 
@@ -308,23 +317,36 @@
     const config = {
       rail3Image: '{{ section.settings.rail_3_image | img_url: "master" }}',
       rail6Image: '{{ section.settings.rail_6_image | img_url: "master" }}',
+      rail9Image: '{{ section.settings.rail_9_image | img_url: "master" }}',
       hookTemplate: '{{ section.settings.hook_template | img_url: "master" }}',
       hookSizes: {
         3: '14%',
-        6: '5%',
+        6: '7%',
+        9: '4%',
       },
       hook3Positions: [
-        { left: 20, top: 52 },
-        { left: 44.5, top: 52 },
-        { left: 69, top: 52 },
+        { left: 20, top: 42 },
+        { left: 44.5, top: 37 },
+        { left: 69, top: 32 },
       ],
       hook6Positions: [
-        { left: 10, top: 52 },
-        { left: 26, top: 52 },
-        { left: 42, top: 52 },
-        { left: 58, top: 52 },
-        { left: 74, top: 52 },
-        { left: 90, top: 52 },
+        { left: 10, top: 42 },
+        { left: 26, top: 40 },
+        { left: 42, top: 38 },
+        { left: 58, top: 36 },
+        { left: 74, top: 34 },
+        { left: 90, top: 32 },
+      ],
+      hook9Positions: [
+        { left: 7, top: 42 },
+        { left: 18, top: 40 },
+        { left: 29, top: 38 },
+        { left: 40, top: 36 },
+        { left: 51, top: 34 },
+        { left: 62, top: 32 },
+        { left: 73, top: 30 },
+        { left: 84, top: 31 },
+        { left: 95, top: 32 },
       ],
     };
 
@@ -388,7 +410,15 @@
     function renderHooks() {
       console.log('Rendering hooks - Count:', state.hookCount, 'Color:', state.hookColorName);
       elements.hooksContainer.innerHTML = '';
-      const positions = state.hookCount === 3 ? config.hook3Positions : config.hook6Positions;
+      let positions;
+      if (state.hookCount === 3) {
+        positions = config.hook3Positions;
+      } else if (state.hookCount === 6) {
+        positions = config.hook6Positions;
+      } else if (state.hookCount === 9) {
+        positions = config.hook9Positions;
+      }
+      console.log('Selected positions array length:', positions ? positions.length : 'undefined');
       const hookSize = config.hookSizes[state.hookCount];
       const filter = hexToFilter(state.hookColor);
 
@@ -407,7 +437,13 @@
 
     // Update Rail Image
     function updateRailImage() {
-      elements.railImage.src = state.hookCount === 3 ? config.rail3Image : config.rail6Image;
+      if (state.hookCount === 3) {
+        elements.railImage.src = config.rail3Image;
+      } else if (state.hookCount === 6) {
+        elements.railImage.src = config.rail6Image;
+      } else {
+        elements.railImage.src = config.rail9Image;
+      }
     }
 
     // Find Matching Variant
@@ -551,6 +587,12 @@
       "id": "rail_6_image",
       "label": "Rail Image - 6 Hooks",
       "info": "Upload the base rail image for 6-hook configuration"
+    },
+    {
+      "type": "image_picker",
+      "id": "rail_9_image",
+      "label": "Rail Image - 9 Hooks",
+      "info": "Upload the base rail image for 9-hook configuration"
     },
     {
       "type": "header",
