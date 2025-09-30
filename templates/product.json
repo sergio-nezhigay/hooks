@@ -9,73 +9,6 @@
  */
 {
   "sections": {
-    "hook_customizer_h7BPeA": {
-      "type": "hook-customizer",
-      "blocks": {
-        "color_gLYRLG": {
-          "type": "color",
-          "settings": {
-            "color_name": "Candy Red",
-            "color_hex": "#ff0000"
-          }
-        },
-        "color_VRDFaa": {
-          "type": "color",
-          "settings": {
-            "color_name": "Navy Blue",
-            "color_hex": "#000080"
-          }
-        },
-        "color_XzwPmE": {
-          "type": "color",
-          "settings": {
-            "color_name": "Forest Green",
-            "color_hex": "#228b22"
-          }
-        },
-        "color_ExeYJB": {
-          "type": "color",
-          "settings": {
-            "color_name": "Charcoal",
-            "color_hex": "#36454f"
-          }
-        },
-        "color_AdWPWi": {
-          "type": "color",
-          "settings": {
-            "color_name": "White",
-            "color_hex": "#ffffff"
-          }
-        },
-        "color_kfJEWt": {
-          "type": "color",
-          "settings": {
-            "color_name": "Sunny Yellow",
-            "color_hex": "#ffd700"
-          }
-        }
-      },
-      "block_order": [
-        "color_gLYRLG",
-        "color_VRDFaa",
-        "color_XzwPmE",
-        "color_ExeYJB",
-        "color_AdWPWi",
-        "color_kfJEWt"
-      ],
-      "name": "Hook Customizer",
-      "settings": {
-        "hook_template": "shopify://shop_images/single-hook-red.png",
-        "hook_red": "shopify://shop_images/single-hook-red.png",
-        "hook_white": "shopify://shop_images/Generated_Image_September_30__2025_-_4_18PM-removebg-preview.png",
-        "rail_style1_3_image": "shopify://shop_images/white-3-cropped.png",
-        "rail_style1_6_image": "shopify://shop_images/Generated_-cropped.png",
-        "rail_style1_9_image": "shopify://shop_images/white-9-cropped.png",
-        "rail_style2_3_image": "shopify://shop_images/base-rail-3-1.png",
-        "rail_style2_6_image": "shopify://shop_images/base-rail-6-1.png",
-        "rail_style2_9_image": "shopify://shop_images/very_long_rail.png"
-      }
-    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -154,6 +87,185 @@
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
+      }
+    },
+    "hook_customizer_P3jGqj": {
+      "type": "hook-customizer",
+      "blocks": {
+        "color_WhhVBx": {
+          "type": "color",
+          "settings": {
+            "color_name": "Candy Red",
+            "color_hex": "#ff0000"
+          }
+        },
+        "color_T3q4Pm": {
+          "type": "color",
+          "settings": {
+            "color_name": "Crimson",
+            "color_hex": "#dc143c"
+          }
+        },
+        "color_H34DHQ": {
+          "type": "color",
+          "settings": {
+            "color_name": "Coral",
+            "color_hex": "#ff7f50"
+          }
+        },
+        "color_UyHiar": {
+          "type": "color",
+          "settings": {
+            "color_name": "Orange",
+            "color_hex": "#ff8c00"
+          }
+        },
+        "color_JbQ6xj": {
+          "type": "color",
+          "settings": {
+            "color_name": "Sunny Yellow",
+            "color_hex": "#ffd700"
+          }
+        },
+        "color_Ygz63W": {
+          "type": "color",
+          "settings": {
+            "color_name": "Mustard",
+            "color_hex": "#ffdb58"
+          }
+        },
+        "color_ydydcf": {
+          "type": "color",
+          "settings": {
+            "color_name": "Lime Green",
+            "color_hex": "#32cd32"
+          }
+        },
+        "color_KrWAUx": {
+          "type": "color",
+          "settings": {
+            "color_name": "Forest Green",
+            "color_hex": "#228b22"
+          }
+        },
+        "color_keQf3N": {
+          "type": "color",
+          "settings": {
+            "color_name": "Emerald",
+            "color_hex": "#50c878"
+          }
+        },
+        "color_YT3x7P": {
+          "type": "color",
+          "settings": {
+            "color_name": "Teal",
+            "color_hex": "#008080"
+          }
+        },
+        "color_UMNXXx": {
+          "type": "color",
+          "settings": {
+            "color_name": "Sky Blue",
+            "color_hex": "#87ceeb"
+          }
+        },
+        "color_Fcb6Qx": {
+          "type": "color",
+          "settings": {
+            "color_name": "Navy Blue",
+            "color_hex": "#000080"
+          }
+        },
+        "color_pwjYC9": {
+          "type": "color",
+          "settings": {
+            "color_name": "Royal Blue",
+            "color_hex": "#4169e1"
+          }
+        },
+        "color_kQzXUe": {
+          "type": "color",
+          "settings": {
+            "color_name": "Purple",
+            "color_hex": "#800080"
+          }
+        },
+        "color_gwMLV6": {
+          "type": "color",
+          "settings": {
+            "color_name": "Lavender",
+            "color_hex": "#b57edc"
+          }
+        },
+        "color_GVphHC": {
+          "type": "color",
+          "settings": {
+            "color_name": "Pink",
+            "color_hex": "#ff69b4"
+          }
+        },
+        "color_yxyYhr": {
+          "type": "color",
+          "settings": {
+            "color_name": "Charcoal",
+            "color_hex": "#36454f"
+          }
+        },
+        "color_y9gKRN": {
+          "type": "color",
+          "settings": {
+            "color_name": "Slate Gray",
+            "color_hex": "#708090"
+          }
+        },
+        "color_9paxth": {
+          "type": "color",
+          "settings": {
+            "color_name": "Black",
+            "color_hex": "#000000"
+          }
+        },
+        "color_LLXnwc": {
+          "type": "color",
+          "settings": {
+            "color_name": "White",
+            "color_hex": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "color_WhhVBx",
+        "color_T3q4Pm",
+        "color_H34DHQ",
+        "color_UyHiar",
+        "color_JbQ6xj",
+        "color_Ygz63W",
+        "color_ydydcf",
+        "color_KrWAUx",
+        "color_keQf3N",
+        "color_YT3x7P",
+        "color_UMNXXx",
+        "color_Fcb6Qx",
+        "color_pwjYC9",
+        "color_kQzXUe",
+        "color_gwMLV6",
+        "color_GVphHC",
+        "color_yxyYhr",
+        "color_y9gKRN",
+        "color_9paxth",
+        "color_LLXnwc"
+      ],
+      "name": "Hook Customizer",
+      "settings": {
+        "hook_template": "shopify://shop_images/single-hook-red.png",
+        "hook_red": "shopify://shop_images/single-hook-red.png",
+        "hook_white": "shopify://shop_images/Generated_Image_September_30__2025_-_4_18PM-removebg-preview.png",
+        "rail_style1_3_image": "shopify://shop_images/white-3-cropped.png",
+        "rail_style1_6_image": "shopify://shop_images/Generated_-cropped.png",
+        "rail_style1_9_image": "shopify://shop_images/white-9-cropped.png",
+        "rail_style2_3_image": "shopify://shop_images/base-rail-3-1.png",
+        "rail_style2_6_image": "shopify://shop_images/base-rail-6-1.png",
+        "rail_style2_9_image": "shopify://shop_images/very_long_rail.png"
       }
     },
     "hp_info_columns_CYRzQP": {
@@ -322,8 +434,8 @@
     }
   },
   "order": [
-    "hook_customizer_h7BPeA",
     "main",
+    "hook_customizer_P3jGqj",
     "hp_info_columns_CYRzQP",
     "related-products",
     "featured_collection_VyDGjD",
