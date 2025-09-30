@@ -319,6 +319,7 @@
       rail6Image: '{{ section.settings.rail_6_image | img_url: "master" }}',
       rail9Image: '{{ section.settings.rail_9_image | img_url: "master" }}',
       hookTemplate: '{{ section.settings.hook_template | img_url: "master" }}',
+      hookRed: '{{ section.settings.hook_red | img_url: "master" }}',
       hookWhite: '{{ section.settings.hook_white | img_url: "master" }}',
       hookSizes: {
         3: '14%',
@@ -327,8 +328,8 @@
       },
       hook3Positions: [
         { left: 20, top: 42 },
-        { left: 44.5, top: 37 },
-        { left: 69, top: 32 },
+        { left: 54.5, top: 37 },
+        { left: 89, top: 32 },
       ],
       hook6Positions: [
         { left: 10, top: 42 },
@@ -422,10 +423,28 @@
       console.log('Selected positions array length:', positions ? positions.length : 'undefined');
       const hookSize = config.hookSizes[state.hookCount];
 
-      // Check if white color is selected
-      const isWhite = state.hookColorName.toLowerCase() === 'white';
-      const hookImage = isWhite ? config.hookWhite : config.hookTemplate;
-      const filter = isWhite ? 'none' : hexToFilter(state.hookColor);
+      // Check for specific uploaded hook images
+      const colorNameLower = state.hookColorName.toLowerCase();
+      const isRed = colorNameLower.includes('red');
+      const isWhite = colorNameLower === 'white';
+
+      let hookImage = config.hookTemplate;
+      let filter = hexToFilter(state.hookColor);
+
+      console.log('Color check - isRed:', isRed, 'isWhite:', isWhite);
+      console.log('Hook images - hookRed:', config.hookRed, 'hookWhite:', config.hookWhite);
+
+      if (isRed && config.hookRed && config.hookRed !== '') {
+        hookImage = config.hookRed;
+        filter = 'none';
+        console.log('Using red hook image:', hookImage);
+      } else if (isWhite && config.hookWhite && config.hookWhite !== '') {
+        hookImage = config.hookWhite;
+        filter = 'none';
+        console.log('Using white hook image:', hookImage);
+      } else {
+        console.log('Using template with filter:', filter);
+      }
 
       positions.forEach((pos, index) => {
         const hook = document.createElement('img');
@@ -578,8 +597,14 @@
     {
       "type": "image_picker",
       "id": "hook_template",
-      "label": "Hook Template (Red PNG)",
-      "info": "Upload a red hook template image with transparent background. This will be recolored based on customer selection."
+      "label": "Hook Template (Base PNG)",
+      "info": "Upload a base hook template image with transparent background. This will be recolored based on customer selection using CSS filters."
+    },
+    {
+      "type": "image_picker",
+      "id": "hook_red",
+      "label": "Red Hook Image",
+      "info": "Upload the red hook image. This will be used directly for red color selection instead of color filters."
     },
     {
       "type": "image_picker",
