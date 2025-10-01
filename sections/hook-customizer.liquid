@@ -124,6 +124,7 @@
               value="{{ variant.id }}"
               data-hook-count="{{ variant.option1 }}"
               data-hook-color="{{ variant.option2 }}"
+              data-rail-style="{{ variant.option3 }}"
               {% unless variant.available %}
                 disabled
               {% endunless %}
@@ -500,14 +501,57 @@
       if (!elements.variantSelector) return null;
 
       const options = elements.variantSelector.querySelectorAll('option');
-      for (let option of options) {
-        const variantHookCount = option.dataset.hookCount;
-        const variantColor = option.dataset.hookColor;
 
-        if (variantHookCount == state.hookCount && variantColor.toLowerCase() === state.hookColorName.toLowerCase()) {
-          return option;
+      // Debug: Log first variant to see actual data format
+      if (options.length > 0) {
+        console.log('First variant data:', {
+          hookCount: options[0].dataset.hookCount,
+          color: options[0].dataset.hookColor,
+          railStyle: options[0].dataset.railStyle,
+          text: options[0].textContent
+        });
+      }
+
+      // Check if product has Option 3 (Rail Style)
+      const hasRailStyleOption = options.length > 0 && options[0].dataset.railStyle !== '';
+
+      if (hasRailStyleOption) {
+        // Normalize rail style: 'style1' -> 'Style 1', 'style2' -> 'Style 2'
+        const normalizedRailStyle = state.railStyle === 'style1' ? 'Style 1' : 'Style 2';
+
+        // Match all 3 options
+        for (let option of options) {
+          const variantHookCount = option.dataset.hookCount;
+          const variantColor = option.dataset.hookColor;
+          const variantRailStyle = option.dataset.railStyle;
+
+          if (
+            variantHookCount == state.hookCount &&
+            variantColor.toLowerCase() === state.hookColorName.toLowerCase() &&
+            variantRailStyle === normalizedRailStyle
+          ) {
+            console.log('Variant found (3 options):', option.textContent);
+            return option;
+          }
+        }
+      } else {
+        // Product only has 2 options (hook count + color), match without rail style
+        console.log('Product has only 2 options, ignoring rail style in variant matching');
+        for (let option of options) {
+          const variantHookCount = option.dataset.hookCount;
+          const variantColor = option.dataset.hookColor;
+
+          if (
+            variantHookCount == state.hookCount &&
+            variantColor.toLowerCase() === state.hookColorName.toLowerCase()
+          ) {
+            console.log('Variant found (2 options):', option.textContent);
+            return option;
+          }
         }
       }
+
+      console.log('No variant found for:', state.hookCount, state.hookColorName);
       return null;
     }
 
@@ -517,11 +561,19 @@
       if (variant && elements.variantSelector) {
         elements.variantSelector.value = variant.value;
 
-        if (elements.addToCartButton) {
+        if (elements.addToCartButton && elements.variantPrice) {
           elements.addToCartButton.disabled = variant.disabled;
-          elements.addToCartButton.textContent = variant.disabled
-            ? 'Out of Stock'
-            : `Add to Cart - ${variant.textContent.split(' - ')[1]}`;
+
+          // Extract price from variant text (format: "3 / Candy Red / Style 1 - $29.99")
+          const price = variant.textContent.split(' - ')[1];
+
+          if (variant.disabled) {
+            elements.addToCartButton.textContent = 'Out of Stock';
+          } else {
+            elements.addToCartButton.innerHTML = `Add to Cart - <span id="variantPrice-${sectionId}">${price}</span>`;
+          }
+
+          console.log('Price updated to:', price);
         }
       }
     }
@@ -628,6 +680,7 @@
 
     // Initial Render
     renderHooks();
+    updateVariantSelection();
   })();
 </script>
 
