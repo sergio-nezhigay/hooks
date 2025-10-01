@@ -11,7 +11,7 @@
         <img
           class="hook-preview-canvas__rail"
           id="railImage-{{ section.id }}"
-          src="{{ section.settings.rail_style1_3_image | img_url: 'master' }}"
+          src="{{ section.settings.rail_style1_3_image | image_url }}"
           alt="Coat rack rail"
           loading="eager"
         >
@@ -150,15 +150,6 @@
     </div>
   </div>
 </div>
-
-{%- comment -%} Hidden Hook Template {%- endcomment -%}
-<img
-  id="hookTemplate-{{ section.id }}"
-  src="{{ section.settings.hook_template | img_url: 'master' }}"
-  alt="Hook template"
-  style="display: none;"
-  crossorigin="anonymous"
->
 
 <style>
   .hook-customizer {
@@ -345,19 +336,19 @@
     const config = {
       rails: {
         style1: {
-          3: '{{ section.settings.rail_style1_3_image | img_url: "master" }}',
-          6: '{{ section.settings.rail_style1_6_image | img_url: "master" }}',
-          9: '{{ section.settings.rail_style1_9_image | img_url: "master" }}',
+          3: '{{ section.settings.rail_style1_3_image | image_url }}',
+          6: '{{ section.settings.rail_style1_6_image | image_url }}',
+          9: '{{ section.settings.rail_style1_9_image | image_url }}',
         },
         style2: {
-          3: '{{ section.settings.rail_style2_3_image | img_url: "master" }}',
-          6: '{{ section.settings.rail_style2_6_image | img_url: "master" }}',
-          9: '{{ section.settings.rail_style2_9_image | img_url: "master" }}',
+          3: '{{ section.settings.rail_style2_3_image | image_url }}',
+          6: '{{ section.settings.rail_style2_6_image | image_url }}',
+          9: '{{ section.settings.rail_style2_9_image | image_url }}',
         },
       },
-      hookTemplate: '{{ section.settings.hook_template | img_url: "master" }}',
-      hookRed: '{{ section.settings.hook_red | img_url: "master" }}',
-      hookWhite: '{{ section.settings.hook_white | img_url: "master" }}',
+      hookTemplate: '{{ section.settings.hook_template | image_url }}',
+      hookRed: '{{ section.settings.hook_red | image_url }}',
+      hookWhite: '{{ section.settings.hook_white | image_url }}',
       hookSizes: {
         3: '14%',
         6: '7%',
