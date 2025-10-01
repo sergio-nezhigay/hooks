@@ -512,46 +512,40 @@
         });
       }
 
-      // Check if product has Option 3 (Rail Style)
-      const hasRailStyleOption = options.length > 0 && options[0].dataset.railStyle !== '';
+      // Normalize rail style: 'style1' -> 'Style 1', 'style2' -> 'Style 2'
+      const normalizedRailStyle = state.railStyle === 'style1' ? 'Style 1' : 'Style 2';
 
-      if (hasRailStyleOption) {
-        // Normalize rail style: 'style1' -> 'Style 1', 'style2' -> 'Style 2'
-        const normalizedRailStyle = state.railStyle === 'style1' ? 'Style 1' : 'Style 2';
+      // Build search string: "ColorName - StyleName"
+      const searchColorStyle = `${state.hookColorName} - ${normalizedRailStyle}`;
 
-        // Match all 3 options
-        for (let option of options) {
-          const variantHookCount = option.dataset.hookCount;
-          const variantColor = option.dataset.hookColor;
-          const variantRailStyle = option.dataset.railStyle;
+      // Try to find variant with combined "Color - Style" format (Option2)
+      for (let option of options) {
+        const variantHookCount = option.dataset.hookCount;
+        const variantColor = option.dataset.hookColor; // e.g., "Candy Red - Style 1"
 
+        // Check if variantColor includes rail style (combined format)
+        if (variantColor && variantColor.includes(' - ')) {
+          // Combined format: match "Color - Style"
           if (
             variantHookCount == state.hookCount &&
-            variantColor.toLowerCase() === state.hookColorName.toLowerCase() &&
-            variantRailStyle === normalizedRailStyle
+            variantColor === searchColorStyle
           ) {
-            console.log('Variant found (3 options):', option.textContent);
+            console.log('Variant found (combined color/style):', option.textContent);
             return option;
           }
-        }
-      } else {
-        // Product only has 2 options (hook count + color), match without rail style
-        console.log('Product has only 2 options, ignoring rail style in variant matching');
-        for (let option of options) {
-          const variantHookCount = option.dataset.hookCount;
-          const variantColor = option.dataset.hookColor;
-
+        } else {
+          // Separate options format: match color only
           if (
             variantHookCount == state.hookCount &&
             variantColor.toLowerCase() === state.hookColorName.toLowerCase()
           ) {
-            console.log('Variant found (2 options):', option.textContent);
+            console.log('Variant found (separate options):', option.textContent);
             return option;
           }
         }
       }
 
-      console.log('No variant found for:', state.hookCount, state.hookColorName);
+      console.log('No variant found for:', state.hookCount, searchColorStyle);
       return null;
     }
 

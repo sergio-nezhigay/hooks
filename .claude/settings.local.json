@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(printenv)",
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Bash(cat:*)",
+      "Bash(unix2dos:*)"
     ],
     "deny": [],
     "ask": []
